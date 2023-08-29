@@ -26,3 +26,7 @@ body {
 .header {
     background-color: rgb(94, 94, 143);
 }
+
+.header img {
+    height: 100%;
+}
