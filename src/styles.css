@@ -9,13 +9,14 @@ body {
 
 .container {
     display: grid;
+    grid-template-rows: 70px 1fr;
     background-color: aliceblue;
     width: 70%;
     min-height: 750px;
     border-radius: 10px;
 }
 
-@media (width <= 1400px) {
+@media (width <= 1500px) {
     .container {
         height: 100%;
         width: 100%;
