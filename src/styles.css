@@ -22,3 +22,7 @@ body {
         width: 100%;
     }
 }
+
+.header {
+    background-color: rgb(70, 71, 112);
+}
