@@ -11,7 +11,7 @@ body {
     display: grid;
     grid-template-rows: 70px 1fr;
     background-color: aliceblue;
-    width: 70%;
+    width: 80%;
     min-height: 750px;
     border-radius: 10px;
 }
@@ -41,4 +41,13 @@ body {
     font-size: 40px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 100;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+}
+
+.main-left {
+    background-color: rgb(225, 236, 250);
 }
