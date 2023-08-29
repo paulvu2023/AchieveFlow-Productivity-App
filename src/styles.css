@@ -26,6 +26,7 @@ body {
 .header {
     display: flex;
     align-items: center;
+    gap: 10px;
     background-color: rgb(94, 94, 143);
     border-radius: 10px 10px 0px 0px;
 }
