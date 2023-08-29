@@ -24,6 +24,8 @@ body {
 }
 
 .header {
+    display: flex;
+    align-items: center;
     background-color: rgb(94, 94, 143);
 }
 
