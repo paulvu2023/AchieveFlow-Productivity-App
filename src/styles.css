@@ -9,7 +9,8 @@ body {
 
 .container {
     display: grid;
-    background-color: white;
+    background-color: aliceblue;
     width: 70%;
     height: 75%;
+    border-radius: 10px;
 }
