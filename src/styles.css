@@ -93,5 +93,11 @@ body {
     flex-direction: column;
     justify-content: start;
     align-items: center;
+    padding-top: 30px;
+}
+
+.main-right button {
+    border: none;
+    outline: none;
 }
 
