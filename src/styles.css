@@ -74,3 +74,8 @@ body {
     padding-left: 6px;
     border-bottom: 1px solid rgb(152, 197, 240);
 }
+
+.fa-circle-plus {
+    font-size: 25px;
+    margin-left: 5px;
+}
