@@ -1,4 +1,4 @@
-class todoItem {
+class toDoItem {
     constructor(title, description, dueDate, priority) {
         this.title = title;
         this.description = description;
@@ -7,3 +7,5 @@ class todoItem {
         this.checked = false;
     }
 }
+
+export { toDoItem };
