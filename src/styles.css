@@ -23,6 +23,10 @@ body {
     }
 }
 
+@media (width <= 1000px) {
+    
+}
+
 .header {
     display: flex;
     align-items: center;
@@ -90,6 +94,7 @@ body {
 /* Styling for the bottom right side */
 
 .main-right {
+    overflow: auto;
     display: flex;
     flex-direction: column;
     justify-content: start;
@@ -98,11 +103,21 @@ body {
 }
 
 .main-right button {
+    gap: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border: none;
     outline: none;
     background-color:rgb(225, 236, 250);
     width: 90%;
     padding: 15px;
     border-radius: 12px;
+    font-size: 25px;
+    font-family: 'Abel', sans-serif;
+}
+
+.fa-beat-fade {
+    font-size: 30px;
 }
 
