@@ -100,5 +100,9 @@ body {
 .main-right button {
     border: none;
     outline: none;
+    background-color:rgb(225, 236, 250);
+    width: 90%;
+    padding: 15px;
+    border-radius: 12px;
 }
 
