@@ -79,3 +79,7 @@ body {
     font-size: 25px;
     margin-left: 5px;
 }
+
+.notes .fa-circle-plus {
+    margin-left: 33px;
+}
