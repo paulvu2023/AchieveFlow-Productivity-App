@@ -20,6 +20,7 @@ body {
     --hamburger-gap: 8px;
     --foreground: white;
     --background: white;
+    --animation-timing: 200ms ease-in-out;
 }
 
 .hamburger-menu {
@@ -38,6 +39,9 @@ body {
     height: var(--bar-height);
     background-color: var(--foreground);
     border-radius: 9999px;
+    transform-origin: left center;
+    transition: opacity var(--animation-timing), width
+    var(--animation-timing);
 }
 
 .hamburger-menu input {
@@ -48,6 +52,18 @@ body {
     pointer-events: none;
 }
 
+.hamburger-menu:has(input:checked)::before {
+    rotate: 45deg;
+}
+
+.hamburger-menu:has(input:checked)::after {
+    rotate: -45deg;
+}
+
+.hamburger-menu input:checked {
+    opacity: 0;
+    width: 0;
+}
 .container {
     display: grid;
     grid-template-rows: 70px 1fr;
