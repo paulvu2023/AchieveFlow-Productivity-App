@@ -56,11 +56,15 @@ body {
 }
 
 .hamburger-menu:has(input:checked)::before {
+    width: var(--x-width);
     rotate: 45deg;
+    translate: 0 calc(var(--bar-height) / -2);
 }
 
 .hamburger-menu:has(input:checked)::after {
+    width: var(--x-width);
     rotate: -45deg;
+    translate: 0 calc(var(--bar-height) / 2);
 }
 
 .hamburger-menu input:checked {
