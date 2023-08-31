@@ -99,7 +99,7 @@ body {
     padding-top: 30px;
 }
 
-.main-right button {
+.add-task {
     gap: 10px;
     display: flex;
     align-items: center;
@@ -112,6 +112,12 @@ body {
     border-radius: 12px;
     font-size: 25px;
     font-family: 'Abel', sans-serif;
+    transition: all 0.3s ease-in-out;
+}
+
+.add-task:hover {
+    transform: scale(1.05);
+    color: rgb(45, 141, 219);
 }
 
 .fa-beat-fade {
