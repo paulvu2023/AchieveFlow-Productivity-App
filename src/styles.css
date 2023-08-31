@@ -92,6 +92,12 @@ body {
     }
 }
 
+@media (height <= 750px) {
+    body {
+        align-items: start;
+    }
+}
+
 .header {
     display: flex;
     align-items: center;
