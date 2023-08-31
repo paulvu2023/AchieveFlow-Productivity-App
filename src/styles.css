@@ -18,7 +18,7 @@ body {
     --bar-width: 40px;
     --bar-height: 4px;
     --hamburger-gap: 8px;
-    --foreground: white;
+    --foreground: black;
     --background: white;
     --animation-timing: 200ms ease-in-out;
     --hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2)
@@ -111,16 +111,24 @@ body {
 
 .main {
     display: flex;
+    height: 100%;
 }
 
 /* Styling for the bottom left side (sidebar) */
 
+.hamburger-menu:has(input:checked) + .sidebar {
+    translate: 0;
+  }
+
 .sidebar {
+    transition: translate var(--animation-timing);
+    translate: -200%;
     width: 300px;
     background-color: rgb(225, 236, 250);
     border-right: 1px solid rgb(152, 197, 240);
     border-radius: 0px 0px 0px 10px;
     padding-top: 50px;
+    opacity: 1;
 }
 
 nav button {
@@ -153,6 +161,7 @@ nav button:hover {
 
 .main-right {
     flex: 1;
+    display: block;
     overflow: auto;
     display: flex;
     flex-direction: column;
