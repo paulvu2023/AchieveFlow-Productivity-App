@@ -17,7 +17,7 @@ body {
     --bar-width: 40px;
     --bar-height: 4px;
     --hamburger-gap: 8px;
-    --foreground: black;
+    --foreground: rgb(59, 59, 59);
     --background: none;
     --animation-timing: 200ms ease-in-out;
     --hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2)
