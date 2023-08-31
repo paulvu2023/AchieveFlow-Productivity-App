@@ -44,7 +44,7 @@ body {
     border-radius: 9999px;
     transform-origin: left center;
     transition: opacity var(--animation-timing), width
-    var(--animation-timing);
+    var(--animation-timing), rotate var(--animation-timing), translate var(--animation-timing);
 }
 
 .hamburger-menu input {
