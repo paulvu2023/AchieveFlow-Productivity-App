@@ -194,7 +194,8 @@ nav button:hover {
     padding: 15px;
     border-radius: 12px;
     font-size: 25px;
-    font-family: 'Abel', sans-serif;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
     transition: all 0.3s ease-in-out;
 }
 
