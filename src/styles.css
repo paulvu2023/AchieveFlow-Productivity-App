@@ -7,7 +7,6 @@ body {
     background-image: url('/images/background.png');
 }
 
-/* Hamburger Stuff */
 *,
 *::after,
 *::before {
@@ -32,6 +31,8 @@ body {
     gap: var(--hamburger-gap);
     width: max-content;
     cursor: pointer;
+    padding: 15px;
+    background-color: rgb(225, 236, 250);
 }
 
 .hamburger-menu::before,
@@ -126,7 +127,7 @@ body {
 
 .sidebar {
     transition: translate var(--animation-timing);
-    translate: -200%;
+    translate: -100%;
     width: 0px;
     background-color: rgb(225, 236, 250);
     border-right: 1px solid rgb(152, 197, 240);
