@@ -110,22 +110,18 @@ body {
 }
 
 .main {
-    display: grid;
-    grid-template-columns: 300px 1fr;
+    display: flex;
 }
 
-/* Styling for the bottom left side */
+/* Styling for the bottom left side (sidebar) */
 
 .sidebar {
+    width: 300px;
     background-color: rgb(225, 236, 250);
     border-right: 1px solid rgb(152, 197, 240);
     border-radius: 0px 0px 0px 10px;
     padding-top: 50px;
 }
-
-/* .sidebar {
-    translate:
-} */
 
 nav button {
     display: block;
@@ -156,6 +152,7 @@ nav button:hover {
 /* Styling for the bottom right side */
 
 .main-right {
+    flex: 1;
     overflow: auto;
     display: flex;
     flex-direction: column;
