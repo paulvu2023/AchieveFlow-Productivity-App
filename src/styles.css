@@ -111,6 +111,8 @@ body {
 
 .main {
     display: flex;
+    flex-direction: row;
+    width: 100%;
     height: 100%;
 }
 
@@ -118,17 +120,19 @@ body {
 
 .hamburger-menu:has(input:checked) + .sidebar {
     translate: 0;
-  }
+    width: 300px;
+    opacity: 1;
+}
 
 .sidebar {
     transition: translate var(--animation-timing);
     translate: -200%;
-    width: 300px;
+    width: 0px;
     background-color: rgb(225, 236, 250);
     border-right: 1px solid rgb(152, 197, 240);
     border-radius: 0px 0px 0px 10px;
     padding-top: 50px;
-    opacity: 1;
+    opacity: 0;
 }
 
 nav button {
@@ -161,9 +165,8 @@ nav button:hover {
 
 .main-right {
     flex: 1;
-    display: block;
-    overflow: auto;
     display: flex;
+    overflow: auto;
     flex-direction: column;
     justify-content: start;
     align-items: center;
