@@ -71,6 +71,7 @@ body {
     opacity: 0;
     width: 0;
 }
+
 .container {
     display: grid;
     grid-template-rows: 70px 1fr;
@@ -85,10 +86,6 @@ body {
         height: 100%;
         width: 100%;
     }
-}
-
-@media (width <= 1000px) {
-    
 }
 
 .header {
@@ -119,12 +116,16 @@ body {
 
 /* Styling for the bottom left side */
 
-.main-left {
+.sidebar {
     background-color: rgb(225, 236, 250);
     border-right: 1px solid rgb(152, 197, 240);
     border-radius: 0px 0px 0px 10px;
     padding-top: 50px;
 }
+
+/* .sidebar {
+    translate:
+} */
 
 nav button {
     display: block;
