@@ -75,7 +75,7 @@ body {
     padding-top: 50px;
 }
 
-.main-left button {
+.sidebar button {
     display: block;
     border: none;
     background: none;
@@ -88,7 +88,7 @@ body {
     transition: all 0.2s ease-in-out;
 }
 
-.main-left button:hover {
+.sidebar button:hover {
     transform: scale(1.2);
 }
 
