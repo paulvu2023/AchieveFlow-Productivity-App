@@ -15,10 +15,10 @@ body {
 }
 
 :root {
-    --bar-width: 60px;
-    --bar-height: 8px;
-    --hamburger-gap: 6px;
-    --foreground: #333;
+    --bar-width: 40px;
+    --bar-height: 4px;
+    --hamburger-gap: 8px;
+    --foreground: white;
     --background: white;
 }
 
@@ -26,7 +26,8 @@ body {
     display: flex;
     flex-direction: column;
     gap: var(--hamburger-gap);
-    width: max-content;   
+    width: max-content;
+    cursor: pointer;
 }
 
 .hamburger-menu::before,
