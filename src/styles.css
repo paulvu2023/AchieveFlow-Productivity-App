@@ -72,6 +72,11 @@ body {
     margin-left: 50px;
     margin-bottom: 25px;
     color: rgb(77, 75, 75);
+    transition: all 0.2s ease-in-out;
+}
+
+.main-left button:hover {
+    transform: scale(1.2);
 }
 
 .fa-circle-plus {
