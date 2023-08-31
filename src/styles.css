@@ -76,6 +76,8 @@ body {
     width: 0;
 }
 
+/* Container Styling */
+
 .container {
     display: grid;
     grid-template-rows: 70px 1fr;
@@ -97,6 +99,8 @@ body {
         align-items: start;
     }
 }
+
+/* Header Styling */
 
 .header {
     display: flex;
