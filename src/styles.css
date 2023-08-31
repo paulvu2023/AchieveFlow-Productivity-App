@@ -13,6 +13,13 @@ body {
     background-image: url('/images/background.png');
 }
 
+/* Hamburger Stuff */
+:root {
+    --bar-width: 60px;
+    --bar-height: 8px;
+    --hamburger-gap: 6px;
+}
+
 .container {
     display: grid;
     grid-template-rows: 70px 1fr;
