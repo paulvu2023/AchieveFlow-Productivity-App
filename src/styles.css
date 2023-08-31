@@ -62,7 +62,7 @@ body {
     padding-top: 50px;
 }
 
-.main-left button, .main-left div {
+.main-left button {
     display: block;
     border: none;
     background: none;
@@ -72,14 +72,6 @@ body {
     margin-left: 50px;
     margin-bottom: 25px;
     color: rgb(77, 75, 75);
-}
-
-.container .main-left div {
-    margin-left: 50px;
-    margin-right: 70px;
-    padding-bottom: 5px;
-    padding-left: 6px;
-    border-bottom: 1px solid rgb(152, 197, 240);
 }
 
 .fa-circle-plus {
