@@ -221,14 +221,18 @@ nav button:hover {
 /* Styling for Task Form */
 
 .add-task-form {
-    width: 500px;
-    height: 550px;
     background-color: lightblue;
     border-radius: 12px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 
 .add-task-form h1 {
     padding-left: 20px;
+}
+
+.add-task-form fieldset {
+    width: 500px;
+    height: 550px;
 }
 
 fieldset {
@@ -238,7 +242,7 @@ fieldset {
     flex-direction: column;
     border: none;
     margin: 0;
-    padding: 20px;
+    padding: 20px 20px 0px 20px;
     background-color: lightblue;
     border-radius: 0px 0px 12px 12px;
 }
