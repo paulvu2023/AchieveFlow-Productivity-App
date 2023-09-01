@@ -223,4 +223,7 @@ nav button:hover {
 .add-task-form {
     display: flex;
     flex-direction: column;
+    width: 500px;
+    height: 600px;
+    background-color: lightblue;
 }
