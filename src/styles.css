@@ -227,10 +227,13 @@ nav button:hover {
 }
 
 .add-task-form h1 {
+    font-family: 'Montserrat', sans-serif;
     border-radius: 12px 12px 0px 0px;
     background-color: rgb(151, 208, 255);
+    color: white;
     margin: 0;
     padding: 20px;
+    padding-left: 30px; 
 }
 
 .add-task-form fieldset {
