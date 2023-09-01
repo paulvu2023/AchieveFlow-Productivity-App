@@ -236,6 +236,10 @@ fieldset {
     background-color: lightblue;
 }
 
+input {
+    padding: 7px;
+}
+
 input:focus {
     outline: none;
     border: 2px solid rgb(17, 77, 156);
