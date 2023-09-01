@@ -224,6 +224,7 @@ nav button:hover {
     width: 500px;
     height: 600px;
     background-color: lightblue;
+    border-radius: 12px;
 }
 
 .add-task-form h1 {
@@ -239,6 +240,7 @@ fieldset {
     margin: 0;
     padding: 20px;
     background-color: lightblue;
+    border-radius: 0px 0px 12px 12px;
 }
 
 input, select, fieldset button {
