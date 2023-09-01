@@ -47,30 +47,32 @@
 
                     <h1>Add Task</h1>
 
-                    <label for="task-name">Task Name</label>
-                    <input autocomplete="off" required type="text" id="task-name" name="task-name">
+                    <fieldset>
+                        <label for="task-name">Task Name<span>*</span></label>
+                        <input autocomplete="off" required type="text" id="task-name" name="task-name">
 
-                    <label for="description">Description</label>
-                    <input autocomplete="off" type="description" id="description" name="description">
+                        <label for="description">Description</label>
+                        <input autocomplete="off" type="description" id="description" name="description">
 
-                    <label for="due-date">Due Date</label>
-                    <input type="date" id="due-date" name="due-date">
+                        <label for="due-date">Due Date</label>
+                        <input type="date" id="due-date" name="due-date">
 
-                    <label for="priority">Priority</label>
-                    <select id="priority" name="priority">
-                        <option value="low">Low</option>
-                        <option value="medium" selected>Medium</option>
-                        <option value="high">High</option>
-                    </select>
-                    
-                    <label for="project">Project</label>
-                    <select id="project" name="project">
-                        <option value="general" selected>General</option>
-                        <!-- JavaScript will populate the options here -->
-                    </select>
+                        <label for="priority">Priority</label>
+                        <select id="priority" name="priority">
+                            <option value="low">Low</option>
+                            <option value="medium" selected>Medium</option>
+                            <option value="high">High</option>
+                        </select>
+                        
+                        <label for="project">Project</label>
+                        <select id="project" name="project">
+                            <option value="general" selected>General</option>
+                            <!-- JavaScript will populate the options here -->
+                        </select>
 
-                    <button type="submit">Add Task</button>
-                    <button type="button">Cancel</button>
+                        <button type="submit">Add Task</button>
+                        <button type="button">Cancel</button>
+                    </fieldset>
                 </div>
             </div>
         </div>
