@@ -218,3 +218,9 @@ nav button:hover {
     font-size: 30px;
 }
 
+/* Styling for Task Form */
+
+.add-task-form {
+    display: flex;
+    flex-direction: column;
+}
