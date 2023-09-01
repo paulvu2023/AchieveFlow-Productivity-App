@@ -248,12 +248,21 @@ fieldset {
     flex-direction: column;
     border: none;
     margin: 0;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
     padding: 20px 30px 0px 30px;
     border-radius: 0px 0px 12px 12px;
 }
 
+label {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    color: rgb(59, 59, 59);
+}
+
 input, select, fieldset button {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
     padding: 7px;
     margin-top: 5px;
     margin-bottom: 40px;
