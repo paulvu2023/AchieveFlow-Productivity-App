@@ -244,7 +244,7 @@ fieldset {
 input, select, fieldset button {
     padding: 7px;
     margin-top: 5px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 input:focus {
@@ -258,4 +258,14 @@ input:invalid {
 
 label span {
     color: red;
+}
+
+fieldset div {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+}
+
+fieldset button {
+    width: 150px;
 }
