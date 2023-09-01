@@ -243,6 +243,8 @@ fieldset {
 
 input, select, fieldset button {
     padding: 7px;
+    margin-top: 5px;
+    margin-bottom: 20px;
 }
 
 input:focus {
