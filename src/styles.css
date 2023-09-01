@@ -236,7 +236,7 @@ fieldset {
     background-color: lightblue;
 }
 
-input {
+input, select, fieldset button {
     padding: 7px;
 }
 
