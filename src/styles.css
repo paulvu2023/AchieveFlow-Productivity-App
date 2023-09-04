@@ -227,7 +227,8 @@ nav button:hover {
     position: absolute;
     top: 55%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(0.1);
+    visibility: hidden;
 }
 
 .add-task-form h1 {
