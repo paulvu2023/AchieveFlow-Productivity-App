@@ -2,9 +2,9 @@ import "./styles.css";
 import { toDoItem } from "./toDoItems";
 
 let taskForm = document.getElementById("add-task-form");
-let addTaskButton = document.querySelector('.add-task');
 
-addTaskButton.addEventListener('click', openTaskForm);
+document.querySelector('.add-task').addEventListener('click', openTaskForm);
+document.querySelector('.cancel-task-button').addEventListener('click', closeTaskForm);
 
 function openTaskForm() {
     taskForm.classList.add('open-add-task-form');
