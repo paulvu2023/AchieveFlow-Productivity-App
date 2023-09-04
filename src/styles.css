@@ -228,6 +228,7 @@ nav button:hover {
 
 .add-task-form h1 {
     font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
     border-radius: 12px 12px 0px 0px;
     background-color: rgb(151, 208, 255);
     color: white;
