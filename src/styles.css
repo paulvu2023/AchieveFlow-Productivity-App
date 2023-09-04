@@ -294,12 +294,17 @@ fieldset button {
     padding: 10px;
     border-radius: 8px;
     font-size: 20px;
+    transition: background-color 0.3s ease;
 }
 
 .add-task-button {
     background-color: rgb(53, 117, 255);
     color: white;
     border: none;
+}
+
+.add-task-button:hover {
+    background-color: rgb(20, 94, 255);
 }
 
 .cancel-task-button {
