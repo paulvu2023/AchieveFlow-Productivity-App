@@ -273,13 +273,17 @@ label {
     color: rgb(59, 59, 59);
 }
 
-input, select, fieldset button {
+input, select, fieldset button{
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
     font-size: 15px;
     padding: 7px;
     margin-top: 5px;
     margin-bottom: 40px;
+}
+
+input[type="date"] {
+    padding: 15px 7px 15px 7px;
 }
 
 input:focus {
