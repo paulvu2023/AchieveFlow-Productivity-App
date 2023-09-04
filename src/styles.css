@@ -230,7 +230,7 @@ nav button:hover {
     font-family: 'Montserrat', sans-serif;
     font-size: 30px;
     border-radius: 12px 12px 0px 0px;
-    background-color: rgb(151, 208, 255);
+    background-color: rgb(98, 108, 248);
     color: white;
     margin: 0;
     padding: 20px;
@@ -291,7 +291,13 @@ fieldset div {
 fieldset button {
     margin-top: -15px;
     width: 150px;
-    padding: 15px;
-    border-radius: 12px;
+    padding: 10px;
+    border-radius: 8px;
     font-size: 20px;
+}
+
+.add-task-button {
+    background-color: rgb(98, 108, 248);
+    color: white;
+    border: none;
 }
