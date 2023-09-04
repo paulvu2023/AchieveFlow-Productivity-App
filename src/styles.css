@@ -225,10 +225,17 @@ nav button:hover {
     border-radius: 12px;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
     position: absolute;
-    top: 55%;
+    top: 0%;
     left: 50%;
     transform: translate(-50%, -50%) scale(0.1);
     visibility: hidden;
+    transition: transform 0.4s, top 0.4s;
+}
+
+.open-add-task-form {
+    visibility: visible;
+    top: 55%;
+    transform: translate(-50%, -50%) scale(1);
 }
 
 .add-task-form h1 {
