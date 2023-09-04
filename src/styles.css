@@ -230,7 +230,7 @@ nav button:hover {
     font-family: 'Montserrat', sans-serif;
     font-size: 30px;
     border-radius: 12px 12px 0px 0px;
-    background-color: rgb(98, 108, 248);
+    background-color: rgb(77, 132, 250);
     color: white;
     margin: 0;
     padding: 20px;
@@ -297,7 +297,12 @@ fieldset button {
 }
 
 .add-task-button {
-    background-color: rgb(98, 108, 248);
+    background-color: rgb(53, 117, 255);
     color: white;
     border: none;
+}
+
+.cancel-task-button {
+    background-color: transparent;
+    border: solid 1px gray;
 }
