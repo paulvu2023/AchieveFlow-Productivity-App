@@ -24,7 +24,10 @@ function createTask(event) {
     const priority = document.getElementById('priority').value;
     const project = document.getElementById('project').value;
 
-    const newTask = new toDoItem
+    const newTask = new Task(taskName, description, dueDate, priority, project);
+
+    taskForm.reset();
+    console.log(newTask);
 }
 
 export { openTaskForm , closeTaskForm , createTask };
