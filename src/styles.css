@@ -188,7 +188,7 @@ nav button:hover {
     padding-top: 30px;
 }
 
-.add-task {
+.add-task /*{ the big task button */ {
     gap: 10px;
     display: flex;
     align-items: center;
@@ -258,6 +258,10 @@ button.details {
     font-family: 'Montserrat', sans-serif;
 }
 
+.fa-pen-to-square, .fa-trash-can {
+    color: rgb(21, 150, 255);
+    font-size: 18px;
+}
 
 /* Styling for Task Form */
 
