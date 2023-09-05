@@ -1,6 +1,6 @@
 import { taskList } from "./taskForm";
 
-function displayAll() {
+function displayAddTask() {
     const form = document.createElement('form');
     form.className = 'add-task-form';
     form.id = 'add-task-form';
@@ -116,4 +116,4 @@ function displayAll() {
     container.appendChild(overlay);
 }
 
-export { displayAll };
+export { displayAddTask };
