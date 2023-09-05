@@ -238,10 +238,19 @@ nav button:hover {
 .task-right-side {
     display: flex;
     align-items: center;
+    gap: 20px;
 }
 
-button .details {
+button.details {
     background-color: transparent;
+    border: 1px solid rgb(21, 150, 255);
+    color: rgb(26, 151, 253);
+    font-size: 12px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    border-radius: 3px;
+    padding: 5px;
+    width: 70px;
 }
 
 /* Styling for Task Form */
