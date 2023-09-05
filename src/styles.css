@@ -244,7 +244,7 @@ nav button:hover {
 button.details {
     background-color: transparent;
     border: 1px solid rgb(21, 150, 255);
-    color: rgb(26, 151, 253);
+    color: rgb(21, 150, 255);
     font-size: 12px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 800;
@@ -252,6 +252,12 @@ button.details {
     padding: 5px;
     width: 70px;
 }
+
+.task-date {
+    color: rgb(21, 150, 255);
+    font-family: 'Montserrat', sans-serif;
+}
+
 
 /* Styling for Task Form */
 
@@ -331,7 +337,8 @@ input:invalid {
 }
 
 label span {
-    color: rgb(76, 77, 102);
+    color: rgb(21, 150, 255);
+    font-family: 'Montserrat', sans-serif;
 }
 
 fieldset div {
@@ -400,7 +407,7 @@ height: 24px;
 border-radius: 50%;
 transform: scale(1);
 vertical-align: middle;
-border: 1px solid #B9B8C3;
+border: 1px solid rgb(21, 150, 255);
 transition: all 0.2s ease;
 }
 .checkbox-wrapper-15 .cbx span:first-child svg {
