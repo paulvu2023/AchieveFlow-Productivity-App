@@ -203,6 +203,7 @@ nav button:hover {
     font-weight: 500;
     font-family: 'Roboto', sans-serif;
     transition: all 0.3s ease-in-out;
+    margin-bottom: 20px;
 }
 
 .add-task:hover {
@@ -228,6 +229,8 @@ nav button:hover {
 
 .task {
     border: 1px solid gray;
+    padding: 10px;
+    margin: 10px 60px 10px 60px;
 }
 
 
