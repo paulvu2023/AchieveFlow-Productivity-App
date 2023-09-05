@@ -29,4 +29,4 @@ function createTask(event) {
     taskForm.reset();
 }
 
-export { openTaskForm , closeTaskForm , createTask };
+export { openTaskForm , closeTaskForm , createTask , taskList };
