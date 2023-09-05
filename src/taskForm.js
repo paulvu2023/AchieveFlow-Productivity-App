@@ -27,7 +27,6 @@ function createTask(event) {
     const newTask = new Task(taskName, description, dueDate, priority, project);
 
     taskForm.reset();
-    console.log(newTask);
 }
 
 export { openTaskForm , closeTaskForm , createTask };
