@@ -228,11 +228,21 @@ nav button:hover {
 }
 
 .task {
+    display: flex;
+    justify-content: space-between;
     border: 1px solid gray;
     padding: 10px;
     margin: 10px 60px 10px 60px;
 }
 
+.task-right-side {
+    display: flex;
+    align-items: center;
+}
+
+button .details {
+    background-color: transparent;
+}
 
 /* Styling for Task Form */
 
