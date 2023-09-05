@@ -2,9 +2,6 @@ import { Task } from "./task";
 
 const taskList = [];
 
-let taskForm = document.getElementById("add-task-form");
-let overlay = document.getElementById('overlay');
-
 function openTaskForm() {
     let taskForm = document.getElementById("add-task-form");
     let overlay = document.getElementById('overlay');
@@ -20,6 +17,7 @@ function closeTaskForm() {
 }
 
 function createTask(event) {
+    let taskForm = document.getElementById("add-task-form");
     event.preventDefault();
 
     const taskName = document.getElementById('task-name').value;
@@ -31,6 +29,8 @@ function createTask(event) {
     const newTask = new Task(taskName, description, dueDate, priority, project);
     taskList.push(newTask);
     taskForm.reset();
+
+    closeTaskForm();
 }
 
 export { openTaskForm , closeTaskForm , createTask , taskList };
