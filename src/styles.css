@@ -218,12 +218,16 @@ nav button:hover {
     font-size: 30px;
 }
 
-/* Styling for Task List */
+/* Styling for Task List and Tasks*/
 .task-list {
     height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
+}
+
+.task {
+    border: 1px solid gray;
 }
 
 
