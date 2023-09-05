@@ -263,6 +263,11 @@ button.details {
     font-size: 18px;
 }
 
+.edit-task, .delete-task {
+    background-color: transparent;
+    border: none;
+}
+
 /* Styling for Task Form */
 
 .add-task-form {
