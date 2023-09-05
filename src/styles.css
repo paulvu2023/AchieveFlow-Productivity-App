@@ -267,11 +267,16 @@ button.details:hover {
 .fa-pen-to-square, .fa-trash-can {
     color: rgb(21, 150, 255);
     font-size: 18px;
+    transition: all 0.2s ease-in-out;
 }
     
 .edit-task, .delete-task {
     background-color: transparent;
     border: none;
+}
+
+.fa-pen-to-square:hover, .fa-trash-can:hover {
+    transform: scale(1.2);
 }
 
 /* Styling for Task Form */
