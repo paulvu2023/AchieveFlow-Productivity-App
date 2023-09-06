@@ -1,5 +1,3 @@
-import { taskList } from "./taskForm";
-
 function addTaskToDOM(task) {
     // Create a new task element with the provided HTML structure
     const taskElement = document.createElement('div');
@@ -7,14 +5,14 @@ function addTaskToDOM(task) {
 
     taskElement.innerHTML = `
         <div class="checkbox-wrapper-15">
-            <input class="inp-cbx" id="cbx-${task.name}" type="checkbox" style="display: none;"/>
-            <label class="cbx" for="cbx-${task.name}">
+            <input class="inp-cbx" id="cbx-${task.title}" type="checkbox" style="display: none;"/>
+            <label class="cbx" for="cbx-${task.taskName}">
                 <span>
                     <svg width="12px" height="9px" viewbox="0 0 12 9">
                         <polyline points="1 5 4 8 11 1"></polyline>
                     </svg>
                 </span>
-                <span>${task.name}</span>
+                <span>${task.taskName}</span>
             </label>
         </div>
         <div class="task-right-side">
@@ -28,6 +26,8 @@ function addTaskToDOM(task) {
             </button>
         </div>
     `;
+
+    console.log(task.taskName);
 
     // Append the task element to the DOM
     document.querySelector('.task-list').appendChild(taskElement);
