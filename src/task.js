@@ -19,4 +19,8 @@ function deleteTask(taskName) {
     }
 }
 
+function editTask(task) {
+    
+}
+
 export { Task , deleteTask };

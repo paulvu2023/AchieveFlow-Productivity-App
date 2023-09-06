@@ -117,7 +117,7 @@ function displayEditTaskForm(task) {
     }
 
     const selectProject = document.getElementById('edit-project');
-
+    
     for (let i = 0; i < selectPriority.options.length; i++) {
         if (selectProject.options[i].value == task.project) {
             selectProject.options[i].selected = true;
@@ -126,7 +126,6 @@ function displayEditTaskForm(task) {
     }
 
     const cancelEditButton = document.querySelector('.cancel-edit-task-button');
-
     cancelEditButton.addEventListener('click', closeEditTaskForm);
 }
 

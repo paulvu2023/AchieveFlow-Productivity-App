@@ -376,7 +376,7 @@ fieldset button {
     transition: background-color 0.3s ease;
 }
 
-.add-task-button {
+.add-task-button, .edit-task-button {
     background-color: rgb(29, 100, 255);
     color: white;
     border: none;
