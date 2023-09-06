@@ -43,8 +43,14 @@ function addTaskToDOM(task) {
 
     document.querySelector('.task-list').appendChild(taskElement);
 
+    if (task.priority == 'low') {
+        document.getElementById(`task-${task.taskName}`).style.borderColor = 'green';
+    } else if (task.priority == 'medium') {
+        document.getElementById(`task-${task.taskName}`).style.borderColor = 'orange';
+    } else if (task.priority == 'high'){
+        document.getElementById(`task-${task.taskName}`).style.borderColor = 'red';
+    }
     
-
     const deleteButton = document.getElementById(`${task.taskName}-delete`);
 
     deleteButton.addEventListener('click', () => {
