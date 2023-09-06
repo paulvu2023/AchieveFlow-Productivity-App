@@ -1,4 +1,5 @@
 import { deleteTask } from './task';
+import { taskList } from './taskForm';
 
 function clearTasks() {
     document.querySelector('.task-list').innerHTML = '';
@@ -39,7 +40,8 @@ function addTaskToDOM(task) {
     `;
 
     document.querySelector('.task-list').appendChild(taskElement);
-
+    
+    // Change task's border color according to task priority
     if (task.priority == 'low') {
         document.getElementById(`task-${task.taskName}`).style.borderColor = 'green';
     } else if (task.priority == 'medium') {
@@ -52,11 +54,58 @@ function addTaskToDOM(task) {
 
     deleteButton.addEventListener('click', () => {
         deleteTask(task.taskName);
-        addAllTasksToDOM();
+        addAllTasksToDOM(taskList);
     });
 
+    const editButton = document.getElementById(`${task.taskName}-edit`);
+
+    editButton.addEventListener('click', () => {
+        displayEditTaskForm(task);
+        addAllTasksToDOM(taskList);
+    });
 }
 
+function displayEditTaskForm(task) {
+    const container = document.querySelector('.main-right');
+    let overlay = document.getElementById('overlay');
+    overlay.style.display = 'block';
+
+    const formHTML = `
+        <form class="edit-task-form open-edit-task-form" id="edit-task-form">
+            <h1>Edit Task</h1>
+            <fieldset>
+                <label for="task-name">Task Name</label>
+                <input value="${task.taskName}" type="text" id="task-name" name="task-name" autocomplete="off" required spellcheck="false">
+
+                <label for="description">Description</label>
+                <input value="${task.description}" type="text" id="description" name="description" autocomplete="off" spellcheck="false">
+
+                <label for="due-date">Due Date</label>
+                <input value="${task.dueDate}" type="date" id="due-date" name="due-date">
+
+                <label for="priority">Priority</label>
+                <select id="priority" name="priority">
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
+
+                <label for="project">Project</label>
+                <select id="project" name="project">
+                    <option value="general">General</option>
+                </select>
+
+                <div>
+                    <button type="submit" class="edit-task-button">Edit</button>
+                    <button type="button" class="cancel-task-button">Cancel</button>
+                </div>
+            </fieldset>
+        </form>
+    `;
+
+    container.insertAdjacentHTML('beforeend', formHTML);
+    container.appendChild(overlay);
+}
 
 function displayAddTaskForm() {
     const container = document.querySelector('.main-right');

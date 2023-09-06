@@ -281,7 +281,7 @@ button.details:hover {
 
 /* Styling for Task Form */
 
-.add-task-form {
+.add-task-form, .edit-task-form {
     background-color: aliceblue;
     border-radius: 12px;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
@@ -294,13 +294,13 @@ button.details:hover {
     z-index: 2
 }
 
-.open-add-task-form {
+.open-add-task-form, .open-edit-task-form {
     visibility: visible;
     top: 55%;
     transform: translate(-50%, -50%) scale(1);
 }
 
-.add-task-form h1 {
+.add-task-form h1, .edit-task-form h1 {
     font-family: 'Montserrat', sans-serif;
     font-size: 30px;
     border-radius: 12px 12px 0px 0px;
@@ -311,7 +311,7 @@ button.details:hover {
     padding-left: 30px; 
 }
 
-.add-task-form fieldset {
+.add-task-form fieldset, .edit-task-form fieldset {
     width: 400px;
     height: 540px;
 }
