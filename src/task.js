@@ -1,3 +1,6 @@
+import { closeTaskForm } from "./taskForm";
+import { addAllTasksToDOM } from "./display";
+
 const taskList = [];
 
 class Task {
