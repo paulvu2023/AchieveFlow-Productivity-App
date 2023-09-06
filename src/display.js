@@ -83,15 +83,15 @@ function displayEditTaskForm(task) {
                 <label for="due-date">Due Date</label>
                 <input value="${task.dueDate}" type="date" id="due-date" name="due-date">
 
-                <label for="priority">Priority</label>
-                <select id="priority" name="priority">
+                <label for="edit-priority">Priority</label>
+                <select id="edit-priority" name="edit-priority">
                     <option value="low">Low</option>
                     <option value="medium">Medium</option>
                     <option value="high">High</option>
                 </select>
 
-                <label for="project">Project</label>
-                <select id="project" name="project">
+                <label for="edit-project">Project</label>
+                <select id="edit-project" name="edit-project">
                     <option value="general">General</option>
                 </select>
 
@@ -105,6 +105,25 @@ function displayEditTaskForm(task) {
 
     container.insertAdjacentHTML('beforeend', formHTML);
     container.appendChild(overlay);
+
+    //Change the selected priority to the task's previous priority
+    const selectPriority = document.getElementById('edit-priority');
+
+    for (let i = 0; i < selectPriority.options.length; i++) {
+        if (selectPriority.options[i].value == task.priority) {
+            selectPriority.options[i].selected = true;
+            break;
+        }
+    }
+
+    const selectProject = document.getElementById('edit-project');
+
+    for (let i = 0; i < selectPriority.options.length; i++) {
+        if (selectProject.options[i].value == task.project) {
+            selectProject.options[i].selected = true;
+            break;
+        }
+    }
 }
 
 function displayAddTaskForm() {
