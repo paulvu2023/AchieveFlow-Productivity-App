@@ -1,4 +1,5 @@
 import { Task } from "./task";
+import { addTaskToDOM } from "./display";
 
 const taskList = [];
 
@@ -31,6 +32,7 @@ function createTask(event) {
     taskForm.reset();
 
     closeTaskForm();
+    addTaskToDOM(newTask);
 }
 
 export { openTaskForm , closeTaskForm , createTask , taskList };
