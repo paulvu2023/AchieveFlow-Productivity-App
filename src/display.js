@@ -72,10 +72,10 @@ function displayAddTask() {
             <h1>Add Task</h1>
             <fieldset>
                 <label for="task-name">Task Name</label>
-                <input type="text" id="task-name" name="task-name" autocomplete="off" required>
+                <input type="text" id="task-name" name="task-name" autocomplete="off" required spellcheck="false">
 
                 <label for="description">Description</label>
-                <input type="text" id="description" name="description" autocomplete="off">
+                <input type="text" id="description" name="description" autocomplete="off" spellcheck="false">
 
                 <label for="due-date">Due Date</label>
                 <input type="date" id="due-date" name="due-date">
