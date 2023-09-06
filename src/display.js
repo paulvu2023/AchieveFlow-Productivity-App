@@ -12,6 +12,7 @@ function addTaskToDOM(task) {
     // Create a new task element with the provided HTML structure
     const taskElement = document.createElement('div');
     taskElement.classList.add('task');
+    taskElement.id = `task-${task.taskName}`;
 
     taskElement.innerHTML = `
         <div class="checkbox-wrapper-15">
