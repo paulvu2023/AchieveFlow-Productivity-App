@@ -18,9 +18,9 @@ function closeTaskForm() {
 }
 
 function createTask(event) {
-    let taskForm = document.getElementById("add-task-form");
     event.preventDefault();
-
+    
+    let taskForm = document.getElementById("add-task-form");
     const taskName = document.getElementById('task-name').value;
     const description = document.getElementById('description').value;
     const dueDate = document.getElementById('due-date').value;

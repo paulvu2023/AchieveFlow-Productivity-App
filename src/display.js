@@ -15,8 +15,8 @@ function addTaskToDOM(task) {
 
     taskElement.innerHTML = `
         <div class="checkbox-wrapper-15">
-            <input class="inp-cbx" id="cbx-${task.taskName}" type="checkbox" style="display: none;"/>
-            <label class="cbx" for="cbx-${task.taskName}">
+            <input class="inp-cbx" id="${task.taskName}" type="checkbox" style="display: none;"/>
+            <label class="cbx" for="${task.taskName}">
                 <span>
                     <svg width="12px" height="9px" viewbox="0 0 12 9">
                         <polyline points="1 5 4 8 11 1"></polyline>
