@@ -97,7 +97,7 @@ function displayEditTaskForm(task) {
 
                 <div>
                     <button type="submit" class="edit-task-button">Edit</button>
-                    <button type="button" class="cancel-task-button">Cancel</button>
+                    <button type="button" class="cancel-edit-task-button">Cancel</button>
                 </div>
             </fieldset>
         </form>
@@ -124,6 +124,17 @@ function displayEditTaskForm(task) {
             break;
         }
     }
+
+    const cancelEditButton = document.querySelector('.cancel-edit-task-button');
+
+    cancelEditButton.addEventListener('click', closeEditTaskForm);
+}
+
+function closeEditTaskForm() {
+    let taskForm = document.getElementById("edit-task-form");
+    let overlay = document.getElementById('overlay');
+    overlay.style.display = 'none';
+    taskForm.remove();
 }
 
 function displayAddTaskForm() {
