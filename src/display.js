@@ -1,3 +1,9 @@
+import { taskList } from './taskForm'
+
+function addAllTasksToDOM(taskList) {
+    taskList.forEach(task => addTaskToDOM(task));
+}
+
 function addTaskToDOM(task) {
     // Create a new task element with the provided HTML structure
     const taskElement = document.createElement('div');
@@ -86,4 +92,4 @@ function displayAddTask() {
 }
 
 
-export { displayAddTask , addTaskToDOM };
+export { displayAddTask , addAllTasksToDOM };

@@ -32,7 +32,6 @@ function createTask(event) {
     taskForm.reset();
 
     closeTaskForm();
-    addTaskToDOM(newTask);
 }
 
 export { openTaskForm , closeTaskForm , createTask , taskList };
