@@ -1,5 +1,5 @@
 import { deleteTask , editTask } from './task';
-import { taskList } from './taskForm';
+import { taskList } from './task';
 
 function clearTasks() {
     document.querySelector('.task-list').innerHTML = '';

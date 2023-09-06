@@ -1,6 +1,7 @@
 import "./styles.css";
 import { displayAddTaskForm } from "./display";
-import { openTaskForm, closeTaskForm, createTask } from "./taskForm";
+import { openTaskForm, closeTaskForm } from "./taskForm";
+import { createTask } from "./task";
 
 document.addEventListener("DOMContentLoaded", function () {
     displayAddTaskForm();
