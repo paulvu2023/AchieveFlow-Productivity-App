@@ -1,7 +1,11 @@
-import { taskList } from './taskForm'
-
 function addAllTasksToDOM(taskList) {
+    clearTasks();
     taskList.forEach(task => addTaskToDOM(task));
+
+}
+
+function clearTasks() {
+    document.querySelector('.task-list').innerHTML = '';
 }
 
 function addTaskToDOM(task) {
@@ -11,7 +15,7 @@ function addTaskToDOM(task) {
 
     taskElement.innerHTML = `
         <div class="checkbox-wrapper-15">
-            <input class="inp-cbx" id="cbx-${task.title}" type="checkbox" style="display: none;"/>
+            <input class="inp-cbx" id="cbx-${task.taskName}" type="checkbox" style="display: none;"/>
             <label class="cbx" for="cbx-${task.taskName}">
                 <span>
                     <svg width="12px" height="9px" viewbox="0 0 12 9">
