@@ -32,7 +32,7 @@ function addTaskToDOM(task) {
         <div class="task-right-side">
             <div class="task-date">${task.dueDate}</div>
             <button class="details">DETAILS</button>
-            <button class="edit-task">
+            <button class="edit-task" id="${task.taskName}-edit">
                 <i class="fa-regular fa-pen-to-square"></i>
             </button>
             <button class="delete-task" id="${task.taskName}-delete">
@@ -42,6 +42,8 @@ function addTaskToDOM(task) {
     `;
 
     document.querySelector('.task-list').appendChild(taskElement);
+
+    
 
     const deleteButton = document.getElementById(`${task.taskName}-delete`);
 
