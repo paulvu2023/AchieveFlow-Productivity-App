@@ -16,8 +16,8 @@ function addTaskToDOM(task) {
             </label>
         </div>
         <div class="task-right-side">
-            <button class="details">DETAILS</button>
             <div class="task-date">${task.dueDate}</div>
+            <button class="details">DETAILS</button>
             <button class="edit-task">
                 <i class="fa-regular fa-pen-to-square"></i>
             </button>
