@@ -13,6 +13,7 @@ function openTaskForm() {
 function closeTaskForm() {
     let taskForm = document.getElementById("add-task-form");
     let overlay = document.getElementById('overlay');
+    taskForm.reset();
     taskForm.classList.remove('open-add-task-form');
     overlay.style.display = 'none';
 }
