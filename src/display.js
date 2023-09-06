@@ -1,11 +1,14 @@
-function addAllTasksToDOM(taskList) {
-    clearTasks();
-    taskList.forEach(task => addTaskToDOM(task));
-
-}
+import { taskList } from './taskForm';
+import { deleteTask } from './task';
 
 function clearTasks() {
     document.querySelector('.task-list').innerHTML = '';
+}
+
+function addAllTasksToDOM() {
+    clearTasks();
+    taskList.forEach(task => addTaskToDOM(task));
+
 }
 
 function addTaskToDOM(task) {
@@ -32,16 +35,21 @@ function addTaskToDOM(task) {
             <button class="edit-task">
                 <i class="fa-regular fa-pen-to-square"></i>
             </button>
-            <button class="delete-task">
+            <button class="delete-task" id="${task.taskName}-delete">
                 <i class="fa-regular fa-trash-can"></i>
             </button>
         </div>
     `;
 
-    console.log(task.taskName);
-
-    // Append the task element to the DOM
     document.querySelector('.task-list').appendChild(taskElement);
+
+    const deleteButton = document.getElementById(`${task.taskName}-delete`);
+
+    deleteButton.addEventListener('click', () => {
+        deleteTask(task.taskName);
+        addAllTasksToDOM();
+    });
+
 }
 
 

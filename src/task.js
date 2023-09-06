@@ -1,3 +1,5 @@
+import { taskList } from './taskForm';
+
 class Task {
     constructor(taskName, description, dueDate, priority, project) {
         this.taskName = taskName;
@@ -9,4 +11,12 @@ class Task {
     }
 }
 
-export { Task };
+function deleteTask(taskName) {
+    for (let i = 0; i < taskList.length; i++) {
+        if (taskName == taskList[i].taskName) {
+            taskList.splice(i, 1);
+        }
+    }
+}
+
+export { Task , deleteTask };
