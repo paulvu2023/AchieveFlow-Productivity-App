@@ -391,7 +391,7 @@ fieldset button {
     border: solid 1px gray;
 }
 
-.cancel-task-button:hover {
+.cancel-task-button:hover, .cancel-edit-task-button:hover {
     border: solid 1px rgb(0, 36, 196);
     color: rgb(0, 36, 196);
 }
