@@ -1,4 +1,4 @@
-import { deleteTask } from './task';
+import { deleteTask , editTask } from './task';
 import { taskList } from './taskForm';
 
 function clearTasks() {
@@ -117,7 +117,7 @@ function displayEditTaskForm(task) {
     }
 
     const selectProject = document.getElementById('edit-project');
-    
+
     for (let i = 0; i < selectPriority.options.length; i++) {
         if (selectProject.options[i].value == task.project) {
             selectProject.options[i].selected = true;
@@ -127,6 +127,12 @@ function displayEditTaskForm(task) {
 
     const cancelEditButton = document.querySelector('.cancel-edit-task-button');
     cancelEditButton.addEventListener('click', closeEditTaskForm);
+
+    const editTaskForm = document.getElementById('edit-task-form');
+    editTaskForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        editTask(task);
+    });
 }
 
 function closeEditTaskForm() {

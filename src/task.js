@@ -19,8 +19,11 @@ function deleteTask(taskName) {
     }
 }
 
-function editTask(task) {
-    
+function editTask(event, task) {
+    event.preventDefault();
+//     for (let i = 0; i < taskList.length; i++) {
+//         if (taskList[i])
+//     }
 }
 
-export { Task , deleteTask };
+export { Task , deleteTask , editTask };
