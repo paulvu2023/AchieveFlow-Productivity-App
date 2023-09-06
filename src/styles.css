@@ -386,7 +386,7 @@ fieldset button {
     background-color: rgb(0, 38, 255);
 }
 
-.cancel-task-button {
+.cancel-task-button, .cancel-edit-task-button {
     background-color: transparent;
     border: solid 1px gray;
 }
