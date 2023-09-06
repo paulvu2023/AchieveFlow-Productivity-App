@@ -1,18 +1,15 @@
-import { taskList } from './taskForm';
 import { deleteTask } from './task';
 
 function clearTasks() {
     document.querySelector('.task-list').innerHTML = '';
 }
 
-function addAllTasksToDOM() {
+function addAllTasksToDOM(taskList) {
     clearTasks();
     taskList.forEach(task => addTaskToDOM(task));
-
 }
 
 function addTaskToDOM(task) {
-    // Create a new task element with the provided HTML structure
     const taskElement = document.createElement('div');
     taskElement.classList.add('task');
     taskElement.id = `task-${task.taskName}`;
@@ -31,7 +28,7 @@ function addTaskToDOM(task) {
         </div>
         <div class="task-right-side">
             <div class="task-date">${task.dueDate}</div>
-            <button class="details">DETAILS</button>
+            <button class="details" id="${task.taskName}-details">DETAILS</button>
             <button class="edit-task" id="${task.taskName}-edit">
                 <i class="fa-regular fa-pen-to-square"></i>
             </button>
