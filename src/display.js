@@ -58,7 +58,7 @@ function addTaskToDOM(task) {
 }
 
 
-function displayAddTask() {
+function displayAddTaskForm() {
     const container = document.querySelector('.main-right');
     const overlay = document.createElement('div');
     overlay.id = 'overlay';
@@ -110,4 +110,4 @@ function displayAddTask() {
 }
 
 
-export { displayAddTask , addAllTasksToDOM };
+export { displayAddTaskForm , addAllTasksToDOM };
