@@ -42,11 +42,11 @@ function addTaskToDOM(task) {
     document.querySelector('.task-list').appendChild(taskElement);
     
     // Change task's border color according to task priority
-    if (task.priority == 'low') {
+    if (task.priority == 'Low') {
         document.getElementById(`task-${task.taskName}`).style.borderColor = 'green';
-    } else if (task.priority == 'medium') {
+    } else if (task.priority == 'Medium') {
         document.getElementById(`task-${task.taskName}`).style.borderColor = 'orange';
-    } else if (task.priority == 'high'){
+    } else if (task.priority == 'High'){
         document.getElementById(`task-${task.taskName}`).style.borderColor = 'red';
     }
 
@@ -181,6 +181,21 @@ function closeEditTaskForm() {
     taskForm.remove();
 }
 
+function openTaskForm() {
+    let taskForm = document.getElementById("add-task-form");
+    let overlay = document.getElementById('overlay');
+    taskForm.classList.add('open-add-task-form');
+    overlay.style.display = 'block';
+}
+
+function closeTaskForm() {
+    let taskForm = document.getElementById("add-task-form");
+    let overlay = document.getElementById('overlay');
+    taskForm.reset();
+    taskForm.classList.remove('open-add-task-form');
+    overlay.style.display = 'none';
+}
+
 function displayAddTaskForm() {
     const container = document.querySelector('.main-right');
     const overlay = document.createElement('div');
@@ -233,4 +248,4 @@ function displayAddTaskForm() {
 }
 
 
-export { displayAddTaskForm , addAllTasksToDOM };
+export { displayAddTaskForm , addAllTasksToDOM , openTaskForm , closeTaskForm };

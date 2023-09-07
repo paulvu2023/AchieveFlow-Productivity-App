@@ -1,5 +1,4 @@
-import { closeTaskForm } from "./taskForm";
-import { addAllTasksToDOM } from "./display";
+import { addAllTasksToDOM , closeTaskForm } from "./display";
 
 const taskList = [];
 
