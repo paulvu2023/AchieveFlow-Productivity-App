@@ -78,16 +78,19 @@ function displayDetails(task) {
 
     const formHTML = `
         <div class="details-container">
-            <h1>Details</h1>
-            <div><span>Task Name:</span> ${task.taskName}</div>
-            <div><span>Description:</span> ${task.description}</div>
-            <div><span>Due Date:</span> ${task.dueDate}</div>
-            <div><span>Priority:</span> ${task.priority}</div>
-            <div><span>Project:</span> ${task.project}</div>
+            <button class="x-button">
+                <i class="fa-solid fa-xmark" style="color: #ffffff;"></i>
+            </button>
+            <h1>${task.taskName}</h1>
+            <div class="detail description-detail"><span>Description:</span> ${task.description}</div>
+            <div class="detail"><span>Due Date:</span> ${task.dueDate}</div>
+            <div class="detail"><span>Priority:</span> ${task.priority}</div>
+            <div class="detail"><span>Project:</span> ${task.project}</div>
         </div>
     `
     container.insertAdjacentHTML('beforeend', formHTML);
     container.appendChild(overlay);
+
 }
 
 function displayEditTaskForm(task) {
@@ -191,14 +194,14 @@ function displayAddTaskForm() {
 
                 <label for="priority">Priority</label>
                 <select id="priority" name="priority">
-                    <option value="low">Low</option>
-                    <option value="medium" selected>Medium</option>
-                    <option value="high">High</option>
+                    <option value="Low">Low</option>
+                    <option value="Medium" selected>Medium</option>
+                    <option value="High">High</option>
                 </select>
 
                 <label for="project">Project</label>
                 <select id="project" name="project">
-                    <option value="general">General</option>
+                    <option value="General">General</option>
                 </select>
 
                 <div>

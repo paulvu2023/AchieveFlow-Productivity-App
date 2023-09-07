@@ -300,11 +300,11 @@ button.details:hover {
     transform: translate(-50%, -50%) scale(1);
 }
 
-.add-task-form h1, .edit-task-form h1, .details-container h1 {
+.add-task-form h1, .edit-task-form h1 {
     font-family: 'Montserrat', sans-serif;
     font-size: 30px;
     border-radius: 12px 12px 0px 0px;
-    background-color: rgb(48, 162, 255);
+    background-color: lightskyblue;
     color: white;
     margin: 0;
     padding: 20px;
@@ -380,13 +380,14 @@ fieldset button {
 }
 
 .add-task-button, .edit-task-button {
-    background-color: rgb(29, 100, 255);
+    font-weight: 800;
+    background-color: rgb(9, 124, 255);
     color: white;
     border: none;
 }
 
 .add-task-button:hover, .edit-task-button:hover {
-    background-color: rgb(0, 38, 255);
+    background-color: rgb(0, 79, 248);
 }
 
 .cancel-task-button, .cancel-edit-task-button {
@@ -413,9 +414,12 @@ fieldset button {
 /* Styling for Details Popup */
 
 .details-container {
-    width: 425px;
-    height: 600px;
-    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    width: 600px;
+    height: 370px;
+    background-color: lightskyblue;
     border-radius: 12px;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
     position: absolute;
@@ -423,6 +427,36 @@ fieldset button {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
+    padding: 20px 30px 0px 30px;
+}
+
+.x-button {
+    background-color: transparent;
+    border: none;
+    font-size: 30px;
+    align-self: end;
+}
+
+.details-container h1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 40px;
+    margin-top: 0;
+    color: white;
+    white-space: nowrap;
+}
+
+.description-detail {
+    overflow-y:auto;
+    overflow-x: hidden;
+}
+
+.detail {
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 5px;
+    margin-bottom: 30px;
+    font-weight: 800;
+    color: white;
 }
 
 /* Checkbox Styling */
