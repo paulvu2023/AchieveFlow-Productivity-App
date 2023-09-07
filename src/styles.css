@@ -562,3 +562,7 @@ transition: all 0.3s ease;
     transform: scale(1.2);
 }
 }
+
+button:hover {
+    cursor: pointer;
+}
