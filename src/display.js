@@ -121,14 +121,14 @@ function displayEditTaskForm(task) {
 
                 <label for="edit-priority">Priority</label>
                 <select id="edit-priority" name="edit-priority">
-                    <option value="low">Low</option>
-                    <option value="medium">Medium</option>
-                    <option value="high">High</option>
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
                 </select>
 
                 <label for="edit-project">Project</label>
                 <select id="edit-project" name="edit-project">
-                    <option value="general">General</option>
+                    <option value="General">General</option>
                 </select>
 
                 <div>
