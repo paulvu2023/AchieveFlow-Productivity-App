@@ -82,10 +82,10 @@ function displayDetails(task) {
                 <i class="fa-solid fa-xmark" style="color: #ffffff;"></i>
             </button>
             <h1>${task.taskName}</h1>
-            <div class="detail description-detail"><span>Description:</span> ${task.description}</div>
-            <div class="detail"><span>Due Date:</span> ${task.dueDate}</div>
-            <div class="detail"><span>Priority:</span> ${task.priority}</div>
-            <div class="detail"><span>Project:</span> ${task.project}</div>
+            <div class="space description-detail"><span>Description:</span> ${task.description}</div>
+            <div class="space"><span>Due Date:</span> ${task.dueDate}</div>
+            <div class="space"><span>Priority:</span> ${task.priority}</div>
+            <div><span>Project:</span> ${task.project}</div>
         </div>
     `
     container.insertAdjacentHTML('beforeend', formHTML);

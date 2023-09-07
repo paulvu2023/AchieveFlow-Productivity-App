@@ -418,7 +418,7 @@ fieldset button {
     flex-direction: column;
     background-color: black;
     width: 600px;
-    height: 370px;
+    height: 400px;
     background-color: lightskyblue;
     border-radius: 12px;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
@@ -427,7 +427,8 @@ fieldset button {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
-    padding: 20px 30px 0px 30px;
+    padding: 20px 50px 0px 50px;
+    overflow: hidden;
 }
 
 .x-button {
@@ -442,21 +443,28 @@ fieldset button {
     font-size: 40px;
     margin-top: 0;
     color: white;
-    white-space: nowrap;
+    overflow-y:auto;
+    overflow-x: hidden;
+    max-height: 100px;
 }
 
-.description-detail {
+.details-container > .description-detail {
+    margin-top: 30px;
+    max-height: 75px;
     overflow-y:auto;
     overflow-x: hidden;
 }
 
-.detail {
+.details-container > div {
     font-size: 20px;
     font-family: 'Roboto', sans-serif;
     margin-top: 5px;
-    margin-bottom: 30px;
     font-weight: 800;
     color: white;
+}
+
+.space {
+    margin-bottom: 30px;
 }
 
 /* Checkbox Styling */
