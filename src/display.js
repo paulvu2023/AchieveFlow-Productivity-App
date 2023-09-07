@@ -90,7 +90,15 @@ function displayDetails(task) {
     `
     container.insertAdjacentHTML('beforeend', formHTML);
     container.appendChild(overlay);
+    let xButton = document.querySelector('.x-button');
+    xButton.addEventListener('click', closeDetails);
+}
 
+function closeDetails(){
+    let container = document.querySelector('.details-container');
+    let overlay = document.getElementById('overlay');
+    container.remove();
+    overlay.style.display = 'none';
 }
 
 function displayEditTaskForm(task) {
