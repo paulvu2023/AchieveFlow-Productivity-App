@@ -74,14 +74,14 @@ function displayEditTaskForm(task) {
         <form class="edit-task-form open-edit-task-form" id="edit-task-form">
             <h1>Edit Task</h1>
             <fieldset>
-                <label for="task-name">Task Name</label>
-                <input value="${task.taskName}" type="text" id="task-name" name="task-name" autocomplete="off" required spellcheck="false">
+                <label for="edit-task-name">Task Name</label>
+                <input value="${task.taskName}" type="text" id="edit-task-name" name="edit-task-name" autocomplete="off" required spellcheck="false">
 
-                <label for="description">Description</label>
-                <input value="${task.description}" type="text" id="description" name="description" autocomplete="off" spellcheck="false">
+                <label for="edit-description">Description</label>
+                <input value="${task.description}" type="text" id="edit-description" name="edit-description" autocomplete="off" spellcheck="false">
 
-                <label for="due-date">Due Date</label>
-                <input value="${task.dueDate}" type="date" id="due-date" name="due-date">
+                <label for="edit-due-date">Due Date</label>
+                <input value="${task.dueDate}" type="date" id="edit-due-date" name="edit-due-date">
 
                 <label for="edit-priority">Priority</label>
                 <select id="edit-priority" name="edit-priority">
@@ -131,7 +131,9 @@ function displayEditTaskForm(task) {
     const editTaskForm = document.getElementById('edit-task-form');
     editTaskForm.addEventListener('submit', (event) => {
         event.preventDefault();
-        editTask(task);
+        editTask(task, taskList);
+        closeEditTaskForm();
+        addAllTasksToDOM(taskList);
     });
 }
 

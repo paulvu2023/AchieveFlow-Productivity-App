@@ -40,11 +40,22 @@ function createTask(event) {
     addAllTasksToDOM(taskList);
 }
 
-function editTask(event, task) {
-    event.preventDefault();
-//     for (let i = 0; i < taskList.length; i++) {
-//         if (taskList[i])
-//     }
+function editTask(task, taskList) {
+    const taskName = document.getElementById('edit-task-name').value;
+    const description = document.getElementById('edit-description').value;
+    const dueDate = document.getElementById('edit-due-date').value;
+    const priority = document.getElementById('edit-priority').value;
+    const project = document.getElementById('edit-project').value;
+
+    for (let i = 0 ; i < taskList.length; i++) {
+        if (taskList[i].taskName == task.taskName) {
+            taskList[i].taskName = taskName;
+            taskList[i].description = description;
+            taskList[i].dueDate = dueDate;
+            taskList[i].priority = priority;
+            taskList[i].project = project;
+        }
+    }
 }
 
 export { Task , deleteTask , createTask, editTask, taskList };
