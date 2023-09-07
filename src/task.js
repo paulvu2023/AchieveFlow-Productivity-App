@@ -9,6 +9,7 @@ class Task {
         this.dueDate = dueDate;
         this.priority = priority;
         this.checked = false;
+        this.project = project;
         projects[findProjectIndex(project)].addTask(this);
     }
 }
@@ -26,6 +27,7 @@ class Project {
 
 function createProject(projectName) {
     const newProject = new Project(projectName);
+    projects.push(newProject);
 }
 
 function findProjectIndex(projectName) {
