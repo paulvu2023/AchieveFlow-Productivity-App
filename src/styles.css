@@ -130,7 +130,7 @@ body {
     height: 100%;
 }
 
-/* Styling for the bottom left side (sidebar) */
+/* Styling for sidebar */
 
 .hamburger-menu:has(input:checked) + .sidebar {
     translate: 0;
@@ -176,7 +176,7 @@ nav button:hover {
     margin-left: 29px;
 }
 
-/* Styling for the bottom right side */
+/* Styling for right side */
 
 .main-right {
     flex: 1;
@@ -279,7 +279,7 @@ button.details:hover {
     transform: scale(1.2);
 }
 
-/* Styling for Task Form */
+/* Styling for Add Task Form */
 
 .add-task-form, .edit-task-form {
     background-color: aliceblue;
@@ -291,7 +291,7 @@ button.details:hover {
     transform: translate(-50%, -50%) scale(0.1);
     visibility: hidden;
     transition: transform 0.4s, top 0.4s;
-    z-index: 2
+    z-index: 2;
 }
 
 .open-add-task-form, .open-edit-task-form {
@@ -300,7 +300,7 @@ button.details:hover {
     transform: translate(-50%, -50%) scale(1);
 }
 
-.add-task-form h1, .edit-task-form h1 {
+.add-task-form h1, .edit-task-form h1, .details-container h1 {
     font-family: 'Montserrat', sans-serif;
     font-size: 30px;
     border-radius: 12px 12px 0px 0px;
@@ -359,6 +359,9 @@ input:invalid {
 label span {
     color: rgb(21, 150, 255);
     font-family: 'Montserrat', sans-serif;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 390px;
 }
 
 fieldset div {
@@ -405,6 +408,21 @@ fieldset button {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 1;
+}
+
+/* Styling for Details Popup */
+
+.details-container {
+    width: 425px;
+    height: 600px;
+    background-color: aliceblue;
+    border-radius: 12px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
 }
 
 /* Checkbox Styling */
