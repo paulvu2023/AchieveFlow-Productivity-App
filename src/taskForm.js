@@ -13,6 +13,4 @@ function closeTaskForm() {
     overlay.style.display = 'none';
 }
 
-
-
 export { openTaskForm , closeTaskForm };

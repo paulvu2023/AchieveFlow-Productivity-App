@@ -49,13 +49,12 @@ function addTaskToDOM(task) {
     } else if (task.priority == 'high'){
         document.getElementById(`task-${task.taskName}`).style.borderColor = 'red';
     }
-    
-    const deleteButton = document.getElementById(`${task.taskName}-delete`);
 
-    deleteButton.addEventListener('click', () => {
-        deleteTask(task.taskName);
-        addAllTasksToDOM(taskList);
+    const detailsButton = document.getElementById(`${task.taskName}-details`);
+    detailsButton.addEventListener('click', () => {
+        displayDetails(task);
     });
+    
 
     const editButton = document.getElementById(`${task.taskName}-edit`);
 
@@ -63,6 +62,32 @@ function addTaskToDOM(task) {
         displayEditTaskForm(task);
         addAllTasksToDOM(taskList);
     });
+    
+    const deleteButton = document.getElementById(`${task.taskName}-delete`);
+
+    deleteButton.addEventListener('click', () => {
+        deleteTask(task.taskName);
+        addAllTasksToDOM(taskList);
+    });
+}
+
+function displayDetails(task) {
+    const container = document.querySelector('.main-right');
+    let overlay = document.getElementById('overlay');
+    overlay.style.display = 'block';
+
+    const formHTML = `
+        <div class="details-container">
+            <h1>Details</h1>
+            <div><span>Task Name:</span> ${task.taskName}</div>
+            <div><span>Description:</span> ${task.description}</div>
+            <div><span>Due Date:</span> ${task.dueDate}</div>
+            <div><span>Priority:</span> ${task.priority}</div>
+            <div><span>Project:</span> ${task.project}</div>
+        </div>
+    `
+    container.insertAdjacentHTML('beforeend', formHTML);
+    container.appendChild(overlay);
 }
 
 function displayEditTaskForm(task) {
@@ -125,16 +150,17 @@ function displayEditTaskForm(task) {
         }
     }
 
-    const cancelEditButton = document.querySelector('.cancel-edit-task-button');
-    cancelEditButton.addEventListener('click', closeEditTaskForm);
-
     const editTaskForm = document.getElementById('edit-task-form');
+
     editTaskForm.addEventListener('submit', (event) => {
         event.preventDefault();
         editTask(task, taskList);
         closeEditTaskForm();
         addAllTasksToDOM(taskList);
     });
+
+    const cancelEditButton = document.querySelector('.cancel-edit-task-button');
+    cancelEditButton.addEventListener('click', closeEditTaskForm);
 }
 
 function closeEditTaskForm() {
