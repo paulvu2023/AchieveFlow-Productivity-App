@@ -1,6 +1,6 @@
 import { addAllTasksToDOM , closeTaskForm } from "./display";
 
-const taskList = [];
+const projects = [];
 
 class Task {
     constructor(taskName, description, dueDate, priority, project) {
@@ -9,8 +9,32 @@ class Task {
         this.dueDate = dueDate;
         this.priority = priority;
         this.checked = false;
-        this.project = project;
+        projects[findProjectIndex(project)].addTask(this);
     }
+}
+
+class Project {
+    constructor(projectName){
+        this.name = projectName;
+        this.taskList = [];
+    }
+
+    addTask(task) {
+        this.taskList.push(taskName);
+    }
+}
+
+function createProject(projectName) {
+    const newProject = new Project(projectName);
+}
+
+function findProjectIndex(projectName) {
+    for (let i = 0; i < projects.length; i++) {
+        if (projects[i].name == projectName) {
+            return i;
+        }
+    }
+    return -1;
 }
 
 function deleteTask(taskName) {
@@ -57,4 +81,4 @@ function editTask(task, taskList) {
     }
 }
 
-export { Task , deleteTask , createTask, editTask, taskList };
+export { Task , deleteTask , createTask, createProject, editTask, projects };
