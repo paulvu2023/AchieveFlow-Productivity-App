@@ -65,7 +65,7 @@ function addTaskToDOM(task) {
     const deleteButton = document.getElementById(`${task.taskName}-delete`);
 
     deleteButton.addEventListener('click', () => {
-        deleteTask(task.taskName);
+        deleteTask(task);
         addAllTasksToDOM(projects[findProjectIndex(task.project)].taskList);
     });
 }

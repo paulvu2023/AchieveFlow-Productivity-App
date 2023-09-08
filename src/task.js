@@ -39,9 +39,11 @@ function findProjectIndex(projectName) {
     return -1;
 }
 
-function deleteTask(taskName) {
+function deleteTask(task) {
+    const taskList = projects[findProjectIndex(task.project)].taskList;
+
     for (let i = 0; i < taskList.length; i++) {
-        if (taskName == taskList[i].taskName) {
+        if (task.taskName == taskList[i].taskName) {
             taskList.splice(i, 1);
         }
     }
@@ -61,7 +63,7 @@ function createTask(event) {
     taskForm.reset();
 
     closeTaskForm();
-    console.log(projects);
+
     addAllTasksToDOM(projects[findProjectIndex(project)].taskList);
 }
 
