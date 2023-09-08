@@ -58,7 +58,7 @@ function loadTask(task) {
     const editButton = document.getElementById(`${task.taskName}-edit`);
 
     editButton.addEventListener('click', () => {
-        displayEditTaskForm(task);
+        openEditTaskForm(task);
         loadAllTasks(projects[findProjectIndex(task.project)].taskList);
     });
     
@@ -142,7 +142,7 @@ function closeDetails(){
     overlay.style.display = 'none';
 }
 
-function displayEditTaskForm(task) {
+function openEditTaskForm(task) {
     const container = document.querySelector('.main-right');
     let overlay = document.getElementById('overlay');
     overlay.style.display = 'block';
