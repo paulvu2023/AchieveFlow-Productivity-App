@@ -70,6 +70,19 @@ function addTaskToDOM(task) {
     });
 }
 
+function openProjectForm() {
+    const container = document.querySelector('.project-container');
+    let overlay = document.getElementById('overlay');
+    overlay.style.display = 'block';
+
+    const formHTML = `
+
+    `
+
+    container.insertAdjacentHTML('beforeend', formHTML);
+    container.appendChild(overlay);
+}
+
 function displayDetails(task) {
     const container = document.querySelector('.main-right');
     let overlay = document.getElementById('overlay');
