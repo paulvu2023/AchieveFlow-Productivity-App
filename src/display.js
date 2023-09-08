@@ -4,7 +4,7 @@ function clearTasks() {
     document.querySelector('.task-list').innerHTML = '';
 }
 
-function addAllTasksToDOM(taskList) {
+function loadAllTasks(taskList) {
     clearTasks();
     taskList.forEach(task => addTaskToDOM(task));
 }
@@ -59,14 +59,14 @@ function addTaskToDOM(task) {
 
     editButton.addEventListener('click', () => {
         displayEditTaskForm(task);
-        addAllTasksToDOM(projects[findProjectIndex(task.project)].taskList);
+        loadAllTasks(projects[findProjectIndex(task.project)].taskList);
     });
     
     const deleteButton = document.getElementById(`${task.taskName}-delete`);
 
     deleteButton.addEventListener('click', () => {
         deleteTask(task);
-        addAllTasksToDOM(projects[findProjectIndex(task.project)].taskList);
+        loadAllTasks(projects[findProjectIndex(task.project)].taskList);
     });
 }
 
@@ -210,7 +210,7 @@ function displayEditTaskForm(task) {
         event.preventDefault();
         editTask(task, projects[findProjectIndex(task.project)].taskList);
         closeEditTaskForm();
-        addAllTasksToDOM(projects[findProjectIndex(task.project)].taskList);
+        loadAllTasks(projects[findProjectIndex(task.project)].taskList);
     });
 
     const cancelEditButton = document.querySelector('.cancel-edit-task-button');
@@ -305,4 +305,4 @@ function loadAddTaskForm() {
 }
 
 
-export { loadAddTaskForm , addAllTasksToDOM , openTaskForm , closeTaskForm , openProjectForm };
+export { loadAddTaskForm , loadAllTasks , openTaskForm , closeTaskForm , openProjectForm };
