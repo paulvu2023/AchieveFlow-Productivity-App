@@ -70,6 +70,39 @@ function loadTask(task) {
     });
 }
 
+function loadTodayTasks() {
+    const todayList = []
+    for (const project of projects) {
+        for (let i = 0; i < project.taskList.length; i++) {
+            if (checkDate(project.taskList[i].dueDate) == true) {
+                todayList.push(project.taskList[i]);
+            }
+        }
+    }
+    if (todayList.length > 0) {
+        loadAllTasks(todayList);
+    }
+}
+
+function checkDate(date) {
+    // Create a JavaScript Date object for today's date in the local time zone
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    
+    // Adjust today's date for the local time zone offset, including Daylight Saving Time
+    const localOffset = today.getTimezoneOffset();
+    today.setMinutes(today.getMinutes() + localOffset);
+
+    // Format today's date in the same format as the input element (YYYY-MM-DD)
+    const formattedToday = today.toISOString().slice(0, 10);
+    
+    if (date === formattedToday) {
+        return true
+    } else {
+        return false;
+    }
+}
+
 function openProjectForm() {
     const container = document.querySelector('.project-container');
     const overlay = document.createElement('div');
@@ -305,4 +338,4 @@ function loadAddTaskForm() {
 }
 
 
-export { loadAddTaskForm , loadAllTasks , openTaskForm , closeTaskForm , openProjectForm };
+export { loadAddTaskForm , loadAllTasks , openTaskForm , closeTaskForm , openProjectForm , loadTodayTasks };
