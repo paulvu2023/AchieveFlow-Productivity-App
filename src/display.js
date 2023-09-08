@@ -76,7 +76,18 @@ function openProjectForm() {
     overlay.style.display = 'block';
 
     const formHTML = `
-
+    <div class="project-form">
+        <form class="add-project-form" id="add-project-form">
+            <fieldset>
+                <label for="project-name">Project Name</label>
+                <input type="text" id="project-name" name="project-name" autocomplete="off" required spellcheck="false">
+                <div>
+                    <button type="submit" class="add-project-button">Add Project</button>
+                    <button type="button" class="cancel-project-button">Cancel</button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
     `
 
     container.insertAdjacentHTML('beforeend', formHTML);
@@ -260,4 +271,4 @@ function loadAddTaskForm() {
 }
 
 
-export { loadAddTaskForm , addAllTasksToDOM , openTaskForm , closeTaskForm };
+export { loadAddTaskForm , addAllTasksToDOM , openTaskForm , closeTaskForm , openProjectForm };

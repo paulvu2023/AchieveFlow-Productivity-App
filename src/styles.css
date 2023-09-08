@@ -480,7 +480,9 @@ fieldset button {
     top: 55%;
     left: 50%;
     transform: translate(-50%, -50%) scale(1);
+    background-color: aliceblue;
     z-index: 2;
+
 }
 
 label[for="project-name"] {
