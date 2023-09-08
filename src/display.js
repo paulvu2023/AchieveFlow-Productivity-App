@@ -92,6 +92,14 @@ function openProjectForm() {
 
     container.insertAdjacentHTML('beforeend', formHTML);
     container.appendChild(overlay);
+
+    const cancelButton = document.querySelector('.cancel-project-button');
+    cancelButton.addEventListener('click', closeProjectForm);
+}
+
+function closeProjectForm() {
+    const container = document.querySelector('.project-container');
+    container.remove();
 }
 
 function displayDetails(task) {
