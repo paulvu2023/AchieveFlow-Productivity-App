@@ -6,10 +6,10 @@ function clearTasks() {
 
 function loadAllTasks(taskList) {
     clearTasks();
-    taskList.forEach(task => addTaskToDOM(task));
+    taskList.forEach(task => loadTask(task));
 }
 
-function addTaskToDOM(task) {
+function loadTask(task) {
     const taskElement = document.createElement('div');
     taskElement.classList.add('task');
     taskElement.id = `task-${task.taskName}`;
