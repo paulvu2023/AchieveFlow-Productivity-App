@@ -21,7 +21,7 @@ class Project {
     }
 
     addTask(task) {
-        this.taskList.push(taskName);
+        this.taskList.push(task);
     }
 }
 
@@ -58,11 +58,11 @@ function createTask(event) {
     const project = document.getElementById('project').value;
 
     const newTask = new Task(taskName, description, dueDate, priority, project);
-    taskList.push(newTask);
     taskForm.reset();
 
     closeTaskForm();
-    addAllTasksToDOM(taskList);
+    console.log(projects);
+    addAllTasksToDOM(projects[findProjectIndex(project)].taskList);
 }
 
 function editTask(task, taskList) {
