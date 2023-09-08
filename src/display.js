@@ -1,5 +1,4 @@
-import { deleteTask , editTask } from './task';
-import { taskList } from './task';
+import { deleteTask , editTask , projects , findProjectIndex } from './task';
 
 function clearTasks() {
     document.querySelector('.task-list').innerHTML = '';
@@ -60,14 +59,14 @@ function addTaskToDOM(task) {
 
     editButton.addEventListener('click', () => {
         displayEditTaskForm(task);
-        addAllTasksToDOM(taskList);
+        addAllTasksToDOM(projects[findProjectIndex(task.project)].taskList);
     });
     
     const deleteButton = document.getElementById(`${task.taskName}-delete`);
 
     deleteButton.addEventListener('click', () => {
         deleteTask(task.taskName);
-        addAllTasksToDOM(taskList);
+        addAllTasksToDOM(projects[findProjectIndex(task.project)].taskList);
     });
 }
 
@@ -165,9 +164,9 @@ function displayEditTaskForm(task) {
 
     editTaskForm.addEventListener('submit', (event) => {
         event.preventDefault();
-        editTask(task, taskList);
+        editTask(task, projects[findProjectIndex(task.project)].taskList);
         closeEditTaskForm();
-        addAllTasksToDOM(taskList);
+        addAllTasksToDOM(projects[findProjectIndex(task.project)].taskList);
     });
 
     const cancelEditButton = document.querySelector('.cancel-edit-task-button');

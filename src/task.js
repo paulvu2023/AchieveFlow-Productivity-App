@@ -83,4 +83,4 @@ function editTask(task, taskList) {
     }
 }
 
-export { Task , deleteTask , createTask, createProject, editTask, projects };
+export { Task , deleteTask , createTask, createProject, editTask, projects , findProjectIndex };
