@@ -195,7 +195,7 @@ function closeTaskForm() {
     overlay.style.display = 'none';
 }
 
-function displayAddTaskForm() {
+function loadAddTaskForm() {
     const container = document.querySelector('.main-right');
     const overlay = document.createElement('div');
     overlay.id = 'overlay';
@@ -247,4 +247,4 @@ function displayAddTaskForm() {
 }
 
 
-export { displayAddTaskForm , addAllTasksToDOM , openTaskForm , closeTaskForm };
+export { loadAddTaskForm , addAllTasksToDOM , openTaskForm , closeTaskForm };

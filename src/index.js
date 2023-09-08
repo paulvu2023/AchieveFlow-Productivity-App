@@ -1,12 +1,13 @@
 import "./styles.css";
-import { displayAddTaskForm , openTaskForm, closeTaskForm } from "./display";
+import { loadAddTaskForm , openTaskForm, closeTaskForm , openProjectForm } from "./display";
 import { createTask , createProject } from "./task";
 
 document.addEventListener("DOMContentLoaded", function () {
     createProject("General");
-    displayAddTaskForm();
+    loadAddTaskForm();
     document.querySelector('.add-task').addEventListener('click', openTaskForm);
     document.querySelector('.cancel-task-button').addEventListener('click', closeTaskForm);
     document.getElementById('add-task-form').addEventListener('submit', createTask);
+    document.querySelector('.projects').addEventListener('click', openProjectForm);
 });
 
