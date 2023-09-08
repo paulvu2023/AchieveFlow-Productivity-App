@@ -1,4 +1,4 @@
-import { deleteTask , editTask , projects , findProjectIndex } from './task';
+import { deleteTask , editTask , projects , findProjectIndex , createProject } from './task';
 
 function clearTasks() {
     document.querySelector('.task-list').innerHTML = '';
@@ -72,7 +72,9 @@ function addTaskToDOM(task) {
 
 function openProjectForm() {
     const container = document.querySelector('.project-container');
-    let overlay = document.getElementById('overlay');
+    const overlay = document.createElement('div');
+
+    overlay.classList.add('overlay');
     overlay.style.display = 'block';
 
     const formHTML = `
@@ -87,11 +89,20 @@ function openProjectForm() {
                 </div>
             </fieldset>
         </form>
-    </div>
+    </div>  
     `
 
     container.insertAdjacentHTML('beforeend', formHTML);
     container.appendChild(overlay);
+
+    const projectForm = document.getElementById('add-project-form');
+    const projectName = document.getElementById('project-name').value;
+    projectForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        createProject(projectName);
+        console.log(projects);
+        closeProjectForm();
+    });
 
     const cancelButton = document.querySelector('.cancel-project-button');
     cancelButton.addEventListener('click', closeProjectForm);
@@ -99,7 +110,7 @@ function openProjectForm() {
 
 function closeProjectForm() {
     const container = document.querySelector('.project-container');
-    container.remove();
+    container.innerHTML = '';
 }
 
 function displayDetails(task) {
