@@ -96,9 +96,9 @@ function openProjectForm() {
     container.appendChild(overlay);
 
     const projectForm = document.getElementById('add-project-form');
-    const projectName = document.getElementById('project-name').value;
     projectForm.addEventListener('submit', (event) => {
         event.preventDefault();
+        const projectName = document.getElementById('project-name').value;
         createProject(projectName);
         console.log(projects);
         closeProjectForm();
