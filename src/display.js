@@ -100,7 +100,6 @@ function openProjectForm() {
         event.preventDefault();
         const projectName = document.getElementById('project-name').value;
         createProject(projectName);
-        console.log(projects);
         closeProjectForm();
     });
 
@@ -170,7 +169,7 @@ function displayEditTaskForm(task) {
 
                 <label for="edit-project">Project</label>
                 <select id="edit-project" name="edit-project">
-                    <option value="General">General</option>
+
                 </select>
 
                 <div>
@@ -183,6 +182,8 @@ function displayEditTaskForm(task) {
 
     container.insertAdjacentHTML('beforeend', formHTML);
     container.appendChild(overlay);
+
+    addProjectSelectOptions('edit-project');
 
     //Change the selected priority to the task's previous priority
     const selectPriority = document.getElementById('edit-priority');
@@ -226,6 +227,7 @@ function closeEditTaskForm() {
 function openTaskForm() {
     let taskForm = document.getElementById("add-task-form");
     let overlay = document.getElementById('overlay');
+    addProjectSelectOptions('project');
     taskForm.classList.add('open-add-task-form');
     overlay.style.display = 'block';
 }
@@ -233,9 +235,22 @@ function openTaskForm() {
 function closeTaskForm() {
     let taskForm = document.getElementById("add-task-form");
     let overlay = document.getElementById('overlay');
+    let selectMenu = document.getElementById('project');
     taskForm.reset();
+    selectMenu.innerHTML = '';
     taskForm.classList.remove('open-add-task-form');
     overlay.style.display = 'none';
+}
+
+function addProjectSelectOptions(selectId) {
+    const select = document.getElementById(selectId);
+
+    for (const project of projects) {
+        const option = document.createElement("option");
+        option.value = project.name;
+        option.textContent = project.name;
+        select.appendChild(option);
+    }
 }
 
 function loadAddTaskForm() {
@@ -266,7 +281,7 @@ function loadAddTaskForm() {
 
                 <label for="project">Project</label>
                 <select id="project" name="project">
-                    <option value="General">General</option>
+
                 </select>
 
                 <div>
