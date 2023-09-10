@@ -144,6 +144,7 @@ body {
 }
 
 .sidebar {
+    height: 680px;
     transition: translate var(--animation-timing);
     translate: -100%;
     width: 0px;
