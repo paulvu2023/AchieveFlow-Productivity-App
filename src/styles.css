@@ -609,3 +609,26 @@ transition: all 0.3s ease;
 button:hover {
     cursor: pointer;
 }
+
+/* Styling for Scrollbar */
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgba(185, 230, 248, 0.445);
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(185, 230, 248, 1);
+}
