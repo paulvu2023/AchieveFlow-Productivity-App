@@ -134,7 +134,7 @@ body {
 
 .active {
     font-weight: 800;
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
 
 .hamburger-menu:has(input:checked) + .sidebar {
