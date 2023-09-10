@@ -132,6 +132,11 @@ body {
 
 /* Styling for sidebar */
 
+.active {
+    font-weight: 800;
+    transform: scale(1.2);
+}
+
 .hamburger-menu:has(input:checked) + .sidebar {
     translate: 0;
     width: 230px;

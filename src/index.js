@@ -1,10 +1,11 @@
 import "./styles.css";
-import { loadAddTaskForm , openTaskForm, closeTaskForm , openProjectForm , loadTodayTasks } from "./display";
+import { loadAddTaskForm , openTaskForm, closeTaskForm , openProjectForm , loadTodayTasks, selectActiveSidebarButton } from "./display";
 import { createTask , createProject } from "./task";
 
 document.addEventListener("DOMContentLoaded", function () {
     createProject("General");
     loadAddTaskForm();
+    selectActiveSidebarButton();
     document.querySelector('.add-task').addEventListener('click', openTaskForm);
     document.querySelector('.cancel-task-button').addEventListener('click', closeTaskForm);
     document.getElementById('add-task-form').addEventListener('submit', createTask);

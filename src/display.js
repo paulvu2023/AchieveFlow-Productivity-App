@@ -4,6 +4,17 @@ function clearTasks() {
     document.querySelector('.task-list').innerHTML = '';
 }
 
+function selectActiveSidebarButton() {
+    const sidebarButtons = document.querySelectorAll('nav > *');
+
+    sidebarButtons.forEach(sidebarButton => {
+        sidebarButton.addEventListener('click', () => {
+            document.querySelector('.active')?.classList.remove('active');
+            sidebarButton.classList.add('active');
+        });
+    });
+}
+
 function loadAllTasks(taskList) {
     clearTasks();
     taskList.forEach(task => loadTask(task));
@@ -338,4 +349,4 @@ function loadAddTaskForm() {
 }
 
 
-export { loadAddTaskForm , loadAllTasks , openTaskForm , closeTaskForm , openProjectForm , loadTodayTasks };
+export { loadAddTaskForm , loadAllTasks , openTaskForm , closeTaskForm , openProjectForm , loadTodayTasks , selectActiveSidebarButton };
