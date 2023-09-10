@@ -181,6 +181,14 @@ nav button:hover {
     margin-left: 29px;
 }
 
+.projects-menu {
+    padding-left: 8px;
+}
+
+.projects-menu .sidebar-project {
+    font-size: 22px;
+}
+
 /* Styling for right side */
 
 .main-right {

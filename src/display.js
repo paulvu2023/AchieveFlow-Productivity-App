@@ -5,8 +5,8 @@ function clearTasks() {
 }
 
 function selectActiveSidebarButton() {
-    const sidebarButtons = document.querySelectorAll('nav > *');
 
+    const sidebarButtons = document.querySelectorAll('nav > *');
     sidebarButtons.forEach(sidebarButton => {
         sidebarButton.addEventListener('click', () => {
             document.querySelector('.active')?.classList.remove('active');
@@ -114,6 +114,15 @@ function checkDate(date) {
     }
 }
 
+function addProjectToSidebar(projectName) {
+    const projectsMenu = document.querySelector('.projects-menu');
+    const newProjectButton = document.createElement('button');
+    newProjectButton.classList.add(`${projectName}-button`);
+    newProjectButton.classList.add('sidebar-project');
+    newProjectButton.textContent = projectName;
+    projectsMenu.append(newProjectButton);
+}
+
 function openProjectForm() {
     const container = document.querySelector('.project-container');
     const overlay = document.createElement('div');
@@ -126,7 +135,7 @@ function openProjectForm() {
         <form class="add-project-form" id="add-project-form">
             <fieldset>
                 <label for="project-name">Project Name</label>
-                <input type="text" id="project-name" name="project-name" autocomplete="off" required spellcheck="false">
+                <input type="text" id="project-name" name="project-name" autocomplete="off" maxlength="15" required spellcheck="false">
                 <div>
                     <button type="submit" class="add-project-button">Add Project</button>
                     <button type="button" class="cancel-project-button">Cancel</button>
@@ -145,6 +154,7 @@ function openProjectForm() {
         const projectName = document.getElementById('project-name').value;
         createProject(projectName);
         closeProjectForm();
+        addProjectToSidebar(projectName);
     });
 
     const cancelButton = document.querySelector('.cancel-project-button');
