@@ -10,9 +10,9 @@ function loadNotes() {
     const notesContainer = document.createElement('div');
     notesContainer.classList.add('notes-container');
     notesContainer.innerHTML = `
-    <p contenteditable="true" class="input-box">
-        <i class="fa-solid fa-trash"></i>
-    </p>`
+    <p contenteditable="true" class="input-box"></p>
+    <i class="fa-regular fa-trash-can"></i>
+    `
     document.querySelector('.task-list').append(notesContainer);
 }
 

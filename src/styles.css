@@ -326,24 +326,31 @@ button.details:hover {
 
 /* Styling for Notes */
 
-.input-box {
-    font-family: 'Roboto', Arial, Helvetica, sans-serif;
-    font-weight: 100;
+.notes-container {
+    margin: 10px;
     position: relative;
     width: 100%;
     max-width: 500px;
     min-height: 150px;
+}
+
+.input-box {
+    width: 100%;
+    max-width: 100%;
+    min-height: 100%;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-weight: 100;
     background-color: white;
-    color: rgb(0, 204, 255);
+    color: rgb(21, 150, 255);
     padding: 20px;
     margin: 20px 0;
     outline: none;
     border-radius: 5px;
 }
 
-p .fa-trash {
+.notes-container .fa-trash-can {
     position: absolute;
-    bottom: 15px;
+    bottom: 0px;
     right: 15px;
     cursor: pointer;
 }
