@@ -85,11 +85,25 @@ function loadTask(task) {
     });
 }
 
+function loadWeekTasks() {
+    const weekList = []
+    for (const project of projects) {
+        for (let i = 0; i < project.taskList.length; i++) {
+            if (checkWeek(project.taskList[i].dueDate) == true) {
+                todayList.push(project.taskList[i]);
+            }
+        }
+    }
+    if (weekList.length > 0) {
+        loadTasklist(weekList);
+    }
+}
+
 function loadTodayTasks() {
     const todayList = []
     for (const project of projects) {
         for (let i = 0; i < project.taskList.length; i++) {
-            if (checkDate(project.taskList[i].dueDate) == true) {
+            if (checkToday(project.taskList[i].dueDate) == true) {
                 todayList.push(project.taskList[i]);
             }
         }
@@ -99,16 +113,13 @@ function loadTodayTasks() {
     }
 }
 
-function checkDate(date) {
-    // Create a JavaScript Date object for today's date in the local time zone
+function checkToday(date) {
     const today = new Date();
     today.setHours(0, 0, 0, 0);
     
-    // Adjust today's date for the local time zone offset, including Daylight Saving Time
     const localOffset = today.getTimezoneOffset();
     today.setMinutes(today.getMinutes() + localOffset);
 
-    // Format today's date in the same format as the input element (YYYY-MM-DD)
     const formattedToday = today.toISOString().slice(0, 10);
     
     if (date === formattedToday) {
