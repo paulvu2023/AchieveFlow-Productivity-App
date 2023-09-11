@@ -196,11 +196,11 @@ nav button:hover {
 }
 
 .projects-menu {
-    padding-top: 12.5px;
+    padding-top: 20px;
     max-height: 297px;
     padding-left: 8px;
     overflow-y: auto;
-    padding-bottom: 12.5px;
+    padding-bottom: 5px;
 }
 
 .projects-menu .sidebar-project, .sidebar-note {
