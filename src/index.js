@@ -1,5 +1,6 @@
 import "./styles.css";
-import { loadAddTaskForm , openTaskForm, closeTaskForm , openProjectForm , loadTodayTasks, selectActiveSidebarButton, loadAllTasks } from "./display";
+import { loadAddTaskForm , openTaskForm, closeTaskForm , openProjectForm , loadTodayTasks,
+         selectActiveSidebarButton, loadAllTasklists } from "./display";
 import { createTask , createProject } from "./task";
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -10,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelector('.cancel-task-button').addEventListener('click', closeTaskForm);
     document.getElementById('add-task-form').addEventListener('submit', createTask);
     document.querySelector('.projects').addEventListener('click', openProjectForm);
-   
+    document.querySelector('.all').addEventListener('click', loadAllTasklists);
     document.querySelector('.today').addEventListener('click', loadTodayTasks);
 });
 

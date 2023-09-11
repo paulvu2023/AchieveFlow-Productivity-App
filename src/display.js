@@ -15,6 +15,10 @@ function selectActiveSidebarButton() {
     });
 }
 
+function loadAllTasklists() {
+    projects.forEach(project => loadTasklist(project.taskList));
+}
+
 function loadTasklist(taskList) {
     clearTasks();
     taskList.forEach(task => loadTask(task));
@@ -359,4 +363,5 @@ function loadAddTaskForm() {
 }
 
 
-export { loadAddTaskForm , loadTasklist , openTaskForm , closeTaskForm , openProjectForm , loadTodayTasks , selectActiveSidebarButton };
+export { loadAddTaskForm , loadTasklist , openTaskForm , closeTaskForm , openProjectForm ,
+         loadTodayTasks , selectActiveSidebarButton, loadAllTasklists};
