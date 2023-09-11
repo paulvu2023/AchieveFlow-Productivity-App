@@ -1,4 +1,5 @@
 import { deleteTask , editTask , projects , findProjectIndex , createProject } from './task';
+import { isThisWeek , parseISO } from 'date-fns';
 
 function clearTasks() {
     document.querySelector('.task-list').innerHTML = '';
@@ -89,8 +90,8 @@ function loadWeekTasks() {
     const weekList = []
     for (const project of projects) {
         for (let i = 0; i < project.taskList.length; i++) {
-            if (checkWeek(project.taskList[i].dueDate) == true) {
-                todayList.push(project.taskList[i]);
+            if (isThisWeek(parseISO(project.taskList[i].dueDate)) == true) {
+                weekList.push(project.taskList[i]);
             }
         }
     }
@@ -375,4 +376,4 @@ function loadAddTaskForm() {
 
 
 export { loadAddTaskForm , loadTasklist , openTaskForm , closeTaskForm , openProjectForm ,
-         loadTodayTasks , selectActiveSidebarButton, loadAllTasklists};
+         loadTodayTasks , selectActiveSidebarButton, loadAllTasklists, loadWeekTasks };
