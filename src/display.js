@@ -5,15 +5,13 @@ function clearTasks() {
     document.querySelector('.task-list').innerHTML = '';
 }
 
-function loadNotesPagePage() {
+function loadNotesPage() {
     clearTasks();
-    const notesContainer = document.createElement('div');
-    notesContainer.classList.add('notes-container');
-    notesContainer.innerHTML = `
-    <p contenteditable="true" class="input-box"></p>
-    <i class="fa-regular fa-trash-can"></i>
-    `
-    document.querySelector('.task-list').append(notesContainer);
+
+    const addNotesButton = document.querySelector('.add-task');
+    addNotesButton.innerHTML = '<i class="fa-solid fa-plus fa-beat-fade"></i>Add Notes';
+    addNotesButton.classList.toggle('add-task');
+    addNotesButton.classList.toggle('add-notes');
 }
 
 function selectActiveSidebarButton() {
