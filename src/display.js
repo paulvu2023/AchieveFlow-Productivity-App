@@ -5,6 +5,17 @@ function clearTasks() {
     document.querySelector('.task-list').innerHTML = '';
 }
 
+function loadNotes() {
+    clearTasks();
+    const notesContainer = document.createElement('div');
+    notesContainer.classList.add('notes-container');
+    notesContainer.innerHTML = `
+    <p contenteditable="true" class="input-box">
+        <i class="fa-solid fa-trash"></i>
+    </p>`
+    document.querySelector('.main-right').append(notesContainer);
+}
+
 function selectActiveSidebarButton() {
     const sidebarButtons = document.querySelectorAll('nav > *');
     sidebarButtons.forEach(sidebarButton => {
@@ -370,4 +381,4 @@ function loadAddTaskForm() {
 
 export { loadAddTaskForm , loadTasklist , openTaskForm , closeTaskForm , openProjectForm ,
          loadTodayTasks , selectActiveSidebarButton, loadAllTasklists, loadWeekTasks ,
-         loadImportantTasks , clearTasks };
+         loadImportantTasks , clearTasks , loadNotes };

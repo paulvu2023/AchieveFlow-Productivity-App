@@ -79,6 +79,7 @@ body {
 /* Container Styling */
 
 .container {
+    max-height: 100%;
     overflow: hidden;
     display: grid;
     grid-template-rows: 70px 1fr;
@@ -93,11 +94,22 @@ body {
         height: 100%;
         width: 100%;
     }
+
+    .task-list {
+        max-height: 100%;
+        height: 100%;
+        background-color: green;
+    }
 }
 
 @media (height <= 750px) {
     body {
         align-items: start;
+    }
+
+    .task-list {
+        max-height: 100%;
+        height: 100%;
     }
 }
 
@@ -125,6 +137,7 @@ body {
 }
 
 .main {
+    max-height: 100%;
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -208,13 +221,12 @@ nav button:hover {
 }
 
 /* Styling for right side */
-
 .main-right {
-    overflow: auto;
+    max-height: 100%;
     height: 100%;
     flex: 1;
     display: flex;
-    overflow: auto;
+    overflow-y: auto;
     flex-direction: column;
     justify-content: start;
     align-items: center;
@@ -254,10 +266,11 @@ nav button:hover {
 
 /* Styling for Task List and Tasks*/
 .task-list {
-    height: 100%;
+    height: 600px;
     width: 100%;
     display: flex;
     flex-direction: column;
+    overflow-y: auto;
 }
 
 .task {
@@ -311,6 +324,31 @@ button.details:hover {
 .fa-pen-to-square:hover, .fa-trash-can:hover {
     transform: scale(1.2);
 }
+
+/* Styling for Notes */
+
+.input-box {
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-weight: 100;
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    min-height: 150px;
+    background-color: white;
+    color: rgb(0, 204, 255);
+    padding: 20px;
+    margin: 20px 0;
+    outline: none;
+    border-radius: 5px;
+}
+
+p .fa-trash {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    cursor: pointer;
+}
+
 
 /* Styling for Add Task Form */
 
