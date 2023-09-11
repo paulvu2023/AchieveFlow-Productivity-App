@@ -22,7 +22,7 @@ function addNote() {
     const notesContainer = document.createElement('div');
     notesContainer.classList.add('notes-container');
     notesContainer.innerHTML = `
-    <p contenteditable="true" class="input-box"></p>
+    <p contenteditable="true" class="input-box" spellcheck="false"></p>
     <i class="fa-regular fa-trash-can"></i>
     `
     document.querySelector('.task-list').append(notesContainer);
@@ -41,6 +41,7 @@ function selectActiveSidebarButton() {
 
 function switchAddTaskandAddNotesIfNeeded(button) {
     if (button.classList.contains('notes')) {
+
     }
     else {  
         document.querySelector('.add-task').style.display = 'flex';
