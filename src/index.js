@@ -1,6 +1,6 @@
 import "./styles.css";
 import { loadAddTaskForm , openTaskForm, closeTaskForm , openProjectForm , loadTodayTasks,
-         selectActiveSidebarButton, loadAllTasklists, loadWeekTasks } from "./display";
+         selectActiveSidebarButton, loadAllTasklists, loadWeekTasks , loadImportantTasks} from "./display";
 import { createTask , createProject } from "./task";
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -14,5 +14,6 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelector('.all').addEventListener('click', loadAllTasklists);
     document.querySelector('.today').addEventListener('click', loadTodayTasks);
     document.querySelector('.week').addEventListener('click', loadWeekTasks);
+    document.querySelector('.important').addEventListener('click', loadImportantTasks);
 });
 

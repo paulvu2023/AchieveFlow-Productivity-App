@@ -82,6 +82,20 @@ function loadTask(task) {
     });
 }
 
+function loadImportantTasks() {
+    const importantList = []
+    for (const project of projects) {
+        for (let i = 0; i < project.taskList.length; i++) {
+            if (project.taskList[i].priority == 'High'){
+                importantList.push(project.taskList[i]);
+            }
+        }
+    }
+    if (importantList.length > 0) {
+        loadTasklist(importantList);
+    }
+}
+
 function loadWeekTasks() {
     const weekList = []
     for (const project of projects) {
@@ -348,11 +362,12 @@ function loadAddTaskForm() {
         </button>
         <div class="task-list"></div>
     `;
-    
+
     container.insertAdjacentHTML('beforeend', formHTML);
     container.appendChild(overlay);
 }
 
 
 export { loadAddTaskForm , loadTasklist , openTaskForm , closeTaskForm , openProjectForm ,
-         loadTodayTasks , selectActiveSidebarButton, loadAllTasklists, loadWeekTasks };
+         loadTodayTasks , selectActiveSidebarButton, loadAllTasklists, loadWeekTasks ,
+         loadImportantTasks };
