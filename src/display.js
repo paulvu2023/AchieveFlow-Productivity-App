@@ -370,4 +370,4 @@ function loadAddTaskForm() {
 
 export { loadAddTaskForm , loadTasklist , openTaskForm , closeTaskForm , openProjectForm ,
          loadTodayTasks , selectActiveSidebarButton, loadAllTasklists, loadWeekTasks ,
-         loadImportantTasks };
+         loadImportantTasks , clearTasks };
