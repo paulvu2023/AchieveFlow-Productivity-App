@@ -7,11 +7,25 @@ function clearTasks() {
 
 function loadNotesPage() {
     clearTasks();
-
-    const addNotesButton = document.querySelector('.add-task');
+    const container = document.querySelector('.task-list');
+    document.querySelector('.add-task').style.display = 'none';
+    const addNotesButton = document.createElement('button');
     addNotesButton.innerHTML = '<i class="fa-solid fa-plus fa-beat-fade"></i>Add Notes';
     addNotesButton.classList.toggle('add-task');
     addNotesButton.classList.toggle('add-notes');
+    container.append(addNotesButton);
+
+    addNotesButton.addEventListener('click', addNote);
+}
+
+function addNote() {
+    const notesContainer = document.createElement('div');
+    notesContainer.classList.add('notes-container');
+    notesContainer.innerHTML = `
+    <p contenteditable="true" class="input-box"></p>
+    <i class="fa-regular fa-trash-can"></i>
+    `
+    document.querySelector('.task-list').append(notesContainer);
 }
 
 function selectActiveSidebarButton() {
