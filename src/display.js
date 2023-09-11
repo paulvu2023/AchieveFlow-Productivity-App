@@ -34,8 +34,20 @@ function selectActiveSidebarButton() {
         sidebarButton.addEventListener('click', () => {
             document.querySelector('.active')?.classList.remove('active');
             sidebarButton.classList.add('active');
+            switchAddTaskandAddNotesIfNeeded(sidebarButton);
         });
     });
+}
+
+function switchAddTaskandAddNotesIfNeeded(button) {
+    if (button.classList.contains('notes')) {
+    }
+    else {  
+        document.querySelector('.add-task').style.display = 'flex';
+        if (document.querySelector('.add-notes')) {
+            document.querySelector('.add-notes').remove();
+        }
+    }
 }
 
 function loadAllTasklists() {
