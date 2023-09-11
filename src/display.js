@@ -13,7 +13,7 @@ function loadNotes() {
     <p contenteditable="true" class="input-box">
         <i class="fa-solid fa-trash"></i>
     </p>`
-    document.querySelector('.main-right').append(notesContainer);
+    document.querySelector('.task-list').append(notesContainer);
 }
 
 function selectActiveSidebarButton() {
