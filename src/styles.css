@@ -95,21 +95,20 @@ body {
         width: 100%;
     }
 
-    .task-list {
+    .main-right .task-list {
         max-height: 100%;
-        height: 100%;
-        background-color: green;
+        height: 85%;
     }
 }
 
-@media (height <= 750px) {
+@media (width <= 750px) {
     body {
         align-items: start;
     }
 
-    .task-list {
+    .main-right .task-list {
         max-height: 100%;
-        height: 100%;
+        height: 85%;
     }
 }
 
