@@ -1,5 +1,5 @@
 import { deleteTask , editTask , projects , findProjectIndex , createProject } from './task';
-import { isThisWeek , parseISO } from 'date-fns';
+import { isThisWeek , isToday, parseISO } from 'date-fns';
 
 function clearTasks() {
     document.querySelector('.task-list').innerHTML = '';
@@ -104,29 +104,13 @@ function loadTodayTasks() {
     const todayList = []
     for (const project of projects) {
         for (let i = 0; i < project.taskList.length; i++) {
-            if (checkToday(project.taskList[i].dueDate) == true) {
+            if (isToday(parseISO(project.taskList[i].dueDate)) == true) {
                 todayList.push(project.taskList[i]);
             }
         }
     }
     if (todayList.length > 0) {
         loadTasklist(todayList);
-    }
-}
-
-function checkToday(date) {
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
-    
-    const localOffset = today.getTimezoneOffset();
-    today.setMinutes(today.getMinutes() + localOffset);
-
-    const formattedToday = today.toISOString().slice(0, 10);
-    
-    if (date === formattedToday) {
-        return true
-    } else {
-        return false;
     }
 }
 
