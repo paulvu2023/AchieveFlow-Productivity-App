@@ -1,4 +1,4 @@
-import { loadAllTasks , closeTaskForm } from "./display";
+import { loadTasklist , closeTaskForm } from "./display";
 
 const projects = [];
 
@@ -64,7 +64,7 @@ function createTask(event) {
 
     closeTaskForm();
 
-    loadAllTasks(projects[findProjectIndex(project)].taskList);
+    loadTasklist(projects[findProjectIndex(project)].taskList);
 }
 
 function editTask(task, taskList) {

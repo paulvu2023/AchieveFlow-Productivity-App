@@ -15,7 +15,7 @@ function selectActiveSidebarButton() {
     });
 }
 
-function loadAllTasks(taskList) {
+function loadTasklist(taskList) {
     clearTasks();
     taskList.forEach(task => loadTask(task));
 }
@@ -70,14 +70,14 @@ function loadTask(task) {
 
     editButton.addEventListener('click', () => {
         openEditTaskForm(task);
-        loadAllTasks(projects[findProjectIndex(task.project)].taskList);
+        loadTasklist(projects[findProjectIndex(task.project)].taskList);
     });
     
     const deleteButton = document.getElementById(`${task.taskName}-delete`);
 
     deleteButton.addEventListener('click', () => {
         deleteTask(task);
-        loadAllTasks(projects[findProjectIndex(task.project)].taskList);
+        loadTasklist(projects[findProjectIndex(task.project)].taskList);
     });
 }
 
@@ -91,7 +91,7 @@ function loadTodayTasks() {
         }
     }
     if (todayList.length > 0) {
-        loadAllTasks(todayList);
+        loadTasklist(todayList);
     }
 }
 
@@ -264,7 +264,7 @@ function openEditTaskForm(task) {
         event.preventDefault();
         editTask(task, projects[findProjectIndex(task.project)].taskList);
         closeEditTaskForm();
-        loadAllTasks(projects[findProjectIndex(task.project)].taskList);
+        loadTasklist(projects[findProjectIndex(task.project)].taskList);
     });
 
     const cancelEditButton = document.querySelector('.cancel-edit-task-button');
@@ -359,4 +359,4 @@ function loadAddTaskForm() {
 }
 
 
-export { loadAddTaskForm , loadAllTasks , openTaskForm , closeTaskForm , openProjectForm , loadTodayTasks , selectActiveSidebarButton };
+export { loadAddTaskForm , loadTasklist , openTaskForm , closeTaskForm , openProjectForm , loadTodayTasks , selectActiveSidebarButton };
