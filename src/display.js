@@ -6,7 +6,6 @@ function clearTasks() {
 }
 
 function selectActiveSidebarButton() {
-
     const sidebarButtons = document.querySelectorAll('nav > *');
     sidebarButtons.forEach(sidebarButton => {
         sidebarButton.addEventListener('click', () => {
@@ -70,16 +69,13 @@ function loadTask(task) {
         displayDetails(task);
     });
     
-
     const editButton = document.getElementById(`${task.taskName}-edit`);
-
     editButton.addEventListener('click', () => {
         openEditTaskForm(task);
         loadTasklist(projects[findProjectIndex(task.project)].taskList);
     });
     
     const deleteButton = document.getElementById(`${task.taskName}-delete`);
-
     deleteButton.addEventListener('click', () => {
         deleteTask(task);
         loadTasklist(projects[findProjectIndex(task.project)].taskList);
@@ -259,7 +255,6 @@ function openEditTaskForm(task) {
     }
 
     const editTaskForm = document.getElementById('edit-task-form');
-
     editTaskForm.addEventListener('submit', (event) => {
         event.preventDefault();
         editTask(task, projects[findProjectIndex(task.project)].taskList);
@@ -353,7 +348,7 @@ function loadAddTaskForm() {
         </button>
         <div class="task-list"></div>
     `;
-
+    
     container.insertAdjacentHTML('beforeend', formHTML);
     container.appendChild(overlay);
 }
