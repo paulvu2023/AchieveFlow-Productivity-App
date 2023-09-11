@@ -191,18 +191,16 @@ nav button:hover {
     margin-left: 5px;
 }
 
-.notes .fa-circle-plus {
-    margin-left: 29px;
+.fa-pencil {
+    margin-left: 7px;
 }
 
 .projects-menu {
-    margin-bottom: 26px;
-}
-
-.projects-menu, .notes-menu {
-    max-height: 143px;
+    padding-top: 12.5px;
+    max-height: 297px;
     padding-left: 8px;
     overflow-y: auto;
+    padding-bottom: 12.5px;
 }
 
 .projects-menu .sidebar-project, .sidebar-note {
