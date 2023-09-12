@@ -258,7 +258,7 @@ function displayDetails(task) {
     let overlay = document.getElementById('overlay');
     overlay.style.display = 'block';
 
-    const formHTML = `
+    const detailsHTML = `
         <div class="details-container">
             <button class="x-button">
                 <i class="fa-solid fa-xmark" style="color: #ffffff;"></i>
@@ -269,10 +269,11 @@ function displayDetails(task) {
             <div class="space"><span>Priority:</span> ${task.priority}</div>
             <div><span>Project:</span> ${task.project}</div>
         </div>
-    `
-    container.insertAdjacentHTML('beforeend', formHTML);
-    container.appendChild(overlay);
-    let xButton = document.querySelector('.x-button');
+    `;
+
+    container.insertAdjacentHTML('beforeend', detailsHTML);
+
+    const xButton = document.querySelector('.x-button');
     xButton.addEventListener('click', closeDetails);
 }
 
