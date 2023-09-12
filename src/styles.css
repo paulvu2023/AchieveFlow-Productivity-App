@@ -332,7 +332,6 @@ button.details:hover {
 }
 
 .notes-container {
-    margin: 10px;
     position: relative;
     width: 100%;
     max-width: 500px;
@@ -353,7 +352,9 @@ button.details:hover {
     border-radius: 5px;
 }
 
-.notes-container .fa-trash-can {
+.notes-container .delete-note {
+    border: none;
+    background-color: transparent;
     position: absolute;
     bottom: 0px;
     right: 15px;

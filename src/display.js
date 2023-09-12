@@ -23,9 +23,11 @@ function addNote() {
     notesContainer.classList.add('notes-container');
     notesContainer.innerHTML = `
     <p contenteditable="true" class="input-box" spellcheck="false"></p>
-    <i class="fa-regular fa-trash-can"></i>
+    <button class="delete-note"><i class="fa-regular fa-trash-can"></i></button>
     `
     document.querySelector('.task-list').append(notesContainer);
+
+    
 }
 
 function selectActiveSidebarButton() {
