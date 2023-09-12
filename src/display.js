@@ -27,7 +27,10 @@ function addNote() {
     `
     document.querySelector('.task-list').append(notesContainer);
 
-    
+    const deleteButton = document.querySelector('.delete-note');
+    deleteButton.addEventListener('click', e => {
+        e.target.parentElement.parentElement.remove();
+    });
 }
 
 function selectActiveSidebarButton() {
