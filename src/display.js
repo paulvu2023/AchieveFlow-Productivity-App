@@ -286,9 +286,10 @@ function closeDetails(){
 
 function openEditTaskForm(task) {
     const container = document.querySelector('.main-right');
-    let overlay = document.getElementById('overlay');
+    const overlay = document.getElementById('overlay');
     overlay.style.display = 'block';
 
+    // Create the edit task form HTML
     const formHTML = `
         <form class="edit-task-form open-edit-task-form" id="edit-task-form">
             <h1>Edit Task</h1>
@@ -311,7 +312,6 @@ function openEditTaskForm(task) {
 
                 <label for="edit-project">Project</label>
                 <select id="edit-project" name="edit-project">
-
                 </select>
 
                 <div>
@@ -322,30 +322,18 @@ function openEditTaskForm(task) {
         </form>
     `;
 
+    // Append the edit task form HTML to the container
     container.insertAdjacentHTML('beforeend', formHTML);
     container.appendChild(overlay);
 
+    // Populate project select options
     addProjectSelectOptions('edit-project');
 
-    //Change the selected priority to the task's previous priority
-    const selectPriority = document.getElementById('edit-priority');
+    // Set the selected priority and project based on the task
+    setSelectOption('edit-priority', task.priority);
+    setSelectOption('edit-project', task.project);
 
-    for (let i = 0; i < selectPriority.options.length; i++) {
-        if (selectPriority.options[i].value == task.priority) {
-            selectPriority.options[i].selected = true;
-            break;
-        }
-    }
-
-    const selectProject = document.getElementById('edit-project');
-
-    for (let i = 0; i < selectPriority.options.length; i++) {
-        if (selectProject.options[i].value == task.project) {
-            selectProject.options[i].selected = true;
-            break;
-        }
-    }
-
+    // Handle form submission
     const editTaskForm = document.getElementById('edit-task-form');
     editTaskForm.addEventListener('submit', (event) => {
         event.preventDefault();
@@ -354,8 +342,19 @@ function openEditTaskForm(task) {
         loadTasklist(projects[findProjectIndex(task.project)].taskList);
     });
 
+    // Handle form cancellation
     const cancelEditButton = document.querySelector('.cancel-edit-task-button');
     cancelEditButton.addEventListener('click', closeEditTaskForm);
+}
+
+function setSelectOption(selectId, value) {
+    const selectElement = document.getElementById(selectId);
+    for (let i = 0; i < selectElement.options.length; i++) {
+        if (selectElement.options[i].value === value) {
+            selectElement.options[i].selected = true;
+            break;
+        }
+    }
 }
 
 function closeEditTaskForm() {
