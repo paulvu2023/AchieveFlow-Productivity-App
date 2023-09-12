@@ -141,10 +141,8 @@ function loadTask(task) {
     checkbox.addEventListener('click', () => {
         if (checkbox.checked) {
             task.checked = true;
-            console.log(task)
         } else {
             task.checked = false;
-            console.log(task)
         }
     })
 
