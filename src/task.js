@@ -25,6 +25,15 @@ class Project {
     }
 }
 
+function loadProjectsIfExists() {
+    const storedProjects = localStorage.getItem('projects');
+    if (storedProjects) {
+        tasks = JSON.parse(storedProjects);
+    } else {
+        createProject('General');
+    }
+}
+
 function createProject(projectName) {
     const newProject = new Project(projectName);
     projects.push(newProject);
@@ -85,4 +94,5 @@ function editTask(task, taskList) {
     }
 }
 
-export { Task , deleteTask , createTask, createProject, editTask, projects , findProjectIndex };
+export { Task , deleteTask , createTask, createProject, editTask, projects , findProjectIndex , 
+         loadProjectsIfExists };

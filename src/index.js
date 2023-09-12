@@ -5,7 +5,7 @@ import { loadAddTaskForm , openTaskForm, closeTaskForm , openProjectForm , loadT
 import { createTask , createProject } from "./task";
 
 document.addEventListener("DOMContentLoaded", function () {
-    createProject("General");
+    loadProjectsIfExists();
     loadAddTaskForm();
     selectActiveSidebarButton();
     document.querySelector('.add-task').addEventListener('click', openTaskForm);
