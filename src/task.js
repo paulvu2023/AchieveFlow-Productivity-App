@@ -1,4 +1,4 @@
-import { loadTasklist , closeTaskForm } from "./display";
+import { loadTasklist , closeTaskForm , clearTasks } from "./display";
 
 const projects = [];
 
@@ -63,7 +63,7 @@ function createTask(event) {
     taskForm.reset();
 
     closeTaskForm();
-
+    clearTasks();
     loadTasklist(projects[findProjectIndex(project)].taskList);
 }
 

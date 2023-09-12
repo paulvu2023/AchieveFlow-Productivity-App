@@ -1,5 +1,5 @@
-import { deleteTask , editTask , projects , findProjectIndex , createProject } from './task';
-import { isThisWeek , isToday, parseISO } from 'date-fns';
+import { deleteTask, editTask, projects, findProjectIndex, createProject } from './task';
+import { isThisWeek, isToday, parseISO } from 'date-fns';
 
 function clearTasks() {
     document.querySelector('.task-list').innerHTML = '';
@@ -45,15 +45,15 @@ function addNote() {
 
 function updateNotes() {
     const notesContainer = document.querySelector('.notes-container');
-    notesContainer.addEventListener('click', function(e){
-        if (e.target.tagName === 'I' && e.target.classList.contains('fa-trash-can')){
+    notesContainer.addEventListener('click', function (e) {
+        if (e.target.tagName === 'I' && e.target.classList.contains('fa-trash-can')) {
             e.target.parentElement.parentElement.remove();
             updateStorageForNotes();
         }
         else if (e.target.tagName === 'P') {
             let notes = document.querySelectorAll('.input-box');
             notes.forEach(note => {
-                note.onkeyup = function(){
+                note.onkeyup = function () {
                     updateStorageForNotes();
                 }
             });
@@ -76,7 +76,7 @@ function switchAddTaskandAddNotesIfNeeded(button) {
     if (button.classList.contains('notes')) {
 
     }
-    else {  
+    else {
         document.querySelector('.add-task').style.display = 'flex';
         if (document.querySelector('.add-notes')) {
             document.querySelector('.add-notes').remove();
@@ -131,7 +131,7 @@ function loadTask(task) {
         'Medium': 'orange',
         'High': 'red',
     };
-    
+
     const borderColor = borderColorMap[task.priority];
     if (borderColor) {
         taskElement.style.borderColor = borderColor;
@@ -141,12 +141,12 @@ function loadTask(task) {
     detailsButton.addEventListener('click', () => {
         displayDetails(task);
     });
-    
+
     const editButton = document.getElementById(`${task.taskName}-edit`);
     editButton.addEventListener('click', () => {
         openEditTaskForm(task);
     });
-    
+
     const deleteButton = document.getElementById(`${task.taskName}-delete`);
     deleteButton.addEventListener('click', () => {
         deleteTask(task);
@@ -158,7 +158,7 @@ function loadImportantTasks() {
     const importantList = []
     for (const project of projects) {
         for (let i = 0; i < project.taskList.length; i++) {
-            if (project.taskList[i].priority == 'High'){
+            if (project.taskList[i].priority == 'High') {
                 importantList.push(project.taskList[i]);
             }
         }
@@ -273,7 +273,7 @@ function displayDetails(task) {
     xButton.addEventListener('click', closeDetails);
 }
 
-function closeDetails(){
+function closeDetails() {
     let container = document.querySelector('.details-container');
     let overlay = document.getElementById('overlay');
     container.remove();
@@ -442,6 +442,8 @@ function loadAddTaskForm() {
 }
 
 
-export { loadAddTaskForm , loadTasklist , openTaskForm , closeTaskForm , openProjectForm ,
-         loadTodayTasks , selectActiveSidebarButton, loadAllTasklists, loadWeekTasks ,
-         loadImportantTasks , clearTasks , loadNotesPage };
+export {
+    loadAddTaskForm, loadTasklist, openTaskForm, closeTaskForm, openProjectForm,
+    loadTodayTasks, selectActiveSidebarButton, loadAllTasklists, loadWeekTasks,
+    loadImportantTasks, clearTasks, loadNotesPage
+};
