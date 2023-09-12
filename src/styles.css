@@ -332,6 +332,7 @@ button.details:hover {
 }
 
 .notes-container {
+    margin: 20px;
     position: relative;
     width: 100%;
     max-width: 500px;
