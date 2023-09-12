@@ -1,6 +1,6 @@
 import { loadTasklist , closeTaskForm , clearTasks } from "./display";
 
-const projects = [];
+let projects = [];
 
 class Task {
     constructor(taskName, description, dueDate, priority, project) {
@@ -10,7 +10,7 @@ class Task {
         this.priority = priority;
         this.checked = false;
         this.project = project;
-        projects[findProjectIndex(project)].addTask(this);
+        projects[findProjectIndex(project)].taskList.push(this);
     }
 }
 
@@ -19,16 +19,12 @@ class Project {
         this.name = projectName;
         this.taskList = [];
     }
-
-    addTask(task) {
-        this.taskList.push(task);
-    }
 }
 
 function loadProjectsIfExists() {
     const storedProjects = localStorage.getItem('projects');
     if (storedProjects) {
-        tasks = JSON.parse(storedProjects);
+        projects = JSON.parse(storedProjects);
     } else {
         createProject('General');
     }
@@ -37,6 +33,7 @@ function loadProjectsIfExists() {
 function createProject(projectName) {
     const newProject = new Project(projectName);
     projects.push(newProject);
+    localStorage.setItem('projects', JSON.stringify(projects));
 }
 
 function findProjectIndex(projectName) {
@@ -56,6 +53,7 @@ function deleteTask(task) {
             taskList.splice(i, 1);
         }
     }
+    localStorage.setItem('projects', JSON.stringify(projects));
 }
 
 function createTask(event) {
@@ -74,6 +72,7 @@ function createTask(event) {
     closeTaskForm();
     clearTasks();
     loadTasklist(projects[findProjectIndex(project)].taskList);
+    localStorage.setItem('projects', JSON.stringify(projects));
 }
 
 function editTask(task, taskList) {
@@ -92,6 +91,7 @@ function editTask(task, taskList) {
             taskList[i].project = project;
         }
     }
+    localStorage.setItem('projects', JSON.stringify(projects));
 }
 
 export { Task , deleteTask , createTask, createProject, editTask, projects , findProjectIndex , 

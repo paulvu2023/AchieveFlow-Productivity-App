@@ -2,7 +2,7 @@ import "./styles.css";
 import { loadAddTaskForm , openTaskForm, closeTaskForm , openProjectForm , loadTodayTasks,
          selectActiveSidebarButton, loadAllTasklists, loadWeekTasks , loadImportantTasks ,
          loadNotesPage } from "./display";
-import { createTask , createProject } from "./task";
+import { createTask , loadProjectsIfExists } from "./task";
 
 document.addEventListener("DOMContentLoaded", function () {
     loadProjectsIfExists();
@@ -17,5 +17,6 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelector('.week').addEventListener('click', loadWeekTasks);
     document.querySelector('.important').addEventListener('click', loadImportantTasks);
     document.querySelector('.notes').addEventListener('click', loadNotesPage);
+    loadAllTasklists();
 });
 
