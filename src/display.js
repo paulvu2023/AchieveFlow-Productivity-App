@@ -163,10 +163,9 @@ function loadImportantTasks() {
             }
         }
     }
+    clearTasks();
     if (importantList.length > 0) {
         loadTasklist(importantList);
-    } else {
-        clearTasks();
     }
 }
 
@@ -179,10 +178,9 @@ function loadWeekTasks() {
             }
         }
     }
+    clearTasks();
     if (weekList.length > 0) {
         loadTasklist(weekList);
-    } else {
-        clearTasks();
     }
 }
 
@@ -195,10 +193,9 @@ function loadTodayTasks() {
             }
         }
     }
+    clearTasks();
     if (todayList.length > 0) {
         loadTasklist(todayList);
-    } else {
-        clearTasks();
     }
 }
 
