@@ -137,6 +137,17 @@ function loadTask(task) {
         taskElement.style.borderColor = borderColor;
     }
 
+    const checkbox = document.getElementById(task.taskName);
+    checkbox.addEventListener('click', () => {
+        if (checkbox.checked) {
+            task.checked = true;
+            console.log(task)
+        } else {
+            task.checked = false;
+            console.log(task)
+        }
+    })
+
     const detailsButton = document.getElementById(`${task.taskName}-details`);
     detailsButton.addEventListener('click', () => {
         displayDetails(task);
