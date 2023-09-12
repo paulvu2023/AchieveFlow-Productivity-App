@@ -162,6 +162,8 @@ function loadImportantTasks() {
     }
     if (importantList.length > 0) {
         loadTasklist(importantList);
+    } else {
+        clearTasks();
     }
 }
 
@@ -176,6 +178,8 @@ function loadWeekTasks() {
     }
     if (weekList.length > 0) {
         loadTasklist(weekList);
+    } else {
+        clearTasks();
     }
 }
 
@@ -190,6 +194,8 @@ function loadTodayTasks() {
     }
     if (todayList.length > 0) {
         loadTasklist(todayList);
+    } else {
+        clearTasks();
     }
 }
 
