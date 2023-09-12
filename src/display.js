@@ -5,8 +5,12 @@ function clearTasks() {
     document.querySelector('.task-list').innerHTML = '';
 }
 
+function loadNotesFromStorage() {
+    document.querySelector('.notes-container').innerHTML = localStorage.getItem("notes");
+}
+
 function updateStorageForNotes() {
-    localStorage.setItem('notes', document.querySelector('.notes-container').innerHTML);
+    localStorage.setItem("notes", document.querySelector('.notes-container').innerHTML);
 }
 
 function loadNotesPage() {
@@ -14,15 +18,16 @@ function loadNotesPage() {
     const container = document.querySelector('.task-list');
     const notesContainer = document.createElement('div');
 
-    notesContainer.classList.add('notes-container')
+    notesContainer.classList.add('notes-container');
     document.querySelector('.add-task').style.display = 'none';
     const addNotesButton = document.createElement('button');
     addNotesButton.innerHTML = '<i class="fa-solid fa-plus fa-beat-fade"></i>Add Notes';
-    addNotesButton.classList.toggle('add-task');
     addNotesButton.classList.toggle('add-notes');
-    notesContainer.append(addNotesButton);
-    container.append(notesContainer)
+    container.append(addNotesButton);
+    container.append(notesContainer);
 
+    loadNotesFromStorage();
+    updateNotes();
     addNotesButton.addEventListener('click', addNote);
 }
 
@@ -35,10 +40,23 @@ function addNote() {
     <button class="delete-note"><i class="fa-regular fa-trash-can"></i></button>
     `
     notesContainer.append(noteMiniContainer);
+    updateNotes();
+}
 
+function updateNotes() {
+    const notesContainer = document.querySelector('.notes-container');
     notesContainer.addEventListener('click', function(e){
-        if (e.target.tagName === 'I'){
+        if (e.target.tagName === 'I' && e.target.classList.contains('fa-trash-can')){
             e.target.parentElement.parentElement.remove();
+            updateStorageForNotes();
+        }
+        else if (e.target.tagName === 'P') {
+            let notes = document.querySelectorAll('.input-box');
+            notes.forEach(note => {
+                note.onkeyup = function(){
+                    updateStorageForNotes();
+                }
+            });
         }
     });
 }
