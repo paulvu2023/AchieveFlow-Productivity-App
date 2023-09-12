@@ -122,15 +122,19 @@ function loadTask(task) {
         </div>
     `;
 
-    document.querySelector('.task-list').appendChild(taskElement);
+    const taskList = document.querySelector('.task-list');
+    taskList.appendChild(taskElement);
+
+    // Map priority values to border colors
+    const borderColorMap = {
+        'Low': 'green',
+        'Medium': 'orange',
+        'High': 'red',
+    };
     
-    // Change task's border color according to task priority
-    if (task.priority == 'Low') {
-        document.getElementById(`task-${task.taskName}`).style.borderColor = 'green';
-    } else if (task.priority == 'Medium') {
-        document.getElementById(`task-${task.taskName}`).style.borderColor = 'orange';
-    } else if (task.priority == 'High'){
-        document.getElementById(`task-${task.taskName}`).style.borderColor = 'red';
+    const borderColor = borderColorMap[task.priority];
+    if (borderColor) {
+        taskElement.style.borderColor = borderColor;
     }
 
     const detailsButton = document.getElementById(`${task.taskName}-details`);
