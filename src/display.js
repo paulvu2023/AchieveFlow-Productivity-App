@@ -5,31 +5,41 @@ function clearTasks() {
     document.querySelector('.task-list').innerHTML = '';
 }
 
+function updateStorageForNotes() {
+    localStorage.setItem('notes', document.querySelector('.notes-container').innerHTML);
+}
+
 function loadNotesPage() {
     clearTasks();
     const container = document.querySelector('.task-list');
+    const notesContainer = document.createElement('div');
+
+    notesContainer.classList.add('notes-container')
     document.querySelector('.add-task').style.display = 'none';
     const addNotesButton = document.createElement('button');
     addNotesButton.innerHTML = '<i class="fa-solid fa-plus fa-beat-fade"></i>Add Notes';
     addNotesButton.classList.toggle('add-task');
     addNotesButton.classList.toggle('add-notes');
-    container.append(addNotesButton);
+    notesContainer.append(addNotesButton);
+    container.append(notesContainer)
 
     addNotesButton.addEventListener('click', addNote);
 }
 
 function addNote() {
-    const notesContainer = document.createElement('div');
-    notesContainer.classList.add('notes-container');
-    notesContainer.innerHTML = `
+    const notesContainer = document.querySelector('.notes-container');
+    const noteMiniContainer = document.createElement('div');
+    noteMiniContainer.classList.add('note-mini-container');
+    noteMiniContainer.innerHTML = `
     <p contenteditable="true" class="input-box" spellcheck="false"></p>
     <button class="delete-note"><i class="fa-regular fa-trash-can"></i></button>
     `
-    document.querySelector('.task-list').append(notesContainer);
+    notesContainer.append(noteMiniContainer);
 
-    const deleteButton = document.querySelector('.delete-note');
-    deleteButton.addEventListener('click', e => {
-        e.target.parentElement.parentElement.remove();
+    notesContainer.addEventListener('click', function(e){
+        if (e.target.tagName === 'I'){
+            e.target.parentElement.parentElement.remove();
+        }
     });
 }
 
