@@ -5,6 +5,19 @@ function clearTasks() {
     document.querySelector('.task-list').innerHTML = '';
 }
 
+function reloadSelectedSidebarPage() {
+    const selectedSidebarPage = document.querySelector('.active').classList;
+    if (selectedSidebarPage.contains('all')) {
+        loadAllTasklists();
+    } else if (selectedSidebarPage.contains('today')) {
+        loadTodayTasks();
+    } else if (selectedSidebarPage.contains('week')) {
+        loadWeekTasks();
+    } else if (selectedSidebarPage.contains('important')) {
+        loadImportantTasks();
+    }
+}
+
 function loadNotesFromStorage() {
     document.querySelector('.notes-container').innerHTML = localStorage.getItem("notes");
 }
@@ -159,7 +172,7 @@ function loadTask(task) {
     const deleteButton = document.getElementById(`${task.taskName}-delete`);
     deleteButton.addEventListener('click', () => {
         deleteTask(task);
-        loadTasklist(projects[findProjectIndex(task.project)].taskList);
+        
     });
 }
 
@@ -454,5 +467,5 @@ function loadAddTaskForm() {
 export {
     loadAddTaskForm, loadTasklist, openTaskForm, closeTaskForm, openProjectForm,
     loadTodayTasks, selectActiveSidebarButton, loadAllTasklists, loadWeekTasks,
-    loadImportantTasks, clearTasks, loadNotesPage
+    loadImportantTasks, clearTasks, loadNotesPage, reloadSelectedSidebarPage,
 };

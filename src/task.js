@@ -1,4 +1,4 @@
-import { loadTasklist , closeTaskForm , clearTasks } from "./display";
+import { loadTasklist , closeTaskForm , clearTasks , reloadSelectedSidebarPage } from "./display";
 
 let projects = [];
 
@@ -54,6 +54,7 @@ function deleteTask(task) {
         }
     }
     localStorage.setItem('projects', JSON.stringify(projects));
+    reloadSelectedSidebarPage();
 }
 
 function createTask(event) {
