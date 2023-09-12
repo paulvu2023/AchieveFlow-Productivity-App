@@ -85,11 +85,11 @@ function switchAddTaskandAddNotesIfNeeded(button) {
 }
 
 function loadAllTasklists() {
+    clearTasks();
     projects.forEach(project => loadTasklist(project.taskList));
 }
 
 function loadTasklist(taskList) {
-    clearTasks();
     taskList.forEach(task => loadTask(task));
 }
 
@@ -145,7 +145,6 @@ function loadTask(task) {
     const editButton = document.getElementById(`${task.taskName}-edit`);
     editButton.addEventListener('click', () => {
         openEditTaskForm(task);
-        loadTasklist(projects[findProjectIndex(task.project)].taskList);
     });
     
     const deleteButton = document.getElementById(`${task.taskName}-delete`);
@@ -339,6 +338,7 @@ function openEditTaskForm(task) {
         event.preventDefault();
         editTask(task, projects[findProjectIndex(task.project)].taskList);
         closeEditTaskForm();
+        clearTasks();
         loadTasklist(projects[findProjectIndex(task.project)].taskList);
     });
 
