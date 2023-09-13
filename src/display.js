@@ -235,6 +235,12 @@ function loadProjectTasklist(projectName) {
     loadTasklist(projects[findProjectIndex(projectName)].taskList);
 }
 
+function loadProjectsToSidebar() {
+    projects.forEach((project) => {
+        addProjectToSidebar(project.name);
+    });
+}
+
 function addProjectToSidebar(projectName) {
     const projectsMenu = document.querySelector('.projects-menu');
     const newProjectButton = document.createElement('button');
@@ -487,4 +493,5 @@ export {
     loadAddTaskForm, loadTasklist, openTaskForm, closeTaskForm, openProjectForm,
     loadTodayTasks, selectActiveSidebarButton, loadAllTasklists, loadWeekTasks,
     loadImportantTasks, clearTasks, loadNotesPage, reloadSelectedSidebarPage,
+    loadProjectsToSidebar
 };

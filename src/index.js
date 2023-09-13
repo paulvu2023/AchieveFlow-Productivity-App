@@ -1,7 +1,7 @@
 import "./styles.css";
 import { loadAddTaskForm , openTaskForm, closeTaskForm , openProjectForm , loadTodayTasks,
          selectActiveSidebarButton, loadAllTasklists, loadWeekTasks , loadImportantTasks ,
-         loadNotesPage } from "./display";
+         loadNotesPage , loadProjectsToSidebar } from "./display";
 import { createTask , loadProjectsIfExists } from "./task";
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -18,5 +18,6 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelector('.important').addEventListener('click', loadImportantTasks);
     document.querySelector('.notes').addEventListener('click', loadNotesPage);
     loadAllTasklists();
+    loadProjectsToSidebar();
 });
 
