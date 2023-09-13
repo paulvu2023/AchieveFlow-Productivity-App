@@ -233,7 +233,7 @@ function loadTodayTasks() {
 function addProjectToSidebar(projectName) {
     const projectsMenu = document.querySelector('.projects-menu');
     const newProjectButton = document.createElement('button');
-    newProjectButton.classList.add(`${projectName}-button`);
+    newProjectButton.classList.add(`${projectName.replace(/ /g, '-')}-button`);
     newProjectButton.classList.add('sidebar-project');
     newProjectButton.textContent = projectName;
     projectsMenu.append(newProjectButton);
