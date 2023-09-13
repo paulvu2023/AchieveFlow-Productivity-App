@@ -90,8 +90,20 @@ function editTask(task, taskList) {
             taskList[i].dueDate = dueDate;
             taskList[i].priority = priority;
             taskList[i].project = project;
+
+            // Add Task to new Project's TaskList
+            projects[findProjectIndex(project)].taskList.push(taskList[i]);
         }
     }
+
+    // Delete Task from former project's TaskList
+    for (let i = 0; i < taskList.length; i++) {
+        if (taskList[i].taskName === taskName) {
+            taskList.splice(i, 1);
+            break;
+        }
+    }
+
     localStorage.setItem('projects', JSON.stringify(projects));
 }
 
