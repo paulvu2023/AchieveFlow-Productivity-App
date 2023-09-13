@@ -151,11 +151,20 @@ function loadTask(task) {
     }
 
     const checkbox = document.getElementById(task.taskName);
+
+    if (task.checked == true) {
+        checkbox.checked = true;
+    } else {
+        checkbox.checked = false;
+    }
+    
     checkbox.addEventListener('click', () => {
         if (checkbox.checked) {
             task.checked = true;
+            localStorage.setItem('projects', JSON.stringify(projects));
         } else {
             task.checked = false;
+            localStorage.setItem('projects', JSON.stringify(projects));
         }
     })
 
