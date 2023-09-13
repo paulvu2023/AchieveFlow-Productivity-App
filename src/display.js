@@ -230,6 +230,11 @@ function loadTodayTasks() {
     }
 }
 
+function loadProjectTasklist(projectName) {
+    clearTasks();
+    loadTasklist(projects[findProjectIndex(projectName)].taskList);
+}
+
 function addProjectToSidebar(projectName) {
     const projectsMenu = document.querySelector('.projects-menu');
     const newProjectButton = document.createElement('button');
@@ -237,6 +242,11 @@ function addProjectToSidebar(projectName) {
     newProjectButton.classList.add('sidebar-project');
     newProjectButton.textContent = projectName;
     projectsMenu.append(newProjectButton);
+
+    const selectNewProjectButton = document.querySelector(`.${projectName.replace(/ /g, '-')}-button`);
+    selectNewProjectButton.addEventListener('click', () => {
+        loadProjectTasklist(projectName);
+    });
 }
 
 function openProjectForm() {
