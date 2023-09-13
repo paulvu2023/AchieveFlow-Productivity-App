@@ -167,6 +167,7 @@ body {
     padding-left: 4px;
     opacity: 0;
     overflow-y: auto;
+    overflow-x: hidden;
     transition: transform var(--animation-timing);
 }
 
@@ -174,6 +175,8 @@ nav {
     max-height: 100%;
     height: 100%;
     overflow-y: auto;
+    overflow-x: hidden;
+    
 }
 
 nav button {
@@ -215,6 +218,7 @@ nav button:hover {
 }
 
 .projects-menu .sidebar-project, .sidebar-note {
+    margin-left: 10px;
     font-size: 22px;
 }
 

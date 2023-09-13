@@ -1,4 +1,4 @@
-import { deleteTask, editTask, projects, findProjectIndex, createProject } from './task';
+import { deleteTask, editTask, projects, findProjectIndex, createProject , deleteProject } from './task';
 import { isThisWeek, isToday, parseISO } from 'date-fns';
 
 function clearTasks() {
@@ -236,6 +236,7 @@ function loadProjectTasklist(projectName) {
 }
 
 function loadProjectsToSidebar() {
+    document.querySelector('.projects-menu').innerHTML = '';
     projects.forEach((project) => {
         addProjectToSidebar(project.name);
     });
@@ -251,7 +252,36 @@ function addProjectToSidebar(projectName) {
 
     const selectNewProjectButton = document.querySelector(`.project-${projectName.replace(/ /g, '-')}-button`);
     selectNewProjectButton.addEventListener('click', () => {
-        loadProjectTasklist(projectName);
+        if (projects[findProjectIndex(projectName)].taskList.length > 0) {
+            loadProjectTasklist(projectName);
+        } else {
+            clearTasks();
+            const container = document.querySelector('.task-list');
+            const deleteProjectContainer = document.createElement('div');
+            const header = document.createElement('div');
+            const subheader = document.createElement('div');
+            const deleteProjectButton = document.createElement('button');
+
+            deleteProjectContainer.classList.add('deleteProjectContainer');
+            header.classList.add('deleteProjectHeader');
+            subheader.classList.add('deleteProjectSubheader');
+            deleteProjectButton.classList.add('deleteProjectButton');
+
+            header.textContent ='Empty Project!';
+            subheader.textContent ='Create a new Task or delete Project.';
+            deleteProjectButton.textContent = 'DELETE PROJECT';
+
+            deleteProjectContainer.appendChild(header);
+            deleteProjectContainer.appendChild(subheader);
+            deleteProjectContainer.appendChild(deleteProjectButton);
+            container.appendChild(deleteProjectContainer);
+
+            deleteProjectButton.addEventListener('click', () => {
+                deleteProject(projectName);
+                loadAllTasklists();
+                loadProjectsToSidebar();
+            });
+        }  
     });
 }
 
@@ -284,7 +314,7 @@ function openProjectForm() {
         const projectName = document.getElementById('project-name').value;
         createProject(projectName);
         closeProjectForm();
-        addProjectToSidebar(projectName);
+        loadProjectsToSidebar();
     });
 
     const cancelButton = document.querySelector('.cancel-project-button');

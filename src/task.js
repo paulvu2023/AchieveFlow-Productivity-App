@@ -30,6 +30,11 @@ function loadProjectsIfExists() {
     }
 }
 
+function deleteProject(projectName) {
+    projects.splice(findProjectIndex(projectName), 1);
+    localStorage.setItem('projects', JSON.stringify(projects));
+}
+
 function createProject(projectName) {
     const newProject = new Project(projectName);
     projects.push(newProject);
@@ -108,4 +113,4 @@ function editTask(task, taskList) {
 }
 
 export { Task , deleteTask , createTask, createProject, editTask, projects , findProjectIndex , 
-         loadProjectsIfExists };
+         loadProjectsIfExists , deleteProject };
