@@ -602,6 +602,43 @@ label[for="project-name"] {
     margin: 0;   
 }
 
+/* Styling for Delete Project Container and its children */
+.deleteProjectContainer {
+    display: flex;
+    gap: 10px;
+    padding: 20px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.deleteProjectHeader {
+    font-family: 'Roboto', Helvetica, sans-serif;
+    font-size: 40px;
+}
+
+.deleteProjectSubheader {
+    font-family: 'Montserrat', Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+.deleteProjectButton {
+    font-family: 'Roboto', Helvetica, sans-serif;
+    font-weight: 800;
+    margin-top: 10px;
+    border: solid 1px black;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 15px;
+    background-color: transparent;
+    transition-duration: 0.4s;
+}
+
+.deleteProjectButton:hover {
+    border: 1px solid rgb(211, 0, 0);
+    background-color: rgb(211, 0, 0);
+    color: white;
+}
+
 /* Checkbox Styling */
 .checkbox-wrapper-15 .cbx {
     user-select: none;
