@@ -80,12 +80,12 @@ function selectActiveSidebarButton() {
         sidebarButton.addEventListener('click', () => {
             document.querySelector('.active')?.classList.remove('active');
             sidebarButton.classList.add('active');
-            switchAddTaskandAddNotesIfNeeded(sidebarButton);
+            switchAddTaskButton(sidebarButton);
         });
     });
 }
 
-function switchAddTaskandAddNotesIfNeeded(button) {
+function switchAddTaskButton(button) {
     if (button.classList.contains('notes')) {
 
     }
