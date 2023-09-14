@@ -197,6 +197,7 @@ function loadTask(task) {
         deleteTask(task);
         clearTasks();
         loadTasklist(projects[findProjectIndex(thisProject)].taskList);
+        loadProjectsToSidebar();
     });
 }
 
