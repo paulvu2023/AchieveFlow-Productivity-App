@@ -74,11 +74,23 @@ function updateNotes() {
     });
 }
 
+function selectActiveProjectButton() {
+    const projectButtons = document.querySelectorAll('.projects-menu > button');
+    projectButtons.forEach(projectButton => {
+        projectButton.addEventListener('click', () => {
+            document.querySelector('.active:not(.sidebar-project)')?.classList.remove('active');
+            document.querySelector('.sidebar-project.active')?.classList.remove('active');
+            projectButton.classList.add('active');
+        });
+    });
+}
+
 function selectActiveSidebarButton() {
-    const sidebarButtons = document.querySelectorAll('nav > *');
+    const sidebarButtons = document.querySelectorAll('nav > *:not(.projects-menu)');
     sidebarButtons.forEach(sidebarButton => {
         sidebarButton.addEventListener('click', () => {
-            document.querySelector('.active')?.classList.remove('active');
+            document.querySelector('.active:not(.sidebar-project)')?.classList.remove('active');
+            document.querySelector('.sidebar-project.active')?.classList.remove('active');
             sidebarButton.classList.add('active');
             switchAddTaskButton(sidebarButton);
         });
@@ -240,6 +252,7 @@ function loadProjectsToSidebar() {
     projects.forEach((project) => {
         addProjectToSidebar(project.name);
     });
+    selectActiveProjectButton();
 }
 
 function addProjectToSidebar(projectName) {
@@ -523,5 +536,5 @@ export {
     loadAddTaskForm, loadTasklist, openTaskForm, closeTaskForm, openProjectForm,
     loadTodayTasks, selectActiveSidebarButton, loadAllTasklists, loadWeekTasks,
     loadImportantTasks, clearTasks, loadNotesPage, reloadSelectedSidebarPage,
-    loadProjectsToSidebar
+    loadProjectsToSidebar, selectActiveProjectButton
 };

@@ -1,7 +1,7 @@
 import "./styles.css";
 import { loadAddTaskForm , openTaskForm, closeTaskForm , openProjectForm , loadTodayTasks,
          selectActiveSidebarButton, loadAllTasklists, loadWeekTasks , loadImportantTasks ,
-         loadNotesPage , loadProjectsToSidebar } from "./display";
+         loadNotesPage , loadProjectsToSidebar , selectActiveProjectButton } from "./display";
 import { Task, createTask , Project , projects, loadProjectsIfExists } from "./task";
 
 
@@ -26,12 +26,14 @@ if (!exampleDataExists) {
     const learnBusiness = new Task('Study E-Commerce for 2 hours', 'Learn from Jordan Bown', tomorrow, 'Medium', 'Work');
 
     localStorage.setItem('exampleData', 'true');
+
 }
 
 document.addEventListener("DOMContentLoaded", function () {
     loadProjectsIfExists();
     loadAddTaskForm();
     selectActiveSidebarButton();
+    selectActiveProjectButton();
     document.querySelector('.add-task').addEventListener('click', openTaskForm);
     document.querySelector('.cancel-task-button').addEventListener('click', closeTaskForm);
     document.getElementById('add-task-form').addEventListener('submit', createTask);
