@@ -538,7 +538,7 @@ function openEditTaskForm(task) {
         editTask(task, projects[findProjectIndex(task.project)].taskList);
         closeEditTaskForm();
         clearTasks();
-        loadTasklist(projects[findProjectIndex(task.project)].taskList);
+        reloadSelectedSidebarPage();
         loadProjectsToSidebar();
         updateAllCounters();
     });
