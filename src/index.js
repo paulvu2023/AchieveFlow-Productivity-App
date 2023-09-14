@@ -36,7 +36,10 @@ document.addEventListener("DOMContentLoaded", function () {
     selectActiveProjectButton();
     document.querySelector('.add-task').addEventListener('click', openTaskForm);
     document.querySelector('.cancel-task-button').addEventListener('click', closeTaskForm);
-    document.getElementById('add-task-form').addEventListener('submit', createTask);
+    document.getElementById('add-task-form').addEventListener('submit', () => {
+        createTask();
+        loadProjectsToSidebar();
+    });
     document.querySelector('.projects').addEventListener('click', openProjectForm);
     document.querySelector('.all').addEventListener('click', loadAllTasklists);
     document.querySelector('.today').addEventListener('click', loadTodayTasks);
