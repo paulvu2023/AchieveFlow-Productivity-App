@@ -21,14 +21,6 @@ function reloadSelectedSidebarPage(projectName = '') {
     }
 }
 
-function loadNotesFromStorage() {
-    document.querySelector('.notes-container').innerHTML = localStorage.getItem("notes");
-}
-
-function updateStorageForNotes() {
-    localStorage.setItem("notes", document.querySelector('.notes-container').innerHTML);
-}
-
 function updateAllCounters() {
     loadProjectsToSidebar();
     updateAllCounter();
@@ -127,6 +119,38 @@ function updateImportantCounter() {
     importantButton.append(countSpan);
 }
 
+function loadNotesFromStorage() {
+    document.querySelector('.notes-container').innerHTML = localStorage.getItem("notes");
+}
+
+function updateStorageForNotes() {
+    localStorage.setItem("notes", document.querySelector('.notes-container').innerHTML);
+}
+
+function loadExampleNotes() {
+    // Check if example notes have been loaded from local storage
+    let exampleNotesLoaded = localStorage.getItem('exampleNotesLoaded') === 'true';
+    if (!exampleNotesLoaded) {
+        const exampleNotes = [
+            "For every action, there is an equal and opposite reaction - Isaac Newton",
+            "A harmless man is not a good man. A good man is a very dangerous man who has that under voluntary control. - Jordan Peterson",
+        ];
+        const notesContainer = document.querySelector('.notes-container');
+
+        exampleNotes.forEach(noteText => {
+            const noteMiniContainer = document.createElement('div');
+            noteMiniContainer.classList.add('note-mini-container');
+            noteMiniContainer.innerHTML = `
+                <p contenteditable="true" class="input-box" spellcheck="false">${noteText}</p>
+                <button class="delete-note"><i class="fa-regular fa-trash-can"></i></button>
+            `;
+            notesContainer.append(noteMiniContainer);
+        });
+
+        localStorage.setItem('exampleNotesLoaded', 'true'); // Store in local storage
+    }
+}
+
 function loadNotesPage() {
     clearTasks();
     const container = document.querySelector('.task-list');
@@ -140,7 +164,9 @@ function loadNotesPage() {
     container.append(addNotesButton);
     container.append(notesContainer);
 
+
     loadNotesFromStorage();
+    loadExampleNotes(); // Load example notes only if not loaded yet
     updateNotes();
     addNotesButton.addEventListener('click', addNote);
 }
