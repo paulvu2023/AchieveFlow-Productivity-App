@@ -2,7 +2,7 @@ import "./styles.css";
 import { loadAddTaskForm , openTaskForm, closeTaskForm , openProjectForm , loadTodayTasks,
          selectActiveSidebarButton, loadAllTasklists, loadWeekTasks , loadImportantTasks ,
          loadNotesPage , loadProjectsToSidebar , selectActiveProjectButton ,
-         reloadSelectedSidebarPage } from "./display";
+         reloadSelectedSidebarPage , updateAllCounters } from "./display";
 import { Task, createTask , Project , projects, loadProjectsIfExists } from "./task";
 
 
@@ -50,5 +50,6 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelector('.notes').addEventListener('click', loadNotesPage);
     loadAllTasklists();
     loadProjectsToSidebar();
+    updateAllCounters();
 });
 

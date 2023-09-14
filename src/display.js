@@ -27,6 +27,74 @@ function updateStorageForNotes() {
     localStorage.setItem("notes", document.querySelector('.notes-container').innerHTML);
 }
 
+function updateAllCounters() {
+    loadProjectsToSidebar();
+    updateTodayCounter();
+    updateWeekCounter();
+    updateImportantCounter();
+}
+
+function updateTodayCounter() {
+    const todayButton = document.querySelector('.today');
+    let todayCount = 0;
+    for (const project of projects) {
+        for (let i = 0; i < project.taskList.length; i++) {
+            if (isToday(parseISO(project.taskList[i].dueDate)) == true) {
+                todayCount++;
+            }
+        }
+    }
+
+    if (todayButton.children[1]) {
+        todayButton.removeChild(todayButton.children[1]);
+    }
+
+    const countSpan = document.createElement('span');
+    countSpan.textContent = todayCount;
+    todayButton.append(countSpan);
+}
+
+function updateWeekCounter() {
+    const weekButton = document.querySelector('.week');
+    let weekCount = 0;
+    for (const project of projects) {
+        for (let i = 0; i < project.taskList.length; i++) {
+            if (isThisWeek(parseISO(project.taskList[i].dueDate)) == true) {
+                weekCount++;
+            }
+        }
+    }
+
+    if (weekButton.children[1]) {
+        weekButton.removeChild(weekButton.children[1]);
+    }
+
+    const countSpan = document.createElement('span');
+    countSpan.textContent = weekCount;
+    weekButton.append(countSpan);
+}
+
+function updateImportantCounter() {
+    const importantButton = document.querySelector('.important');
+    let importantCount = 0;
+    for (const project of projects) {
+        for (let i = 0; i < project.taskList.length; i++) {
+            if (project.taskList[i].priority == 'High') {
+                importantCount++;
+            }
+        }
+    }
+
+    if (importantButton.children[1]) {
+        importantButton.removeChild(importantButton.children[1]);
+    }
+
+
+    const countSpan = document.createElement('span');
+    countSpan.textContent = importantCount;
+    importantButton.append(countSpan);
+}
+
 function loadNotesPage() {
     clearTasks();
     const container = document.querySelector('.task-list');
@@ -87,7 +155,7 @@ function selectActiveProjectButton() {
 }
 
 function selectActiveSidebarButton() {
-    const sidebarButtons = document.querySelectorAll('nav > *:not(.projects-menu)');
+    const sidebarButtons = document.querySelectorAll('.normal-categories button');
     sidebarButtons.forEach(sidebarButton => {
         sidebarButton.addEventListener('click', () => {
             document.querySelector('.active:not(.sidebar-project)')?.classList.remove('active');
@@ -550,5 +618,5 @@ export {
     loadAddTaskForm, loadTasklist, openTaskForm, closeTaskForm, openProjectForm,
     loadTodayTasks, selectActiveSidebarButton, loadAllTasklists, loadWeekTasks,
     loadImportantTasks, clearTasks, loadNotesPage, reloadSelectedSidebarPage,
-    loadProjectsToSidebar, selectActiveProjectButton
+    loadProjectsToSidebar, selectActiveProjectButton , updateAllCounters
 };
