@@ -112,5 +112,5 @@ function editTask(task, taskList) {
     localStorage.setItem('projects', JSON.stringify(projects));
 }
 
-export { Task , deleteTask , createTask, createProject, editTask, projects , findProjectIndex , 
+export { Task , Project, deleteTask , createTask, createProject, editTask, projects , findProjectIndex , 
          loadProjectsIfExists , deleteProject };
