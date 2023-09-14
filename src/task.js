@@ -1,4 +1,6 @@
 import { reloadSelectedSidebarPage } from "./sidebar";
+import { closeTaskForm, clearTasks } from "./task-dom";
+
 
 let projects = [];
 
