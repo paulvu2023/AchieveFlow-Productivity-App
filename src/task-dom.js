@@ -1,5 +1,6 @@
 import { deleteTask, editTask, projects, findProjectIndex } from './task';
 import { isThisWeek, isToday, parseISO } from 'date-fns';
+import { loadProjectsToSidebar , updateAllCounters } from './sidebar';
 
 function clearTasks() {
     document.querySelector('.task-list').innerHTML = '';
