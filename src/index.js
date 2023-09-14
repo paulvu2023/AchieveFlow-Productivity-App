@@ -1,10 +1,7 @@
 import "./styles.css";
-import { loadAddTaskForm , openTaskForm, closeTaskForm , openProjectForm , loadTodayTasks,
-         selectActiveSidebarButton, loadAllTasklists, loadWeekTasks , loadImportantTasks ,
-         loadNotesPage , loadProjectsToSidebar , selectActiveProjectButton ,
-         reloadSelectedSidebarPage , updateAllCounters } from "./display";
-import { Task, createTask , Project , projects, loadProjectsIfExists } from "./task";
-
+import { projects, loadProjectsIfExists, createTask} from "./task";
+import { loadAddTaskForm, loadAllTasklists } from "./task-dom";
+import { selectActiveSidebarButton, selectActiveProjectButton, loadProjectsToSidebar, updateAllCounters} from "./sidebar";
 
 const exampleDataExists = localStorage.getItem('exampleData');
 

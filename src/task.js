@@ -1,4 +1,4 @@
-import { loadTasklist , closeTaskForm , clearTasks , reloadSelectedSidebarPage } from "./display";
+import { reloadSelectedSidebarPage } from "./sidebar";
 
 let projects = [];
 
@@ -111,5 +111,15 @@ function editTask(task, taskList) {
     reloadSelectedSidebarPage(formerProject);
 }
 
-export { Task , Project, deleteTask , createTask, createProject, editTask, projects , findProjectIndex , 
-         loadProjectsIfExists , deleteProject };
+export {
+    Task,
+    Project,
+    deleteTask,
+    createTask,
+    createProject,
+    editTask,
+    projects,
+    findProjectIndex,
+    loadProjectsIfExists,
+    deleteProject,
+};
