@@ -7,6 +7,7 @@ function clearTasks() {
 
 function reloadSelectedSidebarPage() {
     const selectedSidebarPage = document.querySelector('.active').classList;
+    const selectedProject = document.querySelector('.sidebar-project.active')
     if (selectedSidebarPage.contains('all')) {
         loadAllTasklists();
     } else if (selectedSidebarPage.contains('today')) {
@@ -192,8 +193,10 @@ function loadTask(task) {
 
     const deleteButton = document.getElementById(`${task.taskName}-delete`);
     deleteButton.addEventListener('click', () => {
+        const thisProject = task.project;
         deleteTask(task);
-        
+        clearTasks();
+        loadTasklist(projects[findProjectIndex(thisProject)].taskList);
     });
 }
 
