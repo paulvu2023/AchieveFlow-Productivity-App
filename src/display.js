@@ -264,6 +264,7 @@ function addProjectToSidebar(projectName) {
     projectsMenu.append(newProjectButton);
 
     const selectNewProjectButton = document.querySelector(`.project-${projectName.replace(/ /g, '-')}-button`);
+
     selectNewProjectButton.addEventListener('click', () => {
         if (projects[findProjectIndex(projectName)].taskList.length > 0) {
             loadProjectTasklist(projectName);
@@ -296,6 +297,16 @@ function addProjectToSidebar(projectName) {
             });
         }  
     });
+
+    const uncheckedCount = calculateUncheckedCount(projects[findProjectIndex(projectName)]);
+    const uncheckedCountSpan = document.createElement('span');
+    uncheckedCountSpan.textContent = uncheckedCount;
+    newProjectButton.appendChild(uncheckedCountSpan);
+}
+
+function calculateUncheckedCount(project) {
+    const uncheckedTasks = project.taskList.filter(task => !task.checked);
+    return uncheckedTasks.length;
 }
 
 function openProjectForm() {

@@ -214,12 +214,36 @@ nav button:hover {
     max-height: 297px;
     padding-left: 8px;
     overflow-y: auto;
+    overflow-x: hidden;
     padding-bottom: 5px;
 }
 
 .projects-menu .sidebar-project, .sidebar-note {
     margin-left: 10px;
     font-size: 22px;
+}
+
+.sidebar-project {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+.sidebar-project span {
+    display: inline-block;
+    background-color: rgb(151, 208, 255);
+    color: white;
+    border-radius: 50%;
+    width: 27px;
+    height: 27px;
+    font-size: 23px;
+    text-align: center;
+    line-height: 28px;
+    font-weight: 800;
+    font-family: 'Montserrat', Helvetica, sans-serif; 
+    margin-right: 20px;
 }
 
 /* Styling for right side */
