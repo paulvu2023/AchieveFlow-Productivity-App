@@ -1,19 +1,3 @@
-import {
-    clearTasks,
-    loadAllTasklists,
-    loadImportantTasks,
-    loadWeekTasks,
-    loadTodayTasks,
-    loadProjectTasklist,
-    displayDetails,
-    openEditTaskForm,
-    closeEditTaskForm,
-    setSelectOption,
-    addProjectSelectOptions,
-    loadAddTaskForm,
-    openTaskForm,
-    closeTaskForm,
-} from './task-dom';
 import { deleteTask, editTask, projects, findProjectIndex } from './task';
 import { isThisWeek, isToday, parseISO } from 'date-fns';
 

@@ -1,7 +1,5 @@
-import { loadAllTasklists, loadTodayTasks, loadWeekTasks, loadImportantTasks, loadProjectTasklist, clearTasks, findProjectIndex, deleteProject } from "./task-dom";
 import { deleteProject } from "./task";
-
-
+import { loadAllTasklists, loadTodayTasks, loadWeekTasks, loadImportantTasks, loadProjectTasklist, clearTasks } from "./task-dom";
 
 function reloadSelectedSidebarPage(projectName = '') {
     const selectedSidebarPage = document.querySelector('.active').classList;

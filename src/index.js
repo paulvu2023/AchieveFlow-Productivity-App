@@ -1,7 +1,9 @@
 import "./styles.css";
 import { projects, loadProjectsIfExists, createTask} from "./task";
-import { loadAddTaskForm, loadAllTasklists } from "./task-dom";
+import { loadAddTaskForm, loadAllTasklists, openTaskForm, closeTaskForm, loadTodayTasks, loadWeekTasks, loadImportantTasks } from "./task-dom";
 import { selectActiveSidebarButton, selectActiveProjectButton, loadProjectsToSidebar, updateAllCounters} from "./sidebar";
+import { loadNotesPage } from "./notes";
+import { openProjectForm } from "./project";
 
 const exampleDataExists = localStorage.getItem('exampleData');
 
