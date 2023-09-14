@@ -442,6 +442,7 @@ function openEditTaskForm(task) {
         closeEditTaskForm();
         clearTasks();
         loadTasklist(projects[findProjectIndex(task.project)].taskList);
+        loadProjectsToSidebar();
     });
 
     // Handle form cancellation
