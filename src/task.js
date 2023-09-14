@@ -77,7 +77,6 @@ function createTask(event) {
 
     closeTaskForm();
     clearTasks();
-    loadTasklist(projects[findProjectIndex(project)].taskList);
     localStorage.setItem('projects', JSON.stringify(projects));
 }
 
