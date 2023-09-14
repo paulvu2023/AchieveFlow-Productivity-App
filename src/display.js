@@ -120,7 +120,13 @@ function updateImportantCounter() {
 }
 
 function loadNotesFromStorage() {
-    document.querySelector('.notes-container').innerHTML = localStorage.getItem("notes");
+    const notesContainer = document.querySelector('.notes-container');
+    if (notesContainer.innerHTML.trim() === '') {
+        const storedNotes = localStorage.getItem("notes");
+        if (storedNotes) {
+            notesContainer.innerHTML = storedNotes;
+        }
+    }
 }
 
 function updateStorageForNotes() {
@@ -184,6 +190,7 @@ function addNote() {
 }
 
 function updateNotes() {
+    updateStorageForNotes();
     const notesContainer = document.querySelector('.notes-container');
     notesContainer.addEventListener('click', function (e) {
         if (e.target.tagName === 'I' && e.target.classList.contains('fa-trash-can')) {
