@@ -7,7 +7,7 @@ function clearTasks() {
 
 function reloadSelectedSidebarPage() {
     const selectedSidebarPage = document.querySelector('.active').classList;
-    const selectedProject = document.querySelector('.sidebar-project.active')
+    
     if (selectedSidebarPage.contains('all')) {
         loadAllTasklists();
     } else if (selectedSidebarPage.contains('today')) {
@@ -44,8 +44,11 @@ function updateAllCounter() {
         }
     }
 
-    if (allButton.children[1]) {
-        allButton.removeChild(allButton.children[1]);
+    if (allButton) {
+        const spanElement = allButton.querySelector('span');
+        if (spanElement) {
+          allButton.removeChild(spanElement);
+        }
     }
 
     const countSpan = document.createElement('span');
@@ -64,8 +67,11 @@ function updateTodayCounter() {
         }
     }
 
-    if (todayButton.children[1]) {
-        todayButton.removeChild(todayButton.children[1]);
+    if (todayButton) {
+        const spanElement = todayButton.querySelector('span');
+        if (spanElement) {
+            todayButton.removeChild(spanElement);
+        }
     }
 
     const countSpan = document.createElement('span');
@@ -84,8 +90,11 @@ function updateWeekCounter() {
         }
     }
 
-    if (weekButton.children[1]) {
-        weekButton.removeChild(weekButton.children[1]);
+    if (weekButton) {
+        const spanElement = weekButton.querySelector('span');
+        if (spanElement) {
+          weekButton.removeChild(spanElement);
+        }
     }
 
     const countSpan = document.createElement('span');
@@ -104,10 +113,12 @@ function updateImportantCounter() {
         }
     }
 
-    if (importantButton.children[1]) {
-        importantButton.removeChild(importantButton.children[1]);
+    if (importantButton) {
+        const spanElement = importantButton.querySelector('span');
+        if (spanElement) {
+          importantButton.removeChild(spanElement);
+        }
     }
-
 
     const countSpan = document.createElement('span');
     countSpan.textContent = importantCount;
@@ -283,6 +294,7 @@ function loadTask(task) {
         const thisProject = task.project;
         deleteTask(task);
         loadProjectsToSidebar();
+        updateAllCounters();
     });
 }
 
@@ -528,6 +540,7 @@ function openEditTaskForm(task) {
         clearTasks();
         loadTasklist(projects[findProjectIndex(task.project)].taskList);
         loadProjectsToSidebar();
+        updateAllCounters();
     });
 
     // Handle form cancellation

@@ -41,6 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
         createTask(e);
         loadProjectsToSidebar();
         reloadSelectedSidebarPage();
+        updateAllCounters();
     });
     document.querySelector('.projects').addEventListener('click', openProjectForm);
     document.querySelector('.all').addEventListener('click', loadAllTasklists);
