@@ -29,9 +29,28 @@ function updateStorageForNotes() {
 
 function updateAllCounters() {
     loadProjectsToSidebar();
+    updateAllCounter();
     updateTodayCounter();
     updateWeekCounter();
     updateImportantCounter();
+}
+
+function updateAllCounter() {
+    const allButton = document.querySelector('.all');
+    let allCount = 0;
+    for (const project of projects) {
+        for (let i = 0; i < project.taskList.length; i++) {
+            allCount++;
+        }
+    }
+
+    if (allButton.children[1]) {
+        allButton.removeChild(allButton.children[1]);
+    }
+
+    const countSpan = document.createElement('span');
+    countSpan.textContent = allCount;
+    allButton.append(countSpan);
 }
 
 function updateTodayCounter() {
