@@ -86,7 +86,7 @@ function editTask(task, taskList) {
     const dueDate = document.getElementById('edit-due-date').value;
     const priority = document.getElementById('edit-priority').value;
     const project = document.getElementById('edit-project').value;
-
+    let formerProject = '';
     for (let i = 0 ; i < taskList.length; i++) {
         if (taskList[i].taskName == task.taskName) {
             taskList[i].taskName = taskName;
@@ -95,6 +95,7 @@ function editTask(task, taskList) {
             taskList[i].priority = priority;
 
             if (taskList[i].project != project) {
+                formerProject = taskList[i].project;
                 taskList[i].project = project;
                 projects[findProjectIndex(project)].taskList.push(taskList[i]);
                 for (let i = 0; i < taskList.length; i++) {
@@ -104,11 +105,10 @@ function editTask(task, taskList) {
                     }
                 }
             }
-            
         }
     }
-
     localStorage.setItem('projects', JSON.stringify(projects));
+    reloadSelectedSidebarPage(formerProject);
 }
 
 export { Task , Project, deleteTask , createTask, createProject, editTask, projects , findProjectIndex , 

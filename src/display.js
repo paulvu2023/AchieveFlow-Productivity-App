@@ -5,7 +5,7 @@ function clearTasks() {
     document.querySelector('.task-list').innerHTML = '';
 }
 
-function reloadSelectedSidebarPage() {
+function reloadSelectedSidebarPage(projectName = '') {
     const selectedSidebarPage = document.querySelector('.active').classList;
     
     if (selectedSidebarPage.contains('all')) {
@@ -16,6 +16,8 @@ function reloadSelectedSidebarPage() {
         loadWeekTasks();
     } else if (selectedSidebarPage.contains('important')) {
         loadImportantTasks();
+    } else {
+        loadProjectTasklist(projectName);
     }
 }
 
@@ -535,10 +537,9 @@ function openEditTaskForm(task) {
     const editTaskForm = document.getElementById('edit-task-form');
     editTaskForm.addEventListener('submit', (event) => {
         event.preventDefault();
+        clearTasks();
         editTask(task, projects[findProjectIndex(task.project)].taskList);
         closeEditTaskForm();
-        clearTasks();
-        reloadSelectedSidebarPage();
         loadProjectsToSidebar();
         updateAllCounters();
     });

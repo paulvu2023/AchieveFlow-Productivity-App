@@ -40,7 +40,6 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById('add-task-form').addEventListener('submit', (e) => {
         createTask(e);
         loadProjectsToSidebar();
-        reloadSelectedSidebarPage();
         updateAllCounters();
     });
     document.querySelector('.projects').addEventListener('click', openProjectForm);
