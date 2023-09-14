@@ -21,7 +21,7 @@ if (!exampleDataExists) {
     const walk = new Task('Go on walk', 'For 15 Minutes', tomorrow, 'Low', 'Fitness');
     const workout = new Task('Workout at Gym', 'Train Chest, Triceps, and Shoulders', today, 'High', 'Fitness');
     const drinkWater = new Task('Drink water', '16 Cups', today, 'Medium', 'Fitness');
-    const read = new Task('Read for 1 hour', 'Read Way Of The Wolf', 'today', 'Low', 'Work');
+    const read = new Task('Read for 1 hour', 'Read Way Of The Wolf', today, 'Low', 'Work');
     const code = new Task('Code For 5 Hours', 'With 3 breaks for 15 minutes', today, 'High', 'Work');
     const learnBusiness = new Task('Study E-Commerce for 2 hours', 'Learn from Jordan Bown', tomorrow, 'Medium', 'Work');
 
