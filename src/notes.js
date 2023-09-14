@@ -1,3 +1,5 @@
+import { clearTasks } from "./task-dom";
+
 function loadNotesFromStorage() {
     const notesContainer = document.querySelector('.notes-container');
     if (notesContainer.innerHTML.trim() === '') {
