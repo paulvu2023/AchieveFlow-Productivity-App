@@ -1,4 +1,4 @@
-# Super-To-Do-List
+# AchieveFlow-Productivity-App
 
 Welcome to AchieveFlow, your ultimate productivity companion. AchieveFlow allows users to experience increased productivity and task management efficiency, bringing them closer to the Flow State.
 
@@ -12,7 +12,7 @@ AchieveFlow allows you to:
   
 - **Task Details**: Add descriptions and due dates to tasks, ensuring users never miss an important deadlines.
   
-- **Prioritize**: Assign priority levels (High, Medium, Low) to tasks, enabling users to focus on what truly matters.
+- **Prioritize**: Assign priority levels (High, Medium, Low) to tasks, enabling users to focus on what truly matters. The task color automatically changes based on the priority (Red, Yellow, Green).
   
 - **Track Progress**: Mark tasks as completed, filling users with pride.
   
@@ -27,6 +27,7 @@ AchieveFlow allows you to:
   
 [Live App](https://paulvu2023.github.io/AchieveFlow-Productivity-App/)
 
+![AchieveFlowScreenshot](https://github.com/paulvu2023/AchieveFlow-Productivity-App/assets/118864214/5d3c4fe7-5376-46cd-a326-7b18f535b96a)
 
 ## Contact Information
 
