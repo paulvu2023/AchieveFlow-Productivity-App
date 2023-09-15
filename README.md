@@ -12,7 +12,7 @@ AchieveFlow allows you to:
   
 - **Task Details**: Add descriptions and due dates to tasks, ensuring users never miss an important deadlines.
   
-- **Prioritize**: Assign priority levels (High, Medium, Low) to tasks, enabling users to focus on what truly matters.
+- **Prioritize**: Assign priority levels (High, Medium, Low) to tasks, enabling users to focus on what truly matters. The task color automatically changes based on the priority. Red = High, Yellow = Medium, and Green = Low.
   
 - **Track Progress**: Mark tasks as completed, filling users with pride.
   
