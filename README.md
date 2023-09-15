@@ -23,12 +23,15 @@ AchieveFlow allows you to:
 - **Boost Learning and Productivity**: Foster personal growth by creating and storing notes within AchieveFlow.
   
 - **Intelligent Sorting**: Let AchieveFlow do the work for you, automatically sorting tasks based on due dates and priorities.
+
   
 [Live App](https://paulvu2023.github.io/AchieveFlow-Productivity-App/)
+
 
 ## Contact Information
 
 If you have any questions or feedback, please don't hesitate to reach out:
 
 - Email: [workpaulvu@gmail.com](mailto:workpaulvu@gmail.com)
+- 
 - LinkedIn: [Paul Vu on LinkedIn](https://www.linkedin.com/in/paul-vu-business)
