@@ -75,6 +75,7 @@ function loadTask(task) {
             task.checked = false;
             localStorage.setItem('projects', JSON.stringify(projects));
         }
+        updateAllCounters();
     })
 
     const detailsButton = document.getElementById(`${task.taskName}-details`);
