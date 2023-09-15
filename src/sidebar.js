@@ -31,7 +31,9 @@ function updateAllCounter() {
     let allCount = 0;
     for (const project of projects) {
         for (let i = 0; i < project.taskList.length; i++) {
-            allCount++;
+            if (!(project.taskList[i].checked)){
+                allCount++;
+            }
         }
     }
 
