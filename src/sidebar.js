@@ -54,7 +54,7 @@ function updateTodayCounter() {
     let todayCount = 0;
     for (const project of projects) {
         for (let i = 0; i < project.taskList.length; i++) {
-            if (isToday(parseISO(project.taskList[i].dueDate)) == true) {
+            if (isToday(parseISO(project.taskList[i].dueDate)) == true && !(project.taskList[i].checked)) {
                 todayCount++;
             }
         }
