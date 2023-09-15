@@ -26,7 +26,7 @@ AchieveFlow allows you to:
 
   
 [Live App](https://paulvu2023.github.io/AchieveFlow-Productivity-App/)
-![AchieveFlowScreenshot](https://github.com/paulvu2023/AchieveFlow-Productivity-App/assets/118864214/547fad97-9be5-4f5b-9995-1c92bb4a77e2)
+![AchieveFlowScreenshotTransformed](https://github.com/paulvu2023/AchieveFlow-Productivity-App/assets/118864214/f3d1993e-d753-4d72-aa7a-706f30e9eafd)
 
 ## Contact Information
 
