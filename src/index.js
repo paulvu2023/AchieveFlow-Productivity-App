@@ -1,7 +1,7 @@
 import "./styles.css";
 import { Project, Task, projects, loadProjectsIfExists, createTask} from "./task";
 import { loadAddTaskForm, loadAllTasklists, openTaskForm, closeTaskForm, loadTodayTasks, loadWeekTasks, loadImportantTasks } from "./task-dom";
-import { selectActiveSidebarButton, selectActiveProjectButton, loadProjectsToSidebar, updateAllCounters} from "./sidebar";
+import { selectActiveSidebarButton, selectActiveProjectButton, loadProjectsToSidebar, updateAllCounters, reloadSelectedSidebarPage } from "./sidebar";
 import { loadNotesPage } from "./notes";
 import { openProjectForm } from "./project";
 
@@ -39,6 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById('add-task-form').addEventListener('submit', (e) => {
         createTask(e);
         loadProjectsToSidebar();
+        reloadSelectedSidebarPage();
         updateAllCounters();
     });
     document.querySelector('.projects').addEventListener('click', openProjectForm);
