@@ -1,4 +1,4 @@
-import { projects, createProject } from "./task";
+import { createProject } from "./task";
 import { loadProjectsToSidebar } from "./sidebar";
 
 function openProjectForm() {
