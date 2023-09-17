@@ -1,0 +1,816 @@
+html, body {
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('/images/background.png');
+}
+
+/* Hamburger Styling */
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+:root {
+    --bar-width: 40px;
+    --bar-height: 4px;
+    --hamburger-gap: 8px;
+    --foreground: rgb(59, 59, 59);
+    --animation-timing: 200ms ease-in-out;
+}
+
+.hamburger-menu {
+    --x-width: calc((var(--bar-height) * 3 + var(--hamburger-gap) * 2) * 1.41421356237);
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--hamburger-gap);
+    width: max-content;
+    cursor: pointer;
+    padding: 15px;
+    background-color: rgb(225, 236, 250);
+    border-radius: 0 0 0 10px;
+}
+
+.hamburger-menu::before,
+.hamburger-menu::after,
+.hamburger-menu input {
+    content: "";
+    width: var(--bar-width);
+    height: var(--bar-height);
+    background-color: var(--foreground);
+    border-radius: 9999px;
+    transform-origin: left center;
+    transition: opacity var(--animation-timing), width var(--animation-timing), rotate var(--animation-timing), translate var(--animation-timing);
+}
+
+.hamburger-menu input {
+    appearance: none;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    pointer-events: none;
+}
+
+.hamburger-menu:has(input:checked)::before {
+    width: var(--x-width);
+    rotate: 45deg;
+    translate: 0 calc(var(--bar-height) / -2);
+}
+
+.hamburger-menu:has(input:checked)::after {
+    width: var(--x-width);
+    rotate: -45deg;
+    translate: 0 calc(var(--bar-height) / 2);
+}
+
+.hamburger-menu input:checked {
+    opacity: 0;
+    width: 0;
+}
+
+/* Container Styling */
+.container {
+    max-height: 100%;
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: 70px 1fr;
+    background-color: aliceblue;
+    width: 70%;
+    min-height: 750px;
+    border-radius: 10px;
+}
+
+@media (max-width: 1500px) {
+    .container {
+        height: 100%;
+        width: 100%;
+    }
+
+    .main-right .task-list {
+        max-height: 100%;
+        height: 85%;
+    }
+}
+
+@media (max-width: 750px) {
+    body {
+        align-items: start;
+    }
+
+    .main-right .task-list {
+        max-height: 100%;
+        height: 85%;
+    }
+}
+
+/* Header Styling */
+.header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: rgb(151, 208, 255);
+    border-radius: 10px 10px 0 0;
+    border-bottom: 1px solid rgb(152, 197, 240);
+}
+
+.header img {
+    height: 80%;
+    margin-left: 20px;
+}
+
+.header div {
+    color: aliceblue;
+    font-size: 40px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
+}
+
+.main {
+    max-height: 100%;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+}
+
+/* Styling for sidebar */
+.active {
+    font-weight: 800;
+    transform: scale(1.1);
+}
+
+.hamburger-menu:has(input:checked) + .sidebar {
+    transform: translateX(0);
+    width: 230px;
+    opacity: 1;
+    transition: transform var(--animation-timing);
+}
+
+.sidebar {
+    max-height: 100%;
+    height: 100%;
+    transform: translateX(-100%);
+    width: 0;
+    background-color: rgb(225, 236, 250);
+    border-right: 1px solid rgb(152, 197, 240);
+    border-radius: 0 0 0 10px;
+    padding-top: 60px;
+    padding-left: 4px;
+    opacity: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    transition: transform var(--animation-timing);
+}
+
+.normal-categories button{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+nav {
+    margin-top: 0px;
+    max-height: 100%;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    
+}
+
+nav button {
+    margin-left: 5px;
+    display: block;
+    border: none;
+    background: none;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    font-size: 25px;
+    margin-bottom: 25px;
+    color: rgb(77, 75, 75);
+    transition: transform 0.2s ease-in-out;
+}
+
+button.projects {
+    margin-bottom: 0px;
+}
+
+nav button:hover {
+    transform: scale(1.1);
+}
+
+.fa-circle-plus {
+    font-size: 25px;
+    margin-left: 5px;
+}
+
+.fa-pencil {
+    margin-left: 7px;
+}
+
+.projects-menu {
+    padding-top: 20px;
+    max-height: 297px;
+    padding-left: 8px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-bottom: 5px;
+}
+
+.projects-menu .sidebar-project, .sidebar-note {
+    margin-left: 10px;
+    font-size: 22px;
+}
+
+.sidebar-project {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+.sidebar-project span, button span {
+    display: inline-block;
+    background-color: rgb(151, 208, 255);
+    color: white;
+    border-radius: 50%;
+    width: 27px;
+    height: 27px;
+    font-size: 23px;
+    text-align: center;
+    padding-right: 1px;
+    line-height: 28px;
+    font-weight: 800;
+    font-family: 'Montserrat', Helvetica, sans-serif; 
+    margin-right: 20px;
+}
+
+.normal-categories button span {
+    margin-right: 15px;
+}
+
+/* Styling for right side */
+.main-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 30px;
+    max-height: 100%;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.add-task,
+.add-notes /* the big task button */ {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border: none;
+    outline: none;
+    background-color: rgb(225, 236, 250);
+    width: 90%;
+    padding: 15px;
+    border-radius: 12px;
+    font-size: 25px;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+    margin-bottom: 20px;
+}
+
+.add-task:hover,
+.add-notes:hover {
+    transform: scale(1.05);
+    color: rgb(45, 141, 219);
+}
+
+.add-task:active,
+.add-notes:active {
+    transform: scale(0.8);
+}
+
+.fa-beat-fade {
+    font-size: 30px;
+}
+
+/* Styling for Task List and Tasks */
+.task-list {
+    height: 600px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.task {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid gray;
+    padding: 10px;
+    margin: 10px 60px 10px 60px;
+}
+
+.task-right-side {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+button.details {
+    background-color: transparent;
+    border: 1px solid rgb(21, 150, 255);
+    color: rgb(21, 150, 255);
+    font-size: 12px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    border-radius: 3px;
+    padding: 5px;
+    width: 70px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button.details:hover {
+    background-color: rgb(21, 150, 255);
+    color: aliceblue;
+}
+
+.task-date {
+    color: rgb(21, 150, 255);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.fa-pen-to-square,
+.fa-trash-can {
+    color: rgb(21, 150, 255);
+    font-size: 18px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.edit-task,
+.delete-task {
+    background-color: transparent;
+    border: none;
+}
+
+.fa-pen-to-square:hover,
+.fa-trash-can:hover {
+    transform: scale(1.2);
+}
+
+/* Styling for Notes */
+.notes-container {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: 1fr 1fr;
+    padding: 20px;
+}
+
+.add-notes {
+    margin: 0 auto;
+}
+
+.note-mini-container {
+    margin: 20px;
+    position: relative;
+    width: 90%;
+    max-width: 500px;
+    max-height: 250px;
+    min-height: 150px;
+}
+
+.input-box {
+    width: 100%;
+    height: 100%;
+    min-height: 150px;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-weight: 100;
+    background-color: white;
+    color: rgb(21, 150, 255);
+    padding: 25px;
+    margin: 20px 0;
+    outline: none;
+    border-radius: 12px;
+    overflow: auto;
+}
+
+.note-mini-container .delete-note {
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    bottom: 0px;
+    right: 15px;
+    cursor: pointer;
+}
+
+/* Styling for Add Task Form and Edit Task Form */
+
+.add-task-form,
+.edit-task-form {
+    background-color: aliceblue;
+    border-radius: 12px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.1);
+    visibility: hidden;
+    transition: transform 0.4s, top 0.4s;
+    z-index: 2;
+}
+
+.open-add-task-form,
+.open-edit-task-form {
+    visibility: visible;
+    top: 55%;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.add-task-form h1,
+.edit-task-form h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    border-radius: 12px 12px 0px 0px;
+    background-color: lightskyblue;
+    color: white;
+    margin: 0;
+    padding: 20px;
+    padding-left: 30px;
+}
+
+.add-task-form fieldset,
+.edit-task-form fieldset {
+    width: 400px;
+    height: 540px;
+}
+
+fieldset {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border: none;
+    margin: 0;
+    margin-bottom: 25px;
+    padding: 20px 30px 0px 30px;
+    border-radius: 0px 0px 12px 12px;
+}
+
+label {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    color: rgb(59, 59, 59);
+}
+
+input,
+select,
+fieldset button {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    padding: 7px;
+    margin-top: 5px;
+    margin-bottom: 40px;
+}
+
+input[type="date"] {
+    padding: 15px 7px 15px 7px;
+}
+
+input:focus {
+    outline: none;
+    border: 2px solid rgb(17, 77, 156);
+}
+
+input:invalid {
+    border: 2px solid red;
+}
+
+label span {
+    color: rgb(21, 150, 255);
+    font-family: 'Montserrat', sans-serif;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 390px;
+}
+
+fieldset div {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+}
+
+fieldset button {
+    margin-top: -15px;
+    width: 150px;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.add-task-button,
+.edit-task-button,
+.add-project-button {
+    font-weight: 800;
+    background-color: rgb(9, 124, 255);
+    color: white;
+    border: none;
+}
+
+.add-task-button:hover,
+.edit-task-button:hover,
+.add-project-button:hover {
+    background-color: rgb(0, 79, 248);
+}
+
+.cancel-task-button,
+.cancel-edit-task-button,
+.cancel-project-button {
+    background-color: transparent;
+    border: solid 1px gray;
+}
+
+.cancel-task-button:hover,
+.cancel-edit-task-button:hover,
+.cancel-project-button:hover {
+    border: solid 1px rgb(0, 36, 196);
+    color: rgb(0, 36, 196);
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+/* Styling for Details Popup */
+
+.details-container {
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    height: 400px;
+    background-color: lightskyblue;
+    border-radius: 12px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    padding: 20px 50px 0px 50px;
+    overflow: hidden;
+}
+
+.x-button {
+    background-color: transparent;
+    border: none;
+    font-size: 30px;
+    align-self: flex-end;
+}
+
+.details-container h1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 40px;
+    margin-top: 0;
+    color: white;
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 100px;
+}
+
+.details-container > .description-detail {
+    margin-top: 30px;
+    max-height: 75px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.details-container > div {
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 5px;
+    font-weight: 800;
+    color: white;
+}
+
+.space {
+    margin-bottom: 30px;
+}
+
+/* Styling for Projects Form */
+.project-form {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    height: 200px;
+    border-radius: 12px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: aliceblue;
+    z-index: 2;
+}
+
+label[for="project-name"] {
+   margin-top: 20px;
+}
+
+#project-name {
+    margin-bottom: 25px;
+}
+
+#add-project-form fieldset div button {
+    margin: 0;   
+}
+
+/* Styling for Delete Project Container and its children */
+.deleteProjectContainer {
+    display: flex;
+    gap: 10px;
+    padding: 20px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.deleteProjectHeader {
+    font-family: 'Roboto', Helvetica, sans-serif;
+    font-size: 40px;
+}
+
+.deleteProjectSubheader {
+    font-family: 'Montserrat', Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+.deleteProjectButton {
+    font-family: 'Roboto', Helvetica, sans-serif;
+    font-weight: 800;
+    margin-top: 10px;
+    border: solid 1px black;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 15px;
+    background-color: transparent;
+    transition-duration: 0.4s;
+}
+
+.deleteProjectButton:hover {
+    border: 1px solid rgb(211, 0, 0);
+    background-color: rgb(211, 0, 0);
+    color: white;
+}
+
+/* Checkbox Styling */
+.checkbox-wrapper-15 .cbx {
+    user-select: none;
+    tap-highlight-color: transparent;
+    cursor: pointer;
+}
+
+.checkbox-wrapper-15 .cbx span {
+    display: inline-block;
+    vertical-align: middle;
+    transform: translate3d(0, 0, 0);
+}
+
+.checkbox-wrapper-15 .cbx span:first-child {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    transform: scale(1);
+    vertical-align: middle;
+    border: 1px solid rgb(21, 150, 255);
+    transition: all 0.2s ease;
+}
+
+.checkbox-wrapper-15 .cbx span:first-child svg {
+    position: absolute;
+    z-index: 1;
+    top: 8px;
+    left: 6px;
+    fill: none;
+    stroke: white;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 16px;
+    stroke-dashoffset: 16px;
+    transition: all 0.3s ease;
+    transition-delay: 0.1s;
+    transform: translate3d(0, 0, 0);
+}
+
+.checkbox-wrapper-15 .cbx span:first-child:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: rgb(0, 110, 255);
+    display: block;
+    transform: scale(0);
+    opacity: 1;
+    border-radius: 50%;
+    transition-delay: 0.2s;
+}
+
+.checkbox-wrapper-15 .cbx span:last-child {
+    margin-left: 8px;
+}
+
+.checkbox-wrapper-15 .cbx span:last-child:after {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    background: #B9B8C3;
+    transform-origin: 0 0;
+    transform: scaleX(0);
+}
+
+.checkbox-wrapper-15 .cbx:hover span:first-child {
+    border-color: rgb(0, 110, 255);
+}
+
+.checkbox-wrapper-15 .inp-cbx:checked + .cbx span:first-child {
+    border-color: rgb(0, 110, 255);
+    background: rgb(0, 110, 255);
+    animation: check-15 0.6s ease;
+}
+
+.checkbox-wrapper-15 .inp-cbx:checked + .cbx span:first-child svg {
+    stroke-dashoffset: 0;
+}
+
+.checkbox-wrapper-15 .inp-cbx:checked + .cbx span:first-child:before {
+    transform: scale(2.2);
+    opacity: 0;
+    transition: all 0.6s ease;
+}
+
+.checkbox-wrapper-15 .inp-cbx:checked + .cbx span:last-child {
+    color: #B9B8C3;
+    transition: all 0.3s ease;
+}
+
+.checkbox-wrapper-15 .inp-cbx:checked + .cbx span:last-child:after {
+    transform: scaleX(1);
+    transition: all 0.3s ease;
+}
+
+@keyframes check-15 {
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+
+/* Styling for Scrollbar */
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgba(132, 220, 255, 0.75);
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(73, 203, 255);
+}
