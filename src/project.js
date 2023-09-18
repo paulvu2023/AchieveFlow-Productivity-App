@@ -1,12 +1,12 @@
-import { createProject } from "./task";
-import { loadProjectsToSidebar } from "./sidebar";
+import { createProject } from './task';
+import { loadProjectsToSidebar } from './sidebar';
 
 function openProjectForm() {
-    const container = document.querySelector('.project-container');
-    const overlay = document.createElement('div');
-    overlay.classList.add('overlay');
+  const container = document.querySelector('.project-container');
+  const overlay = document.createElement('div');
+  overlay.classList.add('overlay');
 
-    const formHTML = `
+  const formHTML = `
         <div class="project-form">
             <form class="add-project-form" id="add-project-form">
                 <fieldset>
@@ -21,28 +21,28 @@ function openProjectForm() {
         </div>
     `;
 
-    container.insertAdjacentHTML('beforeend', formHTML);
-    container.appendChild(overlay);
+  container.insertAdjacentHTML('beforeend', formHTML);
+  container.appendChild(overlay);
 
-    const projectForm = document.getElementById('add-project-form');
-    projectForm.addEventListener('submit', (event) => {
-        event.preventDefault();
-        const projectName = document.getElementById('project-name').value;
-        createProject(projectName);
-        closeProjectForm();
-        loadProjectsToSidebar();
-    });
+  const projectForm = document.getElementById('add-project-form');
+  projectForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const projectName = document.getElementById('project-name').value;
+    createProject(projectName);
+    closeProjectForm();
+    loadProjectsToSidebar();
+  });
 
-    const cancelButton = document.querySelector('.cancel-project-button');
-    cancelButton.addEventListener('click', closeProjectForm);
+  const cancelButton = document.querySelector('.cancel-project-button');
+  cancelButton.addEventListener('click', closeProjectForm);
 }
 
 function closeProjectForm() {
-    const container = document.querySelector('.project-container');
-    container.innerHTML = '';
+  const container = document.querySelector('.project-container');
+  container.innerHTML = '';
 }
 
 export {
-    openProjectForm,
-    closeProjectForm
+  openProjectForm,
+  closeProjectForm,
 };
