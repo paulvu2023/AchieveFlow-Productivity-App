@@ -6,10 +6,9 @@ import {
 
 function reloadSelectedSidebarPage(projectName = '') {
   const selectedSidebarPage = document.querySelector('.active');
-
+  console.log(selectedSidebarPage)
   if (selectedSidebarPage) {
     const classList = selectedSidebarPage.classList;
-
     if (classList.contains('all')) {
       loadAllTasklists();
     } else if (classList.contains('today')) {
@@ -19,10 +18,18 @@ function reloadSelectedSidebarPage(projectName = '') {
     } else if (classList.contains('important')) {
       loadImportantTasks();
     } else {
-      loadProjectTasklist(projectName);
+      loadProjectTasklist(getActiveProjectName(selectedSidebarPage));
     }
   } else {
     loadProjectTasklist(projectName);
+  }
+}
+
+function getActiveProjectName(projectButton) {
+  for (const project of projects) {
+    if (projectButton.classList.contains(`project-${project.name}-button`)) {
+      return project.name;
+    }
   }
 }
 
