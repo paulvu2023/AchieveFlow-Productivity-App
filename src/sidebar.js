@@ -151,7 +151,7 @@ function selectActiveSidebarButton() {
 
 function switchAddTaskButton(button) {
   if (button.classList.contains('notes')) {
-
+    //
   } else {
     document.querySelector('.add-task').style.display = 'flex';
     if (document.querySelector('.add-notes')) {
@@ -161,19 +161,27 @@ function switchAddTaskButton(button) {
 }
 
 function loadProjectsToSidebar() {
+  const activeProject = document.querySelector('.projects-menu > button.active');
   document.querySelector('.projects-menu').innerHTML = '';
   projects.forEach((project) => {
-    addProjectToSidebar(project.name);
+    addProjectToSidebar(project.name, activeProject);
   });
   selectActiveProjectButton();
 }
 
-function addProjectToSidebar(projectName) {
+function addProjectToSidebar(projectName, activeProject = null) {
   const projectsMenu = document.querySelector('.projects-menu');
   const newProjectButton = document.createElement('button');
+  newProjectButton.textContent = projectName;
   newProjectButton.classList.add(`project-${projectName.replace(/ /g, '-')}-button`);
   newProjectButton.classList.add('sidebar-project');
-  newProjectButton.textContent = projectName;
+
+  if (activeProject) {
+    if (activeProject.classList.contains(`project-${projectName}-button`)) {
+      newProjectButton.classList.add('active');
+    }
+  }
+
   projectsMenu.append(newProjectButton);
 
   const selectNewProjectButton = document.querySelector(`.project-${projectName.replace(/ /g, '-')}-button`);
