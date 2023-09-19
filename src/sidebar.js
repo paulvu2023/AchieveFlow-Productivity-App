@@ -5,16 +5,22 @@ import {
 } from './task-dom';
 
 function reloadSelectedSidebarPage(projectName = '') {
-  const selectedSidebarPage = document.querySelector('.active').classList;
+  const selectedSidebarPage = document.querySelector('.active');
 
-  if (selectedSidebarPage.contains('all')) {
-    loadAllTasklists();
-  } else if (selectedSidebarPage.contains('today')) {
-    loadTodayTasks();
-  } else if (selectedSidebarPage.contains('week')) {
-    loadWeekTasks();
-  } else if (selectedSidebarPage.contains('important')) {
-    loadImportantTasks();
+  if (selectedSidebarPage) {
+    const classList = selectedSidebarPage.classList;
+
+    if (classList.contains('all')) {
+      loadAllTasklists();
+    } else if (classList.contains('today')) {
+      loadTodayTasks();
+    } else if (classList.contains('week')) {
+      loadWeekTasks();
+    } else if (classList.contains('important')) {
+      loadImportantTasks();
+    } else {
+      loadProjectTasklist(projectName);
+    }
   } else {
     loadProjectTasklist(projectName);
   }
@@ -132,7 +138,7 @@ function selectActiveProjectButton() {
 }
 
 function selectActiveSidebarButton() {
-  const sidebarButtons = document.querySelectorAll('.normal-categories button');
+  const sidebarButtons = document.querySelectorAll('.normal-categories > button');
   sidebarButtons.forEach((sidebarButton) => {
     sidebarButton.addEventListener('click', () => {
       document.querySelector('.active:not(.sidebar-project)')?.classList.remove('active');
