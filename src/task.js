@@ -52,15 +52,14 @@ function findProjectIndex(projectName) {
 }
 
 function deleteTask(task) {
-  const { taskList } = projects[findProjectIndex(task.project)];
-
+  const taskList = projects[findProjectIndex(task.project)].taskList;
   for (let i = 0; i < taskList.length; i++) {
     if (task.taskName == taskList[i].taskName) {
       taskList.splice(i, 1);
     }
   }
   localStorage.setItem('projects', JSON.stringify(projects));
-  reloadSelectedSidebarPage();
+  reloadSelectedSidebarPage(task.project);
 }
 
 function createTask(event) {

@@ -94,7 +94,7 @@ function loadTask(task) {
   deleteButton.addEventListener('click', () => {
     const thisProject = task.project;
     deleteTask(task);
-    loadProjectsToSidebar();
+    loadProjectsToSidebar(thisProject);
     updateAllCounters();
   });
 }
