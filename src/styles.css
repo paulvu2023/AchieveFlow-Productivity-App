@@ -104,6 +104,8 @@ body {
 @media (max-width: 1000px) {
     .task {
         flex-direction: column;
+        align-items: center;
+        gap: 5px;
     }
 }
 
