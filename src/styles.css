@@ -101,6 +101,12 @@ body {
     }
 }
 
+@media (max-width: 1000px) {
+    .task {
+        flex-direction: column;
+    }
+}
+
 @media (max-width: 750px) {
     body {
         align-items: start;
@@ -317,6 +323,7 @@ nav button:hover {
 
 .task {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     border: 1px solid gray;
     padding: 10px;
