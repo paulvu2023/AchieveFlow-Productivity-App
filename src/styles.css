@@ -122,6 +122,23 @@ body {
     }
 }
 
+@media (max-width: 700px) {
+    .container {
+        position: relative;
+    }
+
+    .main .sidebar {
+        z-index: 1;
+        position: absolute;
+    }
+
+    .hamburger-menu {
+        position: absolute;
+        background-color: transparent;
+        z-index: 2;
+    }
+}
+
 /* Header Styling */
 .header {
     display: flex;
