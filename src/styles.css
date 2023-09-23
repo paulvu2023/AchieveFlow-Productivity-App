@@ -145,6 +145,10 @@ body {
         position: relative;
     }
 
+    nav {
+        padding: 5px;
+    }
+
     .main-right {
         height: 90vh;
     }
@@ -164,6 +168,14 @@ body {
         max-height: 100%;
         height: auto;
         overflow-y: auto;
+    }
+
+    .sidebar * {
+        font-size: calc(15px + 1.5vw);
+    }
+
+    .sidebar nav .projects-menu * {
+        font-size: calc(15px + 1.5vw);
     }
 }
 
