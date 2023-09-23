@@ -94,10 +94,14 @@ body {
         height: 100%;
         width: 100%;
     }
+
+    .main-right {
+        height: 90vh;
+    }
     
-    .task-list {
+    .main .task-list {
         max-height: 100%;
-        height: auto;
+        height: 100%;
         overflow-y: auto;
     }
 }
@@ -108,6 +112,16 @@ body {
         align-items: center;
         gap: 5px;
     }
+
+    .main-right {
+        height: 90vh;
+    }
+
+    .main .task-list {
+        max-height: 100%;
+        height: auto;
+        overflow-y: auto;
+    }
 }
 
 @media (max-width: 750px) {
@@ -115,7 +129,11 @@ body {
         align-items: start;
     }
 
-    .task-list {
+    .main-right {
+        height: 90vh;
+    }
+
+    .main .task-list {
         max-height: 100%;
         height: auto;
         overflow-y: auto;
@@ -127,6 +145,10 @@ body {
         position: relative;
     }
 
+    .main-right {
+        height: 90vh;
+    }
+
     .main .sidebar {
         z-index: 1;
         position: absolute;
@@ -136,6 +158,12 @@ body {
         position: absolute;
         background-color: transparent;
         z-index: 2;
+    }
+
+    .main .task-list {
+        max-height: 100%;
+        height: auto;
+        overflow-y: auto;
     }
 }
 
@@ -295,7 +323,6 @@ nav button:hover {
     padding-top: 30px;
     width: 100%;
     max-height: 100%;
-    height: 100%;
     overflow-y: auto;
 }
 
