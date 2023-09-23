@@ -117,6 +117,20 @@ body {
         height: 90vh;
     }
 
+    .hamburger-menu {
+        position: absolute;
+        background-color: transparent;
+        z-index: 2;
+    }
+
+    .sidebar * {
+        font-size: calc(15px + 1vw);
+    }
+
+    .sidebar nav .projects-menu * {
+        font-size: calc(15px + 1vw);
+    }
+
     .main .task-list {
         max-height: 100%;
         height: auto;
