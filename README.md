@@ -1,6 +1,10 @@
 # AchieveFlow-Productivity-App
 
 Welcome to AchieveFlow, your ultimate productivity companion. AchieveFlow allows users to experience increased productivity and task management efficiency, bringing them closer to the Flow State.
+  
+[Live App](https://paulvu2023.github.io/AchieveFlow-Productivity-App/)
+
+![Screenshot from 2023-09-29 18-28-44](https://github.com/paulvu2023/AchieveFlow-Productivity-App/assets/118864214/a998a1bc-82f5-4214-9a23-1a0b6ae708aa)
 
 ## Features
 
@@ -24,11 +28,16 @@ AchieveFlow allows you to:
   
 - **Intelligent Sorting**: Let AchieveFlow do the work for you, automatically sorting tasks based on due dates and priorities.
 
+**Tech used:** HTML, CSS, JavaScript
+
+## Challenges 
+
+One of my biggest challenges making this project was implementing the 'Projects' in the DOM. Long story short, creating the UI and connecting it to the JavaScript was difficult for me at the time. There were a lot of frustrating bugs that took me a while to find. I was also bamboozled on how I could save all my data to localStorage and 'export' it when the user loads up the page.
+
+## Lessons Learned:
+
+I learned so much about CRUD and about how I can use relationships between objects and arrays to make my application run. At the earlier stages, I couldn't wrap my head around how I would connect everything. I also learned a ton about localStorage as it was my first time being exposed to it. Finally, I acquired an understanding about media queries and responsive design.
   
-[Live App](https://paulvu2023.github.io/AchieveFlow-Productivity-App/)
-
-![Screenshot from 2023-09-29 18-28-44](https://github.com/paulvu2023/AchieveFlow-Productivity-App/assets/118864214/a998a1bc-82f5-4214-9a23-1a0b6ae708aa)
-
 ## Contact Information
 
 If you have any questions or feedback, please don't hesitate to reach out:
